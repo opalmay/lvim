@@ -1,5 +1,6 @@
 lvim.plugins = {
-    "catppuccin/nvim",
+    -- "catppuccin/nvim",
+    "opalmay/catppuccin-nvim",
     "ThePrimeagen/harpoon",
     "karb94/neoscroll.nvim",
     "baskerville/vim-sxhkdrc",
@@ -16,8 +17,11 @@ lvim.plugins = {
     -- treesitter:
     "andymass/vim-matchup",
 
-    "rcarriga/nvim-dap-ui",
+    -- "rcarriga/nvim-dap-ui",
+    "theHamsta/nvim-dap-virtual-text",
     "mfussenegger/nvim-dap-python",
 }
 lvim.builtin.breadcrumbs.active = true
 lvim.builtin.bufferline.active = false
+lvim.builtin.dap.active = true
+-- lvim.builtin.nvimtree.active = false

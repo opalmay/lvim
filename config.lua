@@ -16,7 +16,7 @@ require("user.whichkey")
 require("user.lualine")
 require("user.indentline")
 require("user.null-ls")
-
+require("user.dap-virtual-text")
 
 --[[
 lvim is the global options object
@@ -140,3 +140,5 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 --         vim.cmd("Catppuccin " .. (vim.v.option_new == "light" and "latte" or "macchiato"))
 --     end,
 -- })
+-- lvim.builtin.nvimtree.setup.update_cwd = false
+-- lvim.builtin.nvimtree.setup.update_focused_file.update_cwd = false
