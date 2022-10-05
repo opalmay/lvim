@@ -180,3 +180,10 @@ map("n", "<leader>hi", ':lua require("lsp-inlayhints").toggle()<CR>')
 
 -- map("n", "<leader>dl", ":lua require('dapui').toggle()<CR>")
 map("n", "<leader>mm", ":lua require('catppuccin').setup{transparent_background=false}<CR>")
+
+-- map("n", "<leader>R", ":SnipRun<CR>")
+-- map("v", "<leader>R", ":SnipRun<CR>")
+
+map("n", "<M-r>", ":SnipRun<CR>")
+map("v", "<M-r>", ":SnipRun<CR>")
+-- map("n", "<CR>", ":")

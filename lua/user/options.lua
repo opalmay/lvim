@@ -65,3 +65,4 @@ autocmd('TextYankPost', {
         })
     end,
 })
+vim.g.gitblame_enabled = 0

@@ -22,18 +22,15 @@
 -- end
 
 --
-lvim.builtin.lualine.sections.lualine_x = { 'filetype' }
 -- lvim.builtin.lualine.options.globalstatus = true
--- lvim.builtin.lualine.on_config_done = function()
---     require('lualine').setup {
---         options = {
---             theme = 'auto',
---             -- sections = {
---             --     lualine_x = { 'filetype' }
---             -- }
---             --     winbar = {
---             --         lualine_b = { marks }
---             --     }
---         }
---     }
--- end
+lvim.builtin.lualine.sections.lualine_x = { 'filetype' }
+lvim.builtin.lualine.on_config_done = function()
+    require('lualine').setup {
+        options = {
+            theme = 'auto',
+            sections = {
+                lualine_x = { 'filetype' }
+            }
+        }
+    }
+end

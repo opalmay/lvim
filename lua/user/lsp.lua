@@ -12,6 +12,19 @@
 --         "Show line diagnostics",
 --       },
 --     },
+
+-- override open_floating_preview to use borders
+-- need to check upstream
+local border = { { "╭", "FloatBorder" }, { "─", "FloatBorder" }, { "╮", "FloatBorder" }, { "│", "FloatBorder" },
+    { "╯", "FloatBorder" }, { "─", "FloatBorder" },
+    { "╰", "FloatBorder" }, { "│", "FloatBorder" } }
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+    opts = opts or {}
+    opts.border = opts.border or border
+    return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
 lvim.lsp.buffer_mappings.normal_mode = {}
 local function lsp_keymaps(bufnr)
     local opts = { noremap = true, silent = true }
