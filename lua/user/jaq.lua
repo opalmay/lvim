@@ -1,4 +1,3 @@
-M = {}
 local status_ok, jaq_nvim = pcall(require, "jaq-nvim")
 if not status_ok then
     return
@@ -82,4 +81,3 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 keymap("n", "<m-r>", ":silent only | Jaq<cr>", opts)
-return M

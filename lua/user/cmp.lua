@@ -1,18 +1,36 @@
-local cmp = require("cmp")
+-- local cmp = require("cmp")
+-- cmp.setup({
+--     mapping = {
+--         ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+--         ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' })
+--     }
+-- lvim.builtin.cmp.on_config_done = function (cmp)
+--     cmp.setup.cmdline(":", {
+-- 	mapping = cmp.mapping.preset.cmdline(),
+-- 	sources = {
+-- 		{ name = "cmdline" },
+-- 		{ name = "path" },
+-- 	},
+-- })
+-- end
 
-cmp.setup.cmdline(":", {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-        { name = "cmdline" },
-        { name = "path" },
-    },
-})
-cmp.setup.cmdline({ "/", "?" }, {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-        { name = "buffer" },
-    },
-})
+-- lvim.builtin.illuminate.on_config_done = function()
+--     local cmp = require("cmp")
+--     cmp.setup.cmdline(":", {
+-- 	mapping = cmp.mapping.preset.cmdline(),
+-- 	sources = {
+-- 		{ name = "cmdline" },
+-- 		{ name = "path" },
+-- 	},
+-- })
+-- end
+
+-- cmp.setup.cmdline({ "/", "?" }, {
+--   mapping = cmp.mapping.preset.cmdline(),
+--   sources = {
+--     { name = "buffer" },
+--   },
+-- })
 -- lvim.builtin.cmp.sources
 -- cmp.setup({
 --     enabled = function()
@@ -27,5 +45,13 @@ cmp.setup.cmdline({ "/", "?" }, {
 --     },
 -- })
 
-lvim.builtin.cmp.mapping["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' })
-lvim.builtin.cmp.mapping["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' })
+-- local map = function(mode, bind, action)
+--     local opts = { noremap = true, silent = true }
+--     vim.keymap.set(mode, bind, action, opts)
+-- end
+-- map("c", "<C-k>", "<nop>") -- Fix for override
+-- map("c", "<C-j>", "<nop>") -- Fix for override
+-- map("i", "<C-k>", "<nop>") -- Fix for cmp override
+-- map("i", "<C-j>", "<nop>") -- Fix for cmp override
+-- lvim.builtin.cmp.mapping["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' })
+-- lvim.builtin.cmp.mapping["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' })

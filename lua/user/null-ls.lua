@@ -2,7 +2,7 @@ lvim.format_on_save = false
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-    -- { command = "stylua", filetypes = { "lua" } },
+    { command = "stylua", filetypes = { "lua" } },
     -- { command = "black", filetypes = { "python" } },
     -- { command = "isort", filetypes = { "python" } },
     {

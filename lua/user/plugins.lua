@@ -27,11 +27,13 @@ lvim.plugins = {
 
     -- run stuff
     "michaelb/sniprun",
-    -- "is0n/jaq-nvim"
+    "is0n/jaq-nvim",
+
+    "folke/trouble.nvim",
 
     -- "folke/noice.nvim",
     -- "MunifTanjim/nui.nvim"
 }
-lvim.builtin.breadcrumbs.active = true
 lvim.builtin.bufferline.active = false
-lvim.builtin.dap.active = true
+-- lvim.builtin.breadcrumbs.active = true
+-- lvim.builtin.dap.active = true

@@ -3,9 +3,9 @@
 -- Shorten function name
 -- local map = vim.api.nvim_set_keymap
 local map = function(mode, bind, action)
-    local opts = { noremap = true, silent = true }
-    -- vim.api.nvim_set_keymap(mode, bind, action, opts)
-    vim.keymap.set(mode, bind, action, opts)
+  local opts = { noremap = true, silent = true }
+  -- vim.api.nvim_set_keymap(mode, bind, action, opts)
+  vim.keymap.set(mode, bind, action, opts)
 end
 
 --Remap space as leader key
@@ -102,7 +102,7 @@ map("n", "<leader>ps", ":lua require('telescope.builtin').grep_string({ search =
 
 -- map("n", "<leader>t", ":TroubleToggle<CR>")
 -- map("n", "<leader>t", ":ToggleTerm<CR>")
-map("n", "<leader>t", ':silent !bspc rule -a St state=floating -o && st -e zsh -is eval "cd $(pwd)" & <CR>')
+-- map("n", "<leader>t", ':silent !bspc rule -a St state=floating -o && st -e zsh -is eval "cd $(pwd)" & <CR>')
 
 map("n", "0", "^")
 map("v", "0", "^")
@@ -130,6 +130,8 @@ map("v", "<C-w>d", '"_d')
 
 map("v", "<C-w>d", '"_d')
 
+-- lvim.keys.normal_mode["<C-j>"] = ":lua require('harpoon.ui').nav_file(1)<CR>"
+-- lvim.keys.normal_mode["<C-k>"] = ":lua require('harpoon.ui').nav_file(2)<CR>"
 map("n", "<C-e>", ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
 map("n", "<leader>a", ":lua require('harpoon.mark').add_file()<CR>")
 
@@ -181,9 +183,9 @@ map("n", "<leader>hi", ':lua require("lsp-inlayhints").toggle()<CR>')
 -- map("n", "<leader>dl", ":lua require('dapui').toggle()<CR>")
 map("n", "<leader>mm", ":lua require('catppuccin').setup{transparent_background=false}<CR>")
 
--- map("n", "<leader>R", ":SnipRun<CR>")
--- map("v", "<leader>R", ":SnipRun<CR>")
+map("n", "<M-R>", ":SnipRun<CR>")
+map("v", "<M-R>", ":SnipRun<CR>")
 
-map("n", "<M-r>", ":SnipRun<CR>")
-map("v", "<M-r>", ":SnipRun<CR>")
+-- map("n", "<M-r>", ":SnipRun<CR>")
+-- map("v", "<M-r>", ":SnipRun<CR>")
 -- map("n", "<CR>", ":")
