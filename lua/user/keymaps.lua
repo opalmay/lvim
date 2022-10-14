@@ -56,8 +56,8 @@ map("n", "N", "Nzzzv")
 -- map("n", "<leader>q", ":Bdelete<CR>")
 map("n", "<leader>/", "gcc")
 -- Replace all occurrences of a word
-map("n", "<leader>ra", ":%vs/\\<<C-r><C-w>\\>/")
-map("n", "<leader>o", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+-- map("n", "<leader>ra", ":%vs/\\<<C-r><C-w>\\>/")
+map("n", "<leader>ra", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 -- map("n", "U", '/<C-r><C-w><CR>')
 
 -- Close current buffer
@@ -86,8 +86,8 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- Move text up and down
-map("v", "J", ":m .+1<CR>==")
-map("v", "K", ":m .-2<CR>==")
+-- map("v", "J", ":m .+1<CR>==")
+-- map("v", "K", ":m .-2<CR>==")
 
 map("v", "p", '"_dP')
 
@@ -116,19 +116,19 @@ map("v", "<C-c>", '"+y')
 map("x", "<C-c>", '"+y')
 
 -- greatest remap ever
-map("x", "<C-w>p", '"_dP')
+map("x", "<M-p>", '"_dP')
 
 -- map("n", "Y", "y$")
 -- next greatest remap ever : asbjornHaland
-map("n", "<C-w>y", '"+y')
-map("v", "<C-w>y", '"+y')
-map("n", "<C-w>Y", '"+y$')
--- map("n", "<C-w>Y", "\"+Y")
+map("n", "<M-y>", '"+y')
+map("v", "<M-y>", '"+y')
+map("n", "<M-Y>", '"+y$')
+-- map("n", "<M-Y", "\"+Y")
 
-map("n", "<C-w>d", '"_d')
-map("v", "<C-w>d", '"_d')
+map("n", "<M-d>", '"_d')
+map("v", "<M-d>", '"_d')
 
-map("v", "<C-w>d", '"_d')
+map("v", "<M-d>", '"_d')
 
 -- lvim.keys.normal_mode["<C-j>"] = ":lua require('harpoon.ui').nav_file(1)<CR>"
 -- lvim.keys.normal_mode["<C-k>"] = ":lua require('harpoon.ui').nav_file(2)<CR>"
@@ -186,6 +186,35 @@ map("n", "<leader>mm", ":lua require('catppuccin').setup{transparent_background=
 map("n", "<M-R>", ":SnipRun<CR>")
 map("v", "<M-R>", ":SnipRun<CR>")
 
+
+map("i", "jj", "<ESC>")
+map("i", "jk", "<ESC>")
+-- map("v", "jj", "<ESC>")
+-- map("v", "jk", "<ESC>")
+-- map("i", "ki", "<ESC>")
+-- vim.keymap.set('n', '<ScrollWheelUp>', '<C-u>')
+-- vim.keymap.set('n', '<ScrollWheelDown>', '<C-d>')
+-- vim.keymap.set('i', '<ScrollWheelUp>', '<C-u>')
+-- vim.keymap.set('i', '<ScrollWheelDown>', '<C-d>')
+-- vim.keymap.set('v', '<ScrollWheelUp>', '<C-u>')
+-- vim.keymap.set('v', '<ScrollWheelDown>', '<C-d>')
+-- map('n', '<ScrollWheelUp>', '5<C-y>')
+-- map('n', '<ScrollWheelDown>', '5<C-e>')
+-- map('i', '<ScrollWheelUp>', '5<C-y>')
+-- map('i', '<ScrollWheelDown>', '5<C-e>')
+-- map('v', '<ScrollWheelUp>', '5<C-y>')
+-- map('v', '<ScrollWheelDown>', '5<C-e>')
 -- map("n", "<M-r>", ":SnipRun<CR>")
 -- map("v", "<M-r>", ":SnipRun<CR>")
 -- map("n", "<CR>", ":")
+map("n", "sf", ":HopWord<CR>")
+
+-- Jump list
+map("n", "<C-o>", "<Plug>EnhancedJumpsLocalOlder")
+map("n", "<C-i>", "<Plug>EnhancedJumpsLocalNewer")
+map("n", "g<C-o>", "<Plug>EnhancedJumpsRemoteOlder")
+map("n", "g<C-i>", "<Plug>EnhancedJumpsRemoteNewer")
+-- map("n", "a", "m`a")
+-- map("n", "i", "m`i")
+-- map("n", "I", "^m`I")
+-- map("n", "A", "$m`A")

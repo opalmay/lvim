@@ -25,6 +25,7 @@ require("catppuccin").setup {
         fidget = true,
         telescope = true,
         harpoon = true,
+        hop = true
     },
 }
 lvim.colorscheme = "catppuccin"

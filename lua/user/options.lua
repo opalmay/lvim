@@ -33,6 +33,7 @@ vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.laststatus = 3 -- unified status bar
 vim.opt.mousescroll = "ver:10"
+vim.opt.mousemodel = "popup"
 -- vim.opt.showcmd = true
 -- vim.cmd "set laststatus=3"
 
@@ -54,15 +55,4 @@ vim.cmd [[set iskeyword+=-]]
 --vim.api.nvim_exec("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif", false)
 -- vim.g.lf_replace_netrw = 1
 
-local autocmd = vim.api.nvim_create_autocmd
-autocmd('TextYankPost', {
-    group = yank_group,
-    pattern = '*',
-    callback = function()
-        vim.highlight.on_yank({
-            higroup = 'IncSearch',
-            timeout = 40,
-        })
-    end,
-})
 vim.g.gitblame_enabled = 0

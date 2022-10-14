@@ -11,7 +11,7 @@ lvim.plugins = {
     "junegunn/vim-slash",
     "ur4ltz/surround.nvim",
 
-    "lacygoill/vim-repeat",
+    "tpope/vim-repeat",
     -- "svermeulen/vim-macrobatics",
 
     -- cmp:
@@ -33,7 +33,11 @@ lvim.plugins = {
 
     -- "folke/noice.nvim",
     -- "MunifTanjim/nui.nvim"
+
+    "phaazon/hop.nvim",
+
+    -- jump list:
+    "inkarkat/vim-EnhancedJumps",
+    "inkarkat/vim-ingo-library"
 }
 lvim.builtin.bufferline.active = false
--- lvim.builtin.breadcrumbs.active = true
--- lvim.builtin.dap.active = true
