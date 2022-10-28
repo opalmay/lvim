@@ -70,6 +70,19 @@ lvim.plugins = {
 		end,
 		ft = { "md" },
 	},
+
+	{
+		"tpope/vim-dadbod",
+		opt = true,
+		requires = {
+			"kristijanhusak/vim-dadbod-ui",
+			"kristijanhusak/vim-dadbod-completion",
+		},
+		config = function()
+			require("user.dadbod").setup()
+		end,
+		cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
+	},
 }
 lvim.builtin.bufferline.active = false
 -- lvim.builtin.breadcrumbs.active = false

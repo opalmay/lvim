@@ -1,6 +1,13 @@
 lvim.builtin.which_key.mappings["g"]["B"] = { ":GitBlameToggle<CR>", "Git Blame" }
 lvim.builtin.which_key.mappings["l"]["t"] = { ":TroubleToggle<CR>", "Trouble" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["D"] = {
+	name = "Database",
+	u = { "<Cmd>DBUIToggle<Cr>", "Toggle UI" },
+	f = { "<Cmd>DBUIFindBuffer<Cr>", "Find buffer" },
+	r = { "<Cmd>DBUIRenameBuffer<Cr>", "Rename buffer" },
+	q = { "<Cmd>DBUILastQueryInfo<Cr>", "Last query info" },
+}
 
 -- lvim.builtin.which_key.mappings["R"] = { ":SnipRun<CR>", "SnipRun" }
 

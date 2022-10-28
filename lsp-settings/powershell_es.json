@@ -1,0 +1,7 @@
+{
+  "powershell": {
+    "codeFormatting": {
+      "openBraceOnSameLine": true
+    }
+  }
+}

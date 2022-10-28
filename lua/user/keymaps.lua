@@ -3,9 +3,9 @@
 -- Shorten function name
 -- local map = vim.api.nvim_set_keymap
 local map = function(mode, bind, action)
-  local opts = { noremap = true, silent = true }
-  -- vim.api.nvim_set_keymap(mode, bind, action, opts)
-  vim.keymap.set(mode, bind, action, opts)
+	local opts = { noremap = true, silent = true }
+	-- vim.api.nvim_set_keymap(mode, bind, action, opts)
+	vim.keymap.set(mode, bind, action, opts)
 end
 
 --Remap space as leader key
@@ -21,25 +21,20 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
--- Better window navigation
-map("n", "<M-h>", ":vertical resize +5<CR>")
-map("n", "<M-l>", ":vertical resize -5<CR>")
--- map("n", "<M-j>", "<C-w>j")
--- map("n", "<M-k>", "<C-w>k")
--- map("n", "<M-l>", "<C-w>l")
+map("n", "<Left>", ":vertical resize +5<CR>")
+map("n", "<Right>", ":vertical resize -5<CR>")
+map("n", "<Up>", ":horizontal resize +5<CR>")
+map("n", "<Down>", ":horizontal resize +5<CR>")
 
--- Resize windows
-map("n", "<Left>", "<C-w>h")
-map("n", "<Down>", "<C-w>j")
-map("n", "<Up>", "<C-w>k")
-map("n", "<Right>", "<C-w>l")
+map("n", "<M-h>", "<C-w>h")
+map("n", "<M-j>", "<C-w>j")
+map("n", "<M-k>", "<C-w>k")
+map("n", "<M-l>", "<C-w>l")
 
--- map("n", "<leader>e", ":Lex 30<cr>")
--- Nvimtree
--- map("n", "<leader>e", ":NvimTreeToggle<CR>")
-
--- map("n", "<leader>b", "gcc")
+-- map("t", "<M-h>", "<C-w>h")
+-- map("t", "<M-j>", "<C-w>j")
+-- map("t", "<M-k>", "<C-w>k")
+-- map("t", "<M-l>", "<C-w>l")
 
 -- Navigate buffers
 -- map("n", "J", ":BufferPrevious<CR>")
@@ -184,7 +179,6 @@ map("n", "<leader>hi", ':lua require("lsp-inlayhints").toggle()<CR>')
 
 map("n", "<M-R>", ":SnipRun<CR>")
 map("v", "<M-R>", ":SnipRun<CR>")
-
 
 map("i", "jj", "<ESC>")
 map("i", "jk", "<ESC>")
