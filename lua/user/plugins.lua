@@ -83,6 +83,7 @@ lvim.plugins = {
     end,
     cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
   },
+  { "Issafalcon/lsp-overloads.nvim" }
 }
 lvim.builtin.bufferline.active = false
 -- lvim.builtin.breadcrumbs.active = false

@@ -53,8 +53,8 @@ vim.g.dotnet_get_dll_path = function()
   -- local path = io.popen('ls ' .. vim.fn.getcwd() .. '/bin/Debug/net6.0/*.dll'):read('*a'):gsub('~', '/home/opal')
   -- local path = io.popen('ls ' .. vim.fn.getcwd() .. '/bin/Debug/net6.0/*.dll'):read('*a')
   return '/home/opal/Documents/projects/dotnettest/bin/Debug/net6.0/dotnettest.dll'
-  -- return path
   -- print(path)
+  -- return path
   -- return io.popen(path):read('*a')
   -- return '/home/opal/.tmp/dotnettest3/bin/Debug/net6.0/dotnettest3.dll'
 end
