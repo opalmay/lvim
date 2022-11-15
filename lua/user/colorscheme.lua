@@ -15,7 +15,6 @@ require("catppuccin").setup({
 
 		WhichKeyFloat = { bg = "NONE" },
 		NormalFloat = { fg = cp.text, bg = "NONE" },
-		-- FloatBorder = { bg = cp.blue, fg = cp.blue }
 	},
 	integrations = {
 		illuminate = true,

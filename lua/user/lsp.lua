@@ -62,7 +62,7 @@ lvim.lsp.on_attach_callback = function(client, bufnr)
   lsp_keymaps(bufnr)
   update_nlspsettings(client)
 
-  if client.server_capabilities.signatureHelpProvider then
-    require('lsp-overloads').setup(client, {})
-  end
+  -- if client.server_capabilities.signatureHelpProvider then
+  --   require('lsp-overloads').setup(client, {})
+  -- end
 end

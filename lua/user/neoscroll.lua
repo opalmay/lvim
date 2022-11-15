@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 neoscroll.setup({
+  scroll_past_bottom = false,
 	easing_function = "cubic",
 	mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "zt", "zz", "zb" },
 })

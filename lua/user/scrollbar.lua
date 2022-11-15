@@ -7,5 +7,8 @@ require("scrollbar").setup({
 		-- color = "#949494"
 		color = colors.overlay0,
 	},
+  handlers = {
+    -- search = true
+  }
 })
 -- require("scrollbar.handlers.search").setup()
