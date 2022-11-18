@@ -18,7 +18,7 @@ formatters.setup({
   },
   {
     command = "yapf",
-    extra_args = { "--style={based_on_style: google, column_limit: 100, indent_width: 4}" },
+    extra_args = { "--style={based_on_style: google, column_limit: 1000, indent_width: 4}" },
   },
 })
 
