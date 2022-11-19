@@ -27,6 +27,7 @@ lvim.plugins = {
   -- treesitter:
   { "andymass/vim-matchup" },
   { "nvim-treesitter/nvim-treesitter-textobjects" },
+  { "RRethy/nvim-treesitter-textsubjects" },
 
   -- dap
   { "theHamsta/nvim-dap-virtual-text" },
@@ -91,10 +92,15 @@ lvim.plugins = {
     -- requires = {
     --   { 'kkharji/sqlite.lua', module = 'sqlite' }
     -- },
-    config = function()
-      require('neoclip').setup()
-    end
-  }
+  },
+  { "s1n7ax/nvim-comment-frame" }
+  -- { "smjonas/live-command.nvim" }
+  -- {
+  --   "narutoxy/dim.lua",
+  --   config = function()
+  --     require('dim').setup({})
+  --   end
+  -- }
 }
 lvim.builtin.bufferline.active = false
 -- lvim.builtin.breadcrumbs.active = false

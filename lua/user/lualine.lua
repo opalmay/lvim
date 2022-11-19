@@ -23,7 +23,6 @@
 
 --
 -- lvim.builtin.lualine.options.globalstatus = true
-lvim.builtin.lualine.sections.lualine_x = { "filetype" }
 -- lvim.builtin.lualine.on_config_done = function()
 -- 	require("lualine").setup({
 -- 		options = {
@@ -34,3 +33,6 @@ lvim.builtin.lualine.sections.lualine_x = { "filetype" }
 -- 		},
 -- 	})
 -- end
+--
+local components = require "lvim.core.lualine.components"
+lvim.builtin.lualine.sections.lualine_x = { components.lsp, components.filetype }

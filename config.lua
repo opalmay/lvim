@@ -27,3 +27,9 @@ require("user.neoclip")
 require("user.telescope")
 -- require("user.hlslens")
 -- require("user.dadbod")
+
+-- Why
+require("nvim-comment-frame").setup({
+  keymap = "<C-0>",
+  multiline_keymap = "<C-9>",
+})
