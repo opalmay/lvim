@@ -68,3 +68,4 @@ lvim.lsp.on_attach_callback = function(client, bufnr)
   --   require('lsp-overloads').setup(client, {})
   -- end
 end
+-- require'toggle_lsp_diagnostics'.init({ underline = false, virtual_text = { prefix = "XXX", spacing = 5 }})

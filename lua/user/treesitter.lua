@@ -29,40 +29,39 @@ local opts = {
         ["aT"] = "@table.outer",
       },
     }
-  }
-  -- 		lsp_interop = {
-  -- 			enable = true,
-  -- 			border = "rounded",
-  -- 			peek_definition_code = {
-  -- 				["gpof"] = "@function.outer",
-  -- 				["gpoc"] = "@class.outer",
-  -- 			},
-  -- 		},
-  -- 		move = {
-  -- 			enable = true,
-  -- 			set_jumps = true, -- whether to set jumps in the jumplist
-  -- 			goto_next_start = {
-  -- 				["]m"] = "@function.outer",
-  -- 				["]]"] = "@class.outer",
-  -- 				["]k"] = "@comment.outer",
-  -- 			},
-  -- 			goto_next_end = {
-  -- 				["]M"] = "@function.outer",
-  -- 				["]["] = "@class.outer",
-  -- 				["]K"] = "@comment.outer",
-  -- 			},
-  -- 			goto_previous_start = {
-  -- 				["[m"] = "@function.outer",
-  -- 				["[["] = "@class.outer",
-  -- 				["[k"] = "@comment.outer",
-  -- 			},
-  -- 			goto_previous_end = {
-  -- 				["[M"] = "@function.outer",
-  -- 				["[]"] = "@class.outer",
-  -- 				["[K"] = "@comment.outer",
-  -- 			},
-  -- 		},
-  -- 	},
+  },
+  -- lsp_interop = {
+  --   enable = true,
+  --   border = "rounded",
+  --   peek_definition_code = {
+  --     ["gpof"] = "@function.outer",
+  --     ["gpoc"] = "@class.outer",
+  --   },
+  -- },
+  -- move = {
+  --   enable = true,
+  --   set_jumps = true, -- whether to set jumps in the jumplist
+  --   goto_next_start = {
+  --     ["]m"] = "@function.outer",
+  --     ["]]"] = "@class.outer",
+  --     ["]k"] = "@comment.outer",
+  --   },
+  --   goto_next_end = {
+  --     ["]M"] = "@function.outer",
+  --     ["]["] = "@class.outer",
+  --     ["]K"] = "@comment.outer",
+  --   },
+  --   goto_previous_start = {
+  --     ["[m"] = "@function.outer",
+  --     ["[["] = "@class.outer",
+  --     ["[k"] = "@comment.outer",
+  --   },
+  --   goto_previous_end = {
+  --     ["[M"] = "@function.outer",
+  --     ["[]"] = "@class.outer",
+  --     ["[K"] = "@comment.outer",
+  --   },
+  -- },
 }
 
 lvim.builtin.treesitter = vim.tbl_deep_extend("force", lvim.builtin.treesitter, opts)

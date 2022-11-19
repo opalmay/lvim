@@ -30,7 +30,7 @@ require("catppuccin").setup({
     which_key = true,
     treesitter = true,
     notify = true,
-    fidget = true,
+    -- fidget = true,
     telescope = true,
     harpoon = true,
     hop = true,
