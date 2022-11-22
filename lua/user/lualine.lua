@@ -34,5 +34,11 @@
 -- 	})
 -- end
 --
+
+-- local function lualine_lsp_signature()
+--   return require("lsp_signature").status_line(500).hint
+--   return require("lsp_signature").status_line(500).label
+-- end
+-- lvim.builtin.lualine.sections.lualine_c = { lualine_lsp_signature }
 local components = require "lvim.core.lualine.components"
 lvim.builtin.lualine.sections.lualine_x = { components.lsp, components.filetype }

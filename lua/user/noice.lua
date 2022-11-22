@@ -25,6 +25,14 @@ noice.setup({
     opts = { enter = true },
     filter = { event = "msg_show", ["not"] = { kind = { "search_count", "echo" } } },
   },
+  lsp = {
+    hover = {
+      enabled = false
+    },
+    signature = {
+      enabled = false
+    }
+  },
   throttle = 1000 / 30, -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
   ---@type table<string, NoiceViewOptions>
   views = {}, -- @see the section on views below
@@ -33,3 +41,4 @@ noice.setup({
   ---@type table<string, NoiceFilter>
   status = {}, --@see the section on statusline components below
 })
+

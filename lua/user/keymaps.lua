@@ -2,9 +2,12 @@
 
 -- Shorten function name
 -- local map = vim.api.nvim_set_keymap
-local map = function(mode, bind, action)
+local map = function(mode, bind, action, opts)
   -- local opts = { noremap = true, silent = true }
-  -- vim.keymap.set(mode, bind, action, opts)
+  if opts then
+    vim.keymap.set(mode, bind, action, opts)
+    return
+  end
   local key
   if mode == "n" then
     key = "normal_mode"
@@ -46,18 +49,28 @@ map("n", "n", ":execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslen
 map("n", "N", ":execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
 map("n", "n", ":execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>zz")
 map("n", "N", ":execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
+
 -- map("n", "j", ":ScrollbarHide<CR>j")
 -- map("n", "k", ":ScrollbarHide<CR>k")
 
 -- Can I do this without?
-map('n', '*', ":ScrollbarShow<CR><Plug>(asterisk-*)<Cmd>lua require('hlslens').start()<CR>")
-map('n', '#', ":ScrollbarShow<CR><Plug>(asterisk-#)<Cmd>lua require('hlslens').start()<CR>")
-map('n', 'g*', ":ScrollbarShow<CR><Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>")
-map('n', 'g#', ":ScrollbarShow<CR><Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>")
-map('x', '*', ":ScrollbarShow<CR><Plug>(asterisk-*)<Cmd>lua require('hlslens').start()<CR>")
-map('x', '#', ":ScrollbarShow<CR><Plug>(asterisk-#)<Cmd>lua require('hlslens').start()<CR>")
-map('x', 'g*', ":ScrollbarShow<CR><Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>")
-map('x', 'g#', ":ScrollbarShow<CR><Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>")
+-- map('n', '*', ":ScrollbarShow<CR><Plug>(asterisk-*)<Cmd>lua require('hlslens').start()<CR>")
+-- map('n', '#', ":ScrollbarShow<CR><Plug>(asterisk-#)<Cmd>lua require('hlslens').start()<CR>")
+-- map('n', 'g*', ":ScrollbarShow<CR><Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>")
+-- map('n', 'g#', ":ScrollbarShow<CR><Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>")
+-- map('x', '*', ":ScrollbarShow<CR><Plug>(asterisk-*)<Cmd>lua require('hlslens').start()<CR>")
+-- map('x', '#', ":ScrollbarShow<CR><Plug>(asterisk-#)<Cmd>lua require('hlslens').start()<CR>")
+-- map('x', 'g*', ":ScrollbarShow<CR><Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>")
+-- map('x', 'g#', ":ScrollbarShow<CR><Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>")
+
+map('n', '*', "<Plug>(asterisk-*)<Cmd>lua require('hlslens').start()<CR>zz")
+map('n', '#', "<Plug>(asterisk-#)<Cmd>lua require('hlslens').start()<CR>zz")
+map('n', 'g*', "<Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>zz")
+map('n', 'g#', "<Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>zz")
+map('x', '*', "<Plug>(asterisk-*)<Cmd>lua require('hlslens').start()<CR>zz")
+map('x', '#', "<Plug>(asterisk-#)<Cmd>lua require('hlslens').start()<CR>zz")
+map('x', 'g*', "<Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>zz")
+map('x', 'g#', "<Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>zz")
 
 map("n", "<Left>", "<C-w>h")
 map("n", "<Down>", "<C-w>j")
@@ -112,7 +125,7 @@ map("i", "!", "!<C-g>u")
 map("i", "[", "[<C-g>u")
 map("i", "{", "{<C-g>u")
 -- map("i", "=", "{<C-g>u")
-map("i", "<CR>", "{<C-g>u")
+-- map("i", "<CR>", "<CR><C-g>u")
 
 -- Visual --
 -- Stay in indent mode
@@ -160,14 +173,18 @@ map("n", "<M-y>", '"+y')
 map("v", "<M-y>", '"+y')
 map("n", "<M-Y>", '"+y$')
 -- map("n", "<M-Y", "\"+Y")
+map("n", "<leader>y", '"_y')
+map("v", "<leader>y", '"_y')
 
 map("n", "<M-d>", '"_d')
 map("v", "<M-d>", '"_d')
+map("n", "<leader>d", '"_d')
+map("v", "<leader>d", '"_d')
 
 map("n", "<M-c>", '"_c')
 map("v", "<M-c>", '"_c')
-
-map("v", "<M-d>", '"_d')
+map("n", "<leader>c", '"_c')
+map("v", "<leader>c", '"_c')
 
 -- lvim.keys.normal_mode["<C-j>"] = ":lua require('harpoon.ui').nav_file(1)<CR>"
 -- lvim.keys.normal_mode["<C-k>"] = ":lua require('harpoon.ui').nav_file(2)<CR>"
