@@ -9,7 +9,7 @@ lvim.plugins = {
   { "nvim-pack/nvim-spectre" },
   { "stevearc/stickybuf.nvim" },
   { "rbong/vim-buffest" },
-  { "junegunn/vim-slash" },
+  -- { "junegunn/vim-slash" },
   {
     "kylechui/nvim-surround",
     config = function()
@@ -39,8 +39,8 @@ lvim.plugins = {
 
   { "folke/trouble.nvim" },
 
-  -- " }folke/noice.nvim",
-  -- " }MunifTanjim/nui.nvim"
+  -- { "folke/noice.nvim" },
+  -- { "MunifTanjim/nui.nvim" },
 
   -- " }phaazon/hop.nvim",
   {
@@ -54,10 +54,8 @@ lvim.plugins = {
   { "inkarkat/vim-EnhancedJumps" },
   { "inkarkat/vim-ingo-library" },
 
-  -- " }wfxr/minimap.vim",
   { "petertriho/nvim-scrollbar" },
-  -- { "kevinhwang91/nvim-hlslens" },
-  -- " }norcalli/nvim-colorizer.lua"
+  { "kevinhwang91/nvim-hlslens" },
   {
     "norcalli/nvim-colorizer.lua",
     config = function()

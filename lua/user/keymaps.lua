@@ -35,6 +35,11 @@ end
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- For hlslens n after noh
+-- Probs need to disable other find plug
+map("n", "n", "<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>zz")
+map("n", "N", "<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
+
 map("n", "<Left>", "<C-w>h")
 map("n", "<Down>", "<C-w>j")
 map("n", "<Up>", "<C-w>k")
@@ -56,8 +61,8 @@ map("n", "<Right>", "<C-w>l")
 
 map("n", "<leader>cd", ":cd %:p:h<CR>")
 
-map("n", "n", "nzzzv")
-map("n", "N", "Nzzzv")
+-- map("n", "n", "nzzzv")
+-- map("n", "N", "Nzzzv")
 -- map("n", "J", "mzJ`z")
 
 -- Space q to quit
@@ -98,7 +103,8 @@ map("v", ">", ">gv")
 -- map("v", "J", ":m .+1<CR>==")
 -- map("v", "K", ":m .-2<CR>==")
 
-map("v", "p", '"_dP')
+-- map("v", "p", '"_dP')
+map("v", "<M-p>", '"_dP')
 
 -- Visual Block --
 -- Move text up and down

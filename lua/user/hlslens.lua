@@ -1,2 +1,5 @@
 -- why
-require("hlslens").setup()
+require("hlslens").setup({
+  calm_down = true,
+  nearest_only = true
+})

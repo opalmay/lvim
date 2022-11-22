@@ -12,7 +12,8 @@ formatters.setup({
     command = "prettier",
     ---@usage arguments to pass to the formatter
     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
-    extra_args = { "--single-quote  --trailing-comma all --tab-width 4" },
+    -- extra_args = { "--single-quote  --trailing-comma all --tab-width 4 --line-width 1000" },
+    extra_args = { "--single-quote", "--trailing-comma", "all", "--tab-width", "2", "--print-width", "1000" },
     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
     -- filetypes = { "typescript", "typescriptreact" },
   },

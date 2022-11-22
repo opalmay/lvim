@@ -2,7 +2,8 @@ lvim.builtin.which_key.mappings["g"]["B"] = { ":GitBlameToggle<CR>", "Git Blame"
 lvim.builtin.which_key.mappings["l"]["t"] = { ":TroubleToggle<CR>", "Trouble" }
 lvim.builtin.which_key.mappings["l"]["b"] = { ":ToggleDiag<CR>", "Toggle Diag" }
 lvim.builtin.which_key.mappings["P"] = { ":Telescope projects<CR>", "Projects" }
-lvim.builtin.which_key.mappings["v"] = { ":Telescope neoclip<CR>", "NeoClip" }
+-- lvim.builtin.which_key.mappings["v"] = { ":Telescope neoclip<CR>", "NeoClip" }
+lvim.builtin.which_key.mappings["v"] = { ":Telescope neoclip initial_mode=normal theme=dropdown<CR>", "NeoClip" }
 -- lvim.builtin.which_key.mappings["D"] = {
 -- 	name = "Database",
 -- 	u = { "<Cmd>DBUIToggle<Cr>", "Toggle UI" },
@@ -14,6 +15,7 @@ lvim.builtin.which_key.mappings["a"] = { ":lua require('harpoon.mark').add_file(
 lvim.builtin.which_key.mappings["t"] = { ":silent !bspc rule -a kitty state=floating -o && kitty -e zsh -is eval \"cd $(pwd)\" & <CR>", "Floating Term" }
 
 
+lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
 -- lvim.builtin.which_key.mappings["R"] = { ":SnipRun<CR>", "SnipRun" }
 
 --     lvim.builtin.which_key.mappings["d"] = {

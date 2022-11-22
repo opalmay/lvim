@@ -21,7 +21,7 @@ require("catppuccin").setup({
     -- IndentBlanklineChar = { fg = colors.maroon }
     -- WhichKeyFloat = { bg = colors.none },
     -- NormalFloat = { bg = colors.none },
-
+    HlSearchNear = { fg="#1e2030", bg="#ed8796"},
     WhichKeyFloat = { bg = "NONE" },
     NormalFloat = { fg = cp.text, bg = "NONE" },
   },
@@ -42,3 +42,5 @@ lvim.colorscheme = "catppuccin"
 
 -- lvim.transparent_window = true
 -- local colors = require("catppuccin.palettes").get_palette() -- fetch colors from g:catppuccin_flavour palette
+-- vim.api.nvim_exec("hi default link HlSearchNear CurSearch", true)
+vim.api.nvim_set_hl(0, "HlSearchNear", {link = "CurSearch"})
