@@ -37,8 +37,27 @@ end
 
 -- For hlslens n after noh
 -- Probs need to disable other find plug
-map("n", "n", "<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>zz")
-map("n", "N", "<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
+-- map("n", "n", ":ScrollbarShow<CR><Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>zz")
+-- map("n", "N", ":ScrollbarShow<CR><Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
+-- map("n", "n", ":ScrollbarShow<CR><Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>zz")
+-- map("n", "N", ":ScrollbarShow<CR><Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
+
+map("n", "n", ":execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>zz")
+map("n", "N", ":execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
+map("n", "n", ":execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>zz")
+map("n", "N", ":execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
+-- map("n", "j", ":ScrollbarHide<CR>j")
+-- map("n", "k", ":ScrollbarHide<CR>k")
+
+-- Can I do this without?
+map('n', '*', ":ScrollbarShow<CR><Plug>(asterisk-*)<Cmd>lua require('hlslens').start()<CR>")
+map('n', '#', ":ScrollbarShow<CR><Plug>(asterisk-#)<Cmd>lua require('hlslens').start()<CR>")
+map('n', 'g*', ":ScrollbarShow<CR><Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>")
+map('n', 'g#', ":ScrollbarShow<CR><Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>")
+map('x', '*', ":ScrollbarShow<CR><Plug>(asterisk-*)<Cmd>lua require('hlslens').start()<CR>")
+map('x', '#', ":ScrollbarShow<CR><Plug>(asterisk-#)<Cmd>lua require('hlslens').start()<CR>")
+map('x', 'g*', ":ScrollbarShow<CR><Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>")
+map('x', 'g#', ":ScrollbarShow<CR><Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>")
 
 map("n", "<Left>", "<C-w>h")
 map("n", "<Down>", "<C-w>j")
@@ -78,6 +97,7 @@ map("n", "<leader>ra", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 -- map("n", "Q", ":Bdelete<CR>")
 
 map("n", "<ESC>", ":noh<CR><ESC>")
+-- map("n", "<ESC>", ":noh<CR>:ScrollbarHide<ESC>")
 
 map("n", "p", "p==")
 map("n", "<C-s>", ":w<CR>")

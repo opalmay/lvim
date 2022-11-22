@@ -56,6 +56,7 @@ lvim.plugins = {
 
   { "petertriho/nvim-scrollbar" },
   { "kevinhwang91/nvim-hlslens" },
+  { "haya14busa/vim-asterisk" },
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
