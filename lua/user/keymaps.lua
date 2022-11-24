@@ -38,39 +38,8 @@ end
 --   term_mode = "t",
 --   command_mode = "c",
 
--- For hlslens n after noh
--- Probs need to disable other find plug
--- map("n", "n", ":ScrollbarShow<CR><Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>zz")
--- map("n", "N", ":ScrollbarShow<CR><Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
--- map("n", "n", ":ScrollbarShow<CR><Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>zz")
--- map("n", "N", ":ScrollbarShow<CR><Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
-
--- map("n", "n", ":execute(smoothie#do('n'))<CR><Cmd>lua require('hlslens').start()<CR>zz")
--- map("n", "N", ":call smoothie#do('N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
--- map("n", "n", ":execute('normal ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>zz")
--- map("v", "N", ":execute('normal ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
-
--- map("n", "j", ":ScrollbarHide<CR>j")
--- map("n", "k", ":ScrollbarHide<CR>k")
-
--- Can I do this without?
--- map('n', '*', ":ScrollbarShow<CR><Plug>(asterisk-*)<Cmd>lua require('hlslens').start()<CR>")
--- map('n', '#', ":ScrollbarShow<CR><Plug>(asterisk-#)<Cmd>lua require('hlslens').start()<CR>")
--- map('n', 'g*', ":ScrollbarShow<CR><Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>")
--- map('n', 'g#', ":ScrollbarShow<CR><Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>")
--- map('x', '*', ":ScrollbarShow<CR><Plug>(asterisk-*)<Cmd>lua require('hlslens').start()<CR>")
--- map('x', '#', ":ScrollbarShow<CR><Plug>(asterisk-#)<Cmd>lua require('hlslens').start()<CR>")
--- map('x', 'g*', ":ScrollbarShow<CR><Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>")
--- map('x', 'g#', ":ScrollbarShow<CR><Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>")
-
--- map('n', '*', "<Plug>(asterisk-*)<Cmd>lua require('hlslens').start()<CR>zz")
--- map('n', '#', "<Plug>(asterisk-#)<Cmd>lua require('hlslens').start()<CR>zz")
--- map('n', 'g*', "<Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>zz")
--- map('n', 'g#', "<Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>zz")
--- map('x', '*', "<Plug>(asterisk-*)<Cmd>lua require('hlslens').start()<CR>zz")
--- map('x', '#', "<Plug>(asterisk-#)<Cmd>lua require('hlslens').start()<CR>zz")
--- map('x', 'g*', "<Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>zz")
--- map('x', 'g#', "<Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>zz")
+-- map("n", "j", ':noh<CR><Cmd>let [v:hlsearch, @/, v:searchforward]=smoothie#do("j")<CR>')
+-- map("n", "k", ':noh<CR><Cmd>let [v:hlsearch, @/, v:searchforward]=smoothie#do("k")<CR>')
 
 map("n", "<Left>", "<C-w>h")
 map("n", "<Down>", "<C-w>j")

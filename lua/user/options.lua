@@ -36,7 +36,7 @@ vim.opt.mousescroll = "ver:10"
 vim.opt.mousemodel = "popup"
 -- vim.opt.showcmd = true
 -- vim.cmd "set laststatus=3"
-vim.opt.startofline = true
+-- vim.opt.startofline = true
 
 -- vim.opt.autochdir = true;
 

@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 fidget.setup({
-    window = {
-        blend = 0
-    }
+    -- window = {
+    --     blend = 0
+    -- }
 })

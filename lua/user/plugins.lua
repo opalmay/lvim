@@ -3,6 +3,7 @@ lvim.plugins = {
   { "f-person/git-blame.nvim" },
   { "ThePrimeagen/harpoon" },
   { "opalmay/vim-smoothie" },
+  -- { "psliwka/vim-smoothie" },
   -- { "karb94/neoscroll.nvim" },
   -- { "opalmay/neoscroll.nvim", branch = "feat-scroll-past-bottom" },
   -- { "opalmay/neoscroll.nvim" },
@@ -58,7 +59,7 @@ lvim.plugins = {
 
   -- { "petertriho/nvim-scrollbar" },
   -- { "kevinhwang91/nvim-hlslens" },
-  { "haya14busa/vim-asterisk" },
+  -- { "haya14busa/vim-asterisk" },
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
@@ -71,7 +72,7 @@ lvim.plugins = {
     setup = function()
       vim.g.mkdp_filetypes = { "markdown" }
     end,
-    ft = { "md" },
+    -- ft = { "md" },
   },
 
   -- {

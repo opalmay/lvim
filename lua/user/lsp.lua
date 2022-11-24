@@ -71,8 +71,8 @@ end
 -- require'toggle_lsp_diagnostics'.init({ underline = false, virtual_text = { prefix = "XXX", spacing = 5 }})
 require "lsp_signature".setup({
   hint_prefix = "",
-  hint_enable = true,
-  -- hint_enable = false,
+  -- hint_enable = true,
+  hint_enable = false,
   floating_window = false,
   toggle_key = "<C-x>",
   -- max_height = 20

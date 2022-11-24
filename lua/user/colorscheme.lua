@@ -21,6 +21,7 @@ require("catppuccin").setup({
     -- IndentBlanklineChar = { fg = colors.maroon }
     -- WhichKeyFloat = { bg = colors.none },
     -- NormalFloat = { bg = colors.none },
+    --
     HlSearchNear = { fg="#1e2030", bg="#ed8796"},
     HlSearchLensNear = { bg = cp.none },
 
@@ -32,7 +33,7 @@ require("catppuccin").setup({
     which_key = true,
     treesitter = true,
     notify = true,
-    -- fidget = true,
+    fidget = true,
     telescope = true,
     harpoon = true,
     hop = true,

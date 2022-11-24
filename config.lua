@@ -1,7 +1,7 @@
 require("user.plugins")
 require("user.keymaps")
 require("user.options")
-require("user.neoscroll")
+require("user.smoothie")
 require("user.cmp")
 require("user.nvimtree")
 require("user.lsp")
