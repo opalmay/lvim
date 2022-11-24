@@ -1,5 +1,4 @@
 local dap = require('dap')
-
 dap.adapters.coreclr = {
   type = 'executable',
   command = '/usr/local/netcoredbg',
@@ -52,7 +51,7 @@ vim.g.dotnet_get_dll_path = function()
   -- return vim.g['dotnet_last_dll_path']
   -- local path = io.popen('ls ' .. vim.fn.getcwd() .. '/bin/Debug/net6.0/*.dll'):read('*a'):gsub('~', '/home/opal')
   -- local path = io.popen('ls ' .. vim.fn.getcwd() .. '/bin/Debug/net6.0/*.dll'):read('*a')
-  return '/home/opal/Documents/projects/dotnettest/bin/Debug/net6.0/dotnettest.dll'
+  return '/home/opal/Documents/projects/dotnettest/bin/Debug/net6.0/dotnettest.dll' -- The code from the example made you enter it every time..
   -- print(path)
   -- return path
   -- return io.popen(path):read('*a')

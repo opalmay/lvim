@@ -70,8 +70,12 @@ lvim.lsp.on_attach_callback = function(client, bufnr)
 end
 -- require'toggle_lsp_diagnostics'.init({ underline = false, virtual_text = { prefix = "XXX", spacing = 5 }})
 require "lsp_signature".setup({
-  -- hint_prefix = "",
-  hint_enable = false,
-  noice = true
-  -- floating_window = false
+  hint_prefix = "",
+  hint_enable = true,
+  -- hint_enable = false,
+  floating_window = false,
+  toggle_key = "<C-x>",
+  -- max_height = 20
+  -- select_signature_key = "<C-X>"
+  -- noice = true
 })

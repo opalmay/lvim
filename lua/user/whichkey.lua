@@ -17,7 +17,11 @@ lvim.builtin.which_key.mappings["a"] = { ":lua require('harpoon.mark').add_file(
 lvim.builtin.which_key.mappings["t"] = { ":silent !bspc rule -a kitty state=floating -o && kitty -e zsh -is eval \"cd $(pwd)\" & <CR>", "Floating Term" }
 
 
-lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
+-- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
+lvim.builtin.which_key.mappings["p"] = nil
+-- lvim.builtin.which_key.mappings["D"] = lvim.builtin.which_key.mappings["d"]
+lvim.builtin.which_key.mappings["d"] = nil
+lvim.builtin.which_key.mappings["c"] = nil
 -- lvim.builtin.which_key.mappings["R"] = { ":SnipRun<CR>", "SnipRun" }
 
 --     lvim.builtin.which_key.mappings["d"] = {

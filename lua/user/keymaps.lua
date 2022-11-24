@@ -4,10 +4,10 @@
 -- local map = vim.api.nvim_set_keymap
 local map = function(mode, bind, action, opts)
   -- local opts = { noremap = true, silent = true }
-  if opts then
-    vim.keymap.set(mode, bind, action, opts)
-    return
-  end
+  -- if opts then
+  --   vim.keymap.set(mode, bind, action, opts)
+  --   return
+  -- end
   local key
   if mode == "n" then
     key = "normal_mode"
@@ -45,10 +45,10 @@ end
 -- map("n", "n", ":ScrollbarShow<CR><Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>zz")
 -- map("n", "N", ":ScrollbarShow<CR><Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
 
-map("n", "n", ":execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>zz")
-map("n", "N", ":execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
-map("n", "n", ":execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>zz")
-map("n", "N", ":execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
+-- map("n", "n", ":execute(smoothie#do('n'))<CR><Cmd>lua require('hlslens').start()<CR>zz")
+-- map("n", "N", ":call smoothie#do('N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
+-- map("n", "n", ":execute('normal ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>zz")
+-- map("v", "N", ":execute('normal ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>zz")
 
 -- map("n", "j", ":ScrollbarHide<CR>j")
 -- map("n", "k", ":ScrollbarHide<CR>k")
@@ -63,14 +63,14 @@ map("n", "N", ":execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslen
 -- map('x', 'g*', ":ScrollbarShow<CR><Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>")
 -- map('x', 'g#', ":ScrollbarShow<CR><Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>")
 
-map('n', '*', "<Plug>(asterisk-*)<Cmd>lua require('hlslens').start()<CR>zz")
-map('n', '#', "<Plug>(asterisk-#)<Cmd>lua require('hlslens').start()<CR>zz")
-map('n', 'g*', "<Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>zz")
-map('n', 'g#', "<Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>zz")
-map('x', '*', "<Plug>(asterisk-*)<Cmd>lua require('hlslens').start()<CR>zz")
-map('x', '#', "<Plug>(asterisk-#)<Cmd>lua require('hlslens').start()<CR>zz")
-map('x', 'g*', "<Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>zz")
-map('x', 'g#', "<Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>zz")
+-- map('n', '*', "<Plug>(asterisk-*)<Cmd>lua require('hlslens').start()<CR>zz")
+-- map('n', '#', "<Plug>(asterisk-#)<Cmd>lua require('hlslens').start()<CR>zz")
+-- map('n', 'g*', "<Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>zz")
+-- map('n', 'g#', "<Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>zz")
+-- map('x', '*', "<Plug>(asterisk-*)<Cmd>lua require('hlslens').start()<CR>zz")
+-- map('x', '#', "<Plug>(asterisk-#)<Cmd>lua require('hlslens').start()<CR>zz")
+-- map('x', 'g*', "<Plug>(asterisk-g*)<Cmd>lua require('hlslens').start()<CR>zz")
+-- map('x', 'g#', "<Plug>(asterisk-g#)<Cmd>lua require('hlslens').start()<CR>zz")
 
 map("n", "<Left>", "<C-w>h")
 map("n", "<Down>", "<C-w>j")
@@ -146,7 +146,7 @@ map("x", "K", ":move '<-2<CR>gv=gv")
 
 -- map("n", "<leader>f", "<cmd>Telescope find_files<cr>")
 map("n", "<c-t>", "<cmd>Telescope live_grep<cr>")
-map("n", "<leader>ps", ":lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')})<CR>")
+-- map("n", "<leader>ps", ":lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')})<CR>")
 
 -- map("n", "<leader>t", ":TroubleToggle<CR>")
 -- map("n", "<leader>t", ":ToggleTerm<CR>")
@@ -165,7 +165,9 @@ map("v", "<C-c>", '"+y')
 map("x", "<C-c>", '"+y')
 
 -- greatest remap ever
+-- Keep register when pasting
 map("x", "<M-p>", '"_dP')
+map("x", "<leader>p", '"_dP')
 
 -- map("n", "Y", "y$")
 -- next greatest remap ever : asbjornHaland
@@ -173,13 +175,11 @@ map("n", "<M-y>", '"+y')
 map("v", "<M-y>", '"+y')
 map("n", "<M-Y>", '"+y$')
 -- map("n", "<M-Y", "\"+Y")
-map("n", "<leader>y", '"_y')
-map("v", "<leader>y", '"_y')
 
 map("n", "<M-d>", '"_d')
 map("v", "<M-d>", '"_d')
-map("n", "<leader>d", '"_d')
-map("v", "<leader>d", '"_d')
+map("n", "<leader>d", '"vd')
+map("v", "<leader>d", '"vd')
 
 map("n", "<M-c>", '"_c')
 map("v", "<M-c>", '"_c')

@@ -2,8 +2,10 @@ lvim.plugins = {
   { "catppuccin/nvim" },
   { "f-person/git-blame.nvim" },
   { "ThePrimeagen/harpoon" },
+  { "opalmay/vim-smoothie" },
   -- { "karb94/neoscroll.nvim" },
-  { "opalmay/neoscroll.nvim", branch = "feat-scroll-past-bottom" },
+  -- { "opalmay/neoscroll.nvim", branch = "feat-scroll-past-bottom" },
+  -- { "opalmay/neoscroll.nvim" },
   { "baskerville/vim-sxhkdrc" },
   { "j-hui/fidget.nvim" },
   { "nvim-pack/nvim-spectre" },
@@ -54,8 +56,8 @@ lvim.plugins = {
   { "inkarkat/vim-EnhancedJumps" },
   { "inkarkat/vim-ingo-library" },
 
-  { "petertriho/nvim-scrollbar" },
-  { "kevinhwang91/nvim-hlslens" },
+  -- { "petertriho/nvim-scrollbar" },
+  -- { "kevinhwang91/nvim-hlslens" },
   { "haya14busa/vim-asterisk" },
   {
     "norcalli/nvim-colorizer.lua",
@@ -93,7 +95,7 @@ lvim.plugins = {
     --   { 'kkharji/sqlite.lua', module = 'sqlite' }
     -- },
   },
-  { "s1n7ax/nvim-comment-frame" }
+  { "s1n7ax/nvim-comment-frame" },
   -- { "smjonas/live-command.nvim" }
   -- {
   --   "narutoxy/dim.lua",
