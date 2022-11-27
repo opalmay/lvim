@@ -26,6 +26,7 @@ require("user.autocmds")
 require("user.neoclip")
 require("user.telescope")
 require("user.toggleterm")
+require("user.neovide")
 -- require("user.hlslens")
 -- require("user.dadbod")
 

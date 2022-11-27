@@ -3,8 +3,6 @@ if not status_ok then
   return
 end
 
-fidget.setup({
-    -- window = {
-    --     blend = 0
-    -- }
-})
+if not vim.g.neovide then
+  fidget.setup()
+end

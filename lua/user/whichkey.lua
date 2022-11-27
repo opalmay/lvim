@@ -3,7 +3,7 @@ lvim.builtin.which_key.setup.plugins.presets.windows = true
 lvim.builtin.which_key.mappings["g"]["B"] = { ":GitBlameToggle<CR>", "Git Blame" }
 lvim.builtin.which_key.mappings["l"]["t"] = { ":TroubleToggle<CR>", "Trouble" }
 lvim.builtin.which_key.mappings["l"]["b"] = { ":ToggleDiag<CR>", "Toggle Diag" }
-lvim.builtin.which_key.mappings["P"] = { ":Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["p"] = { ":Telescope zoxide list<CR>", "Zoxide" }
 -- lvim.builtin.which_key.mappings["v"] = { ":Telescope neoclip<CR>", "NeoClip" }
 lvim.builtin.which_key.mappings["v"] = { ":Telescope neoclip initial_mode=normal theme=dropdown<CR>", "NeoClip" }
 -- lvim.builtin.which_key.mappings["D"] = {
@@ -18,7 +18,7 @@ lvim.builtin.which_key.mappings["t"] = { ":silent !bspc rule -a kitty state=floa
 
 
 -- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
-lvim.builtin.which_key.mappings["p"] = nil
+-- lvim.builtin.which_key.mappings["p"] = nil
 -- lvim.builtin.which_key.mappings["D"] = lvim.builtin.which_key.mappings["d"]
 lvim.builtin.which_key.mappings["d"] = nil
 lvim.builtin.which_key.mappings["c"] = nil

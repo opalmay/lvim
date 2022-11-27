@@ -1,11 +1,12 @@
 lvim.plugins = {
+  { "https://github.com/jvgrootveld/telescope-zoxide.git" },
   { "catppuccin/nvim" },
   { "f-person/git-blame.nvim" },
   { "ThePrimeagen/harpoon" },
   { "opalmay/vim-smoothie" },
   -- { "psliwka/vim-smoothie" },
   -- { "karb94/neoscroll.nvim" },
-  -- { "opalmay/neoscroll.nvim", branch = "feat-scroll-past-bottom" },
+  { "opalmay/neoscroll.nvim", branch = "feat-scroll-past-bottom" },
   -- { "opalmay/neoscroll.nvim" },
   { "baskerville/vim-sxhkdrc" },
   { "j-hui/fidget.nvim" },
@@ -106,4 +107,4 @@ lvim.plugins = {
   -- }
 }
 lvim.builtin.bufferline.active = false
--- lvim.builtin.breadcrumbs.active = false
+lvim.builtin.breadcrumbs.active = true

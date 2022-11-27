@@ -58,6 +58,9 @@ local function lsp_keymaps(bufnr)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+  vim.api.nvim_set_keymap('n', '<C-LeftMouse>', '<LeftMouse><cmd>lua vim.lsp.buf.hover({border = "single"})<CR>', opts)
+
+  vim.api.nvim_set_keymap('n', '<C-RightMouse>', '<LeftMouse><cmd>lua vim.diagnostic.open_float()<CR>', opts)
 end
 
 lvim.lsp.on_attach_callback = function(client, bufnr)
@@ -74,7 +77,7 @@ require "lsp_signature".setup({
   -- hint_enable = true,
   hint_enable = false,
   floating_window = false,
-  toggle_key = "<C-x>",
+  toggle_key = "<C-g>",
   -- max_height = 20
   -- select_signature_key = "<C-X>"
   -- noice = true

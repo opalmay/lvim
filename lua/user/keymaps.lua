@@ -41,6 +41,8 @@ end
 -- map("n", "j", ':noh<CR><Cmd>let [v:hlsearch, @/, v:searchforward]=smoothie#do("j")<CR>')
 -- map("n", "k", ':noh<CR><Cmd>let [v:hlsearch, @/, v:searchforward]=smoothie#do("k")<CR>')
 
+map("v", "<RightMouse>", '"+y')
+
 map("n", "<Left>", "<C-w>h")
 map("n", "<Down>", "<C-w>j")
 map("n", "<Up>", "<C-w>k")
@@ -101,6 +103,11 @@ map("i", "{", "{<C-g>u")
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
+map("v", "<C-a>", "<C-a>gv")
+map("v", "<C-x>", "<C-x>gv")
+map("v", "g<C-a>", "g<C-a>gv")
+map("v", "g<C-x>", "g<C-x>gv")
+
 -- Move text up and down
 -- map("v", "J", ":m .+1<CR>==")
 -- map("v", "K", ":m .-2<CR>==")
@@ -147,8 +154,8 @@ map("n", "<M-Y>", '"+y$')
 
 map("n", "<M-d>", '"_d')
 map("v", "<M-d>", '"_d')
-map("n", "<leader>d", '"vd')
-map("v", "<leader>d", '"vd')
+map("n", "<leader>d", '"_d')
+map("v", "<leader>d", '"_d')
 
 map("n", "<M-c>", '"_c')
 map("v", "<M-c>", '"_c')
@@ -238,7 +245,3 @@ map("n", "<C-o>", "<Plug>EnhancedJumpsLocalOlder")
 map("n", "<C-i>", "<Plug>EnhancedJumpsLocalNewer")
 map("n", "g<C-o>", "<Plug>EnhancedJumpsRemoteOlder")
 map("n", "g<C-i>", "<Plug>EnhancedJumpsRemoteNewer")
--- map("n", "a", "m`a")
--- map("n", "i", "m`i")
--- map("n", "I", "^m`I")
--- map("n", "A", "$m`A")
