@@ -77,7 +77,7 @@ require "lsp_signature".setup({
   -- hint_enable = true,
   hint_enable = false,
   floating_window = false,
-  toggle_key = "<C-g>",
+  toggle_key = "<C-a>",
   -- max_height = 20
   -- select_signature_key = "<C-X>"
   -- noice = true

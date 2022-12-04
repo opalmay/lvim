@@ -1,12 +1,12 @@
 lvim.plugins = {
-  { "https://github.com/jvgrootveld/telescope-zoxide.git" },
+  { "jvgrootveld/telescope-zoxide" },
   { "catppuccin/nvim" },
   { "f-person/git-blame.nvim" },
   { "ThePrimeagen/harpoon" },
   { "opalmay/vim-smoothie" },
   -- { "psliwka/vim-smoothie" },
   -- { "karb94/neoscroll.nvim" },
-  { "opalmay/neoscroll.nvim", branch = "feat-scroll-past-bottom" },
+  -- { "opalmay/neoscroll.nvim", branch = "feat-scroll-past-bottom" },
   -- { "opalmay/neoscroll.nvim" },
   { "baskerville/vim-sxhkdrc" },
   { "j-hui/fidget.nvim" },
@@ -55,7 +55,7 @@ lvim.plugins = {
   },
 
   -- jump list:
-  { "inkarkat/vim-EnhancedJumps" },
+  { "opalmay/vim-EnhancedJumps" },
   { "inkarkat/vim-ingo-library" },
 
   -- { "petertriho/nvim-scrollbar" },
@@ -98,6 +98,7 @@ lvim.plugins = {
     -- },
   },
   { "s1n7ax/nvim-comment-frame" },
+  -- { "svermeulen/vim-subversive" }
   -- { "smjonas/live-command.nvim" }
   -- {
   --   "narutoxy/dim.lua",

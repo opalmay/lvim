@@ -4,10 +4,10 @@
 -- local map = vim.api.nvim_set_keymap
 local map = function(mode, bind, action, opts)
   -- local opts = { noremap = true, silent = true }
-  -- if opts then
-  --   vim.keymap.set(mode, bind, action, opts)
-  --   return
-  -- end
+  if opts then
+    vim.keymap.set(mode, bind, action, opts)
+    return
+  end
   local key
   if mode == "n" then
     key = "normal_mode"
@@ -144,6 +144,7 @@ map("x", "<C-c>", '"+y')
 -- Keep register when pasting
 map("x", "<M-p>", '"_dP')
 map("x", "<leader>p", '"_dP')
+map("x", "P", '"_dP')
 
 -- map("n", "Y", "y$")
 -- next greatest remap ever : asbjornHaland

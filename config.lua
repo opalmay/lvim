@@ -35,3 +35,12 @@ require("nvim-comment-frame").setup({
   keymap = "<C-0>",
   multiline_keymap = "<C-9>",
 })
+-- vim.api.nvim_exec([[
+-- function! NvimYabaiNavigate(yabai_direction, vim_direction)
+--     let win_nr_before = winnr()
+--     execute("wincmd " . a:vim_direction)
+--     if win_nr_before ==# winnr()
+--         call system("yabai -m window --focus " . a:yabai_direction)
+--     endif
+-- endfunction
+-- ]], true)
