@@ -76,18 +76,6 @@ lvim.plugins = {
     -- ft = { "md" },
   },
 
-  -- {
-  --   "tpope/vim-dadbod",
-  --   opt = true,
-  --   requires = {
-  --     "kristijanhusak/vim-dadbod-ui",
-  --     "kristijanhusak/vim-dadbod-completion",
-  --   },
-  --   config = function()
-  --     require("user.dadbod").setup()
-  --   end,
-  --   cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
-  -- },
   -- { "Issafalcon/lsp-overloads.nvim" },
   { "ray-x/lsp_signature.nvim" },
   { "Vimjas/vim-python-pep8-indent" },

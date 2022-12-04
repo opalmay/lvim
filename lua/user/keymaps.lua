@@ -38,9 +38,6 @@ end
 --   term_mode = "t",
 --   command_mode = "c",
 
--- map("n", "j", ':noh<CR><Cmd>let [v:hlsearch, @/, v:searchforward]=smoothie#do("j")<CR>')
--- map("n", "k", ':noh<CR><Cmd>let [v:hlsearch, @/, v:searchforward]=smoothie#do("k")<CR>')
-
 map("v", "<RightMouse>", '"+y')
 
 map("n", "<Left>", "<C-w>h")
@@ -68,10 +65,6 @@ map("n", "<leader>cd", ":cd %:p:h<CR>")
 -- map("n", "N", "Nzzzv")
 -- map("n", "J", "mzJ`z")
 
--- Space q to quit
--- map("n", "<leader>q", ":q <CR>")
--- map("n", "<leader>q", ":Bdelete<CR>")
--- map("n", "<leader>/", "gcc")
 -- Replace all occurrences of a word
 -- map("n", "<leader>ra", ":%vs/\\<<C-r><C-w>\\>/")
 map("n", "<leader>ra", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
@@ -142,26 +135,24 @@ map("x", "<C-c>", '"+y')
 
 -- greatest remap ever
 -- Keep register when pasting
-map("x", "<M-p>", '"_dP')
-map("x", "<leader>p", '"_dP')
-map("x", "P", '"_dP')
+-- map("x", "<M-p>", '"_dP')
+-- map("x", "<leader>p", '"_dP')
+-- map("x", "P", '"_dP')
 
--- map("n", "Y", "y$")
--- next greatest remap ever : asbjornHaland
-map("n", "<M-y>", '"+y')
-map("v", "<M-y>", '"+y')
-map("n", "<M-Y>", '"+y$')
--- map("n", "<M-Y", "\"+Y")
+-- -- next greatest remap ever : asbjornHaland
+-- map("n", "<M-y>", '"+y')
+-- map("v", "<M-y>", '"+y')
+-- map("n", "<M-Y>", '"+y$')
 
-map("n", "<M-d>", '"_d')
-map("v", "<M-d>", '"_d')
-map("n", "<leader>d", '"_d')
-map("v", "<leader>d", '"_d')
+-- map("n", "<M-d>", '"_d')
+-- map("v", "<M-d>", '"_d')
+-- map("n", "<leader>d", '"_d')
+-- map("v", "<leader>d", '"_d')
 
-map("n", "<M-c>", '"_c')
-map("v", "<M-c>", '"_c')
-map("n", "<leader>c", '"_c')
-map("v", "<leader>c", '"_c')
+-- map("n", "<M-c>", '"_c')
+-- map("v", "<M-c>", '"_c')
+-- map("n", "<leader>c", '"_c')
+-- map("v", "<leader>c", '"_c')
 
 -- lvim.keys.normal_mode["<C-j>"] = ":lua require('harpoon.ui').nav_file(1)<CR>"
 -- lvim.keys.normal_mode["<C-k>"] = ":lua require('harpoon.ui').nav_file(2)<CR>"
