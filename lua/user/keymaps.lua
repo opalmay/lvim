@@ -83,7 +83,7 @@ map("n", "<leader>ra", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 map("n", "<ESC>", ":noh<CR><ESC>")
 -- map("n", "<ESC>", ":noh<CR>:ScrollbarHide<ESC>")
 
-map("n", "p", "p==")
+-- map("n", "p", "p==")
 map("n", "<C-s>", ":w<CR>")
 map("i", "<C-s>", "<ESC>:w<CR>")
 
@@ -246,3 +246,16 @@ map("n", "<C-o>", "<Plug>EnhancedJumpsLocalOlder")
 map("n", "<C-i>", "<Plug>EnhancedJumpsLocalNewer")
 map("n", "g<C-o>", "<Plug>EnhancedJumpsRemoteOlder")
 map("n", "g<C-i>", "<Plug>EnhancedJumpsRemoteNewer")
+
+vim.keymap.set({"n","x"}, "p", "<Plug>(YankyPutAfter)") -- Add indent?
+vim.keymap.set({"n","x"}, "P", "<Plug>(YankyPutBefore)")
+vim.keymap.set({"n","x"}, "gp", "<Plug>(YankyGPutAfter)")
+vim.keymap.set({"n","x"}, "gP", "<Plug>(YankyGPutBefore)")
+vim.keymap.set("n", "<c-n>", "<Plug>(YankyCycleBackward)")
+vim.keymap.set("n", "<c-p>", "<Plug>(YankyCycleForward)")
+
+-- Lua
+vim.keymap.set("n", "s", "<cmd>lua require('substitute').operator()<cr>", { noremap = true })
+vim.keymap.set("n", "ss", "<cmd>lua require('substitute').line()<cr>", { noremap = true })
+vim.keymap.set("n", "S", "<cmd>lua require('substitute').eol()<cr>", { noremap = true })
+vim.keymap.set("x", "s", "<cmd>lua require('substitute').visual()<cr>", { noremap = true })

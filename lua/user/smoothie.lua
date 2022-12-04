@@ -5,8 +5,10 @@ if vim.g.neovide then
   vim.g.smoothie_remapped_commands = { 'zz', 'H', 'M', 'L', '{', '}', 'j', 'k', '<ScrollWheelDown>', '<ScrollWheelUp>',
     '#', '*' }
 else
-  vim.g.smoothie_remapped_commands = { 'zz', 'H', 'M', 'L', '{', '}', 'j', 'k', '<ScrollWheelDown>', '<ScrollWheelUp>',
-    'n', 'N', '#', '*', "<C-u>", "<C-d>", "<C-o>", "<C-i>" }
+  -- vim.g.smoothie_remapped_commands = { 'zz', 'H', 'M', 'L', '{', '}', 'j', 'k', '<ScrollWheelDown>', '<ScrollWheelUp>',
+  --   'n', 'N', '#', '*', "<C-u>", "<C-d>", "<C-b>", "<C-f>" }
+  vim.g.smoothie_remapped_commands = { 'H', 'M', 'L', '{', '}', 'j', 'k', '<ScrollWheelDown>', '<ScrollWheelUp>',
+    'n', 'N', '#', '*', "<C-u>", "<C-d>", "<C-b>", "<C-f>" }
   -- require("neoscroll").setup({
   --   scroll_past_bottom = false,
   --   hide_cursor = not vim.g.neovide,

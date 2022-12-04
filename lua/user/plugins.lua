@@ -8,8 +8,8 @@ lvim.plugins = {
   -- { "karb94/neoscroll.nvim" },
   -- { "opalmay/neoscroll.nvim", branch = "feat-scroll-past-bottom" },
   -- { "opalmay/neoscroll.nvim" },
-  { "baskerville/vim-sxhkdrc" },
-  { "j-hui/fidget.nvim" },
+  -- { "baskerville/vim-sxhkdrc" },
+  -- { "j-hui/fidget.nvim" },
   { "nvim-pack/nvim-spectre" },
   { "stevearc/stickybuf.nvim" },
   { "rbong/vim-buffest" },
@@ -21,7 +21,7 @@ lvim.plugins = {
     end,
   },
 
-  { "tpope/vim-repeat" },
+  -- { "tpope/vim-repeat" },
   -- " }svermeulen/vim-macrobatics",
 
   -- cmp:
@@ -41,18 +41,18 @@ lvim.plugins = {
   { "michaelb/sniprun", run = 'bash ./install.sh' },
   { "is0n/jaq-nvim" },
 
-  { "folke/trouble.nvim" },
+  -- { "folke/trouble.nvim" },
 
   -- { "folke/noice.nvim" },
   -- { "MunifTanjim/nui.nvim" },
 
   -- " }phaazon/hop.nvim",
-  {
-    "ggandor/leap.nvim",
-    config = function()
-      require("leap").add_default_mappings()
-    end,
-  },
+  -- {
+  --   "ggandor/leap.nvim",
+  --   config = function()
+  --     require("leap").add_default_mappings()
+  --   end,
+  -- },
 
   -- jump list:
   { "opalmay/vim-EnhancedJumps" },
@@ -92,11 +92,6 @@ lvim.plugins = {
   { "ray-x/lsp_signature.nvim" },
   { "Vimjas/vim-python-pep8-indent" },
   { "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim" },
-  { "AckslD/nvim-neoclip.lua",
-    -- requires = {
-    --   { 'kkharji/sqlite.lua', module = 'sqlite' }
-    -- },
-  },
   { "s1n7ax/nvim-comment-frame" },
   -- { "svermeulen/vim-subversive" }
   -- { "smjonas/live-command.nvim" }
@@ -106,6 +101,8 @@ lvim.plugins = {
   --     require('dim').setup({})
   --   end
   -- }
+  { "gbprod/yanky.nvim" },
+  { "gbprod/substitute.nvim" }
 }
 lvim.builtin.bufferline.active = false
-lvim.builtin.breadcrumbs.active = true
+-- lvim.builtin.breadcrumbs.active = true

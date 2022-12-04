@@ -22,25 +22,14 @@ require("user.jaq")
 require("user.hop")
 require("user.enhancedjumps")
 require("user.autocmds")
--- require("user.scrollbar")
-require("user.neoclip")
 require("user.telescope")
 require("user.toggleterm")
 require("user.neovide")
--- require("user.hlslens")
--- require("user.dadbod")
+require("user.subtitute")
+require("user.yanky")
 
 -- Why
-require("nvim-comment-frame").setup({
-  keymap = "<C-0>",
-  multiline_keymap = "<C-9>",
-})
--- vim.api.nvim_exec([[
--- function! NvimYabaiNavigate(yabai_direction, vim_direction)
---     let win_nr_before = winnr()
---     execute("wincmd " . a:vim_direction)
---     if win_nr_before ==# winnr()
---         call system("yabai -m window --focus " . a:yabai_direction)
---     endif
--- endfunction
--- ]], true)
+-- require("nvim-comment-frame").setup({
+--   keymap = "<C-0>",
+--   multiline_keymap = "<C-9>",
+-- })
