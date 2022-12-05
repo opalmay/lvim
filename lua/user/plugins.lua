@@ -90,7 +90,13 @@ lvim.plugins = {
   --   end
   -- }
   { "gbprod/yanky.nvim" },
-  { "gbprod/substitute.nvim" }
+  { "gbprod/substitute.nvim" },
+  {
+    "klen/nvim-config-local",
+    config = function()
+      require('config-local').setup()
+    end
+  }
 }
 lvim.builtin.bufferline.active = false
 -- lvim.builtin.breadcrumbs.active = true

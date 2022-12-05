@@ -29,7 +29,7 @@ require("user.subtitute")
 require("user.yanky")
 
 -- Why
--- require("nvim-comment-frame").setup({
---   keymap = "<C-0>",
---   multiline_keymap = "<C-9>",
--- })
+require("nvim-comment-frame").setup({
+  keymap = "<C-0>",
+  multiline_keymap = "<C-9>",
+})
