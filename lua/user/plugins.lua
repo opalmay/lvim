@@ -73,7 +73,7 @@ lvim.plugins = {
     setup = function()
       vim.g.mkdp_filetypes = { "markdown" }
     end,
-    -- ft = { "md" },
+    ft = { "markdown" },
   },
 
   -- { "Issafalcon/lsp-overloads.nvim" },
@@ -96,7 +96,8 @@ lvim.plugins = {
     config = function()
       require('config-local').setup()
     end
-  }
+  },
+  { "ThePrimeagen/vim-be-good" }
 }
 lvim.builtin.bufferline.active = false
 -- lvim.builtin.breadcrumbs.active = true

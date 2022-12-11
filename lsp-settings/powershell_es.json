@@ -1,8 +1,5 @@
 {
   "powershell": {
-    "scriptAnalysis": {
-      "enable": false
-    },
     "codeFormatting": {
       "openBraceOnSameLine": true,
       "whitespaceBetweenParameters": true

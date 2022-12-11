@@ -7,6 +7,17 @@ lvim.autocommands = {
       command = "set filetype=sxhkdrc"
     }
   },
+  -- {
+  --   { "CursorMoved" },
+  --   {
+  --     group = cursor,
+  --     pattern = "*",
+  --     callback = function ()
+  --       vim.cmd("set nohlsearch")
+  --     end
+  --     -- command = "noh"
+  --   }
+  -- },
   {
     { "TextYankPost" },
     {
