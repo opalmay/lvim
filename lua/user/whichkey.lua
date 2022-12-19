@@ -5,7 +5,11 @@ lvim.builtin.which_key.mappings["l"]["t"] = { ":TroubleToggle<CR>", "Trouble" }
 lvim.builtin.which_key.mappings["l"]["b"] = { ":ToggleDiag<CR>", "Toggle Diag" }
 lvim.builtin.which_key.mappings["p"] = { ":Telescope zoxide list<CR>", "Zoxide" }
 -- lvim.builtin.which_key.mappings["v"] = { ":Telescope neoclip<CR>", "NeoClip" }
-lvim.builtin.which_key.mappings["v"] = { ":Telescope neoclip initial_mode=normal theme=dropdown<CR>", "NeoClip" }
+lvim.builtin.which_key.mappings["v"] = { ":Telescope yank_history<CR>", "Yank History" }
+lvim.builtin.which_key.mappings["o"] = {
+  l =  { ":set rnu!<CR>", "Toggle Relative Line Numbers" },
+  t = { ':let &background = ( &background == "dark"? "light" : "dark" )<CR>', "Toggle Dark Theme" }
+}
 -- lvim.builtin.which_key.mappings["D"] = {
 -- 	name = "Database",
 -- 	u = { "<Cmd>DBUIToggle<Cr>", "Toggle UI" },

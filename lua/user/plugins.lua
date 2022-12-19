@@ -6,7 +6,7 @@ lvim.plugins = {
   { "opalmay/vim-smoothie" },
   -- { "psliwka/vim-smoothie" },
   -- { "karb94/neoscroll.nvim" },
-  -- { "opalmay/neoscroll.nvim", branch = "feat-scroll-past-bottom" },
+  { "opalmay/neoscroll.nvim", branch = "feat-scroll-past-bottom" },
   -- { "opalmay/neoscroll.nvim" },
   -- { "baskerville/vim-sxhkdrc" },
   -- { "j-hui/fidget.nvim" },
@@ -47,12 +47,12 @@ lvim.plugins = {
   -- { "MunifTanjim/nui.nvim" },
 
   -- " }phaazon/hop.nvim",
-  -- {
-  --   "ggandor/leap.nvim",
-  --   config = function()
-  --     require("leap").add_default_mappings()
-  --   end,
-  -- },
+  {
+    "ggandor/leap.nvim",
+    config = function()
+      -- require("leap").add_default_mappings()
+    end,
+  },
 
   -- jump list:
   { "opalmay/vim-EnhancedJumps" },
@@ -91,6 +91,11 @@ lvim.plugins = {
   -- }
   { "gbprod/yanky.nvim" },
   { "gbprod/substitute.nvim" },
+  { "gbprod/stay-in-place.nvim",
+    config = function()
+      require("stay-in-place").setup()
+    end
+  },
   {
     "klen/nvim-config-local",
     config = function()

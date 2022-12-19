@@ -1,5 +1,8 @@
 -- lvim.builtin.treesitter.ensure_installed = "all"
--- What?
+-- lvim.builtin.illuminate.options.delay = 200
+-- lvim.builtin.illuminate.active = false
+lvim.builtin.autopairs.enable_check_bracket_line = true
+-- lvim.builtin.autopairs.disable_in_macro = true
 local opts = {
   -- 	ensure_installed = "all",
   textsubjects = {
@@ -19,16 +22,53 @@ local opts = {
 
       keymaps = {
         -- You can use the capture groups defined in textobjects.scm
-        ["af"] = "@function.outer",
         ["if"] = "@function.inner",
+        ["af"] = "@function.outer",
         ["ac"] = "@class.outer",
         ["ic"] = "@class.inner",
         ["ak"] = "@comment.outer",
-        ["aa"] = "@parameter.inner", -- "ap" is already used
-        ["ia"] = "@parameter.outer", -- "ip" is already used
+        ["ia"] = "@parameter.inner", -- "ip" is already used
+        ["aa"] = "@parameter.outer", -- "ap" is already used
         ["aT"] = "@table.outer",
       },
-    }
+    },
+    swap = {
+      enable = true,
+      swap_next = {
+        ["<leader>h"] = "@parameter.inner",
+      },
+      swap_previous = {
+        ["<leader>H"] = "@parameter.inner",
+      },
+    },
+    move = {
+      enable = true,
+      set_jumps = true, -- whether to set jumps in the jumplist
+      goto_next_start = {
+        ["]m"] = "@function.outer",
+        ["]]"] = { query = "@class.outer", desc = "Next class start" },
+      },
+      goto_next_end = {
+        ["]M"] = "@function.outer",
+        ["]["] = "@class.outer",
+      },
+      goto_previous_start = {
+        ["[m"] = "@function.outer",
+        ["[["] = "@class.outer",
+      },
+      goto_previous_end = {
+        ["[M"] = "@function.outer",
+        ["[]"] = "@class.outer",
+      },
+    },
+    -- lsp_interop = {
+    --   enable = true,
+    --   border = 'none',
+    --   peek_definition_code = {
+    --     ["<leader>df"] = "@function.outer",
+    --     ["<leader>dF"] = "@class.outer",
+    --   },
+    -- },
   },
   -- lsp_interop = {
   --   enable = true,
@@ -65,7 +105,7 @@ local opts = {
 }
 
 lvim.builtin.treesitter = vim.tbl_deep_extend("force", lvim.builtin.treesitter, opts)
-lvim.builtin.treesitter.matchup.enable = true
+-- lvim.builtin.treesitter.matchup.enable = true
 
 -- vim.opt.redrawtime = 500
 -- -- local chunginess = {} -- Caching is hard

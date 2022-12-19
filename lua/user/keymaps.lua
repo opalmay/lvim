@@ -59,7 +59,7 @@ map("n", "<Right>", "<C-w>l")
 -- map("n", "J", ":BufferPrevious<CR>")
 -- map("n", "K", ":BufferNext<CR>")
 
-map("n", "<leader>cd", ":cd %:p:h<CR>")
+-- map("n", "<leader>cd", ":cd %:p:h<CR>")
 
 -- map("n", "n", "nzzzv", { remap = true })
 -- map("n", "N", "Nzzzv", { remap = true })
@@ -93,8 +93,8 @@ map("i", "{", "{<C-g>u")
 
 -- Visual --
 -- Stay in indent mode
-map("v", "<", "<gv")
-map("v", ">", ">gv")
+-- map("v", "<", "<gv")
+-- map("v", ">", ">gv")
 
 map("v", "<C-a>", "<C-a>gv")
 map("v", "<C-x>", "<C-x>gv")
@@ -203,12 +203,15 @@ map("v", "@", ":normal @")
 -- end
 -- sfsaf
 --
-map("n", "<leader>hi", ':lua require("lsp-inlayhints").toggle()<CR>')
+-- map("n", "<leader>hi", ':lua require("lsp-inlayhints").toggle()<CR>')
 
 -- map("n", "<leader>dl", ":lua require('dapui').toggle()<CR>")
 
-map("n", "<M-R>", ":SnipRun<CR>")
+-- TODO give this a better keymap
+-- map("n", "<M-R>", ":SnipRun<CR>")
 map("v", "<M-R>", ":SnipRun<CR>")
+map("n", "<M-R>", ":silent only | Jaq<cr>")
+--
 -- map("i", "jj", "<ESC>")
 -- map("i", "jj", "<ESC>")
 -- map("i", "jk", "<ESC>")
@@ -257,10 +260,17 @@ vim.keymap.set({"n","x"}, "p", "<Plug>(YankyPutAfter)") -- Add indent?
 vim.keymap.set({"n","x"}, "P", "<Plug>(YankyPutBefore)")
 vim.keymap.set({"n","x"}, "gp", "<Plug>(YankyGPutAfter)")
 vim.keymap.set({"n","x"}, "gP", "<Plug>(YankyGPutBefore)")
-vim.keymap.set("n", "<c-n>", "<Plug>(YankyCycleBackward)")
-vim.keymap.set("n", "<c-p>", "<Plug>(YankyCycleForward)")
+vim.keymap.set("n", "<c-p>", "<Plug>(YankyCycleBackward)")
+vim.keymap.set("n", "<c-n>", "<Plug>(YankyCycleForward)")
+vim.keymap.set({"n","x"}, "y", "<Plug>(YankyYank)") -- Stay in place
 
-vim.keymap.set("n", "s", "<cmd>lua require('substitute').operator()<cr>", { noremap = true })
-vim.keymap.set("n", "ss", "<cmd>lua require('substitute').line()<cr>", { noremap = true })
-vim.keymap.set("n", "S", "<cmd>lua require('substitute').eol()<cr>", { noremap = true })
-vim.keymap.set("x", "s", "<cmd>lua require('substitute').visual()<cr>", { noremap = true })
+vim.keymap.set("n", "s", "<cmd>lua require('substitute').operator()<cr>")
+vim.keymap.set("n", "ss", "<cmd>lua require('substitute').line()<cr>")
+vim.keymap.set("n", "S", "<cmd>lua require('substitute').eol()<cr>")
+vim.keymap.set("x", "s", "<cmd>lua require('substitute').visual()<cr>")
+
+map("n", "`", "<Plug>(leap-forward-to)")
+map("n", "~", "<Plug>(leap-backward-to)")
+-- map("n", "leap-cross-window", "<Plug>(leap=cross-window)")
+map("v", "x", "<Plug>(leap-forward-till)")
+map("v", "X", "<Plug>(leap-backward-till)")
