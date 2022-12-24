@@ -209,8 +209,8 @@ map("v", "@", ":normal @")
 
 -- TODO give this a better keymap
 -- map("n", "<M-R>", ":SnipRun<CR>")
-map("v", "<M-R>", ":SnipRun<CR>")
-map("n", "<M-R>", ":silent only | Jaq<cr>")
+map("v", "<M-r>", ":SnipRun<CR>")
+map("n", "<M-r>", ":silent only | Jaq<cr>")
 --
 -- map("i", "jj", "<ESC>")
 -- map("i", "jj", "<ESC>")

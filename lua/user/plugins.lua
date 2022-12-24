@@ -41,7 +41,7 @@ lvim.plugins = {
   { "michaelb/sniprun", run = 'bash ./install.sh' },
   { "is0n/jaq-nvim" },
 
-  -- { "folke/trouble.nvim" },
+  { "folke/trouble.nvim" },
 
   -- { "folke/noice.nvim" },
   -- { "MunifTanjim/nui.nvim" },
@@ -102,7 +102,8 @@ lvim.plugins = {
       require('config-local').setup()
     end
   },
-  { "ThePrimeagen/vim-be-good" }
+  { "ThePrimeagen/vim-be-good" },
+  { "MTDL9/vim-log-highlighting" },
 }
 lvim.builtin.bufferline.active = false
 -- lvim.builtin.breadcrumbs.active = true
