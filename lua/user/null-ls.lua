@@ -12,18 +12,18 @@ formatters.setup({
     command = "prettier",
     ---@usage arguments to pass to the formatter
     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
-    -- extra_args = { "--single-quote  --trailing-comma all --tab-width 4 --line-width 1000" },
-    extra_args = { "--single-quote", "--trailing-comma", "all", "--tab-width", "2", "--print-width", "1000" },
+    -- extra_args = { "--single-quote  --trailing-comma all --tab-width 4 --line-width 200" },
+    extra_args = { "--single-quote", "--trailing-comma", "all", "--tab-width", "2", "--print-width", "200" },
     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
     -- filetypes = { "typescript", "typescriptreact" },
   },
   {
     command = "black",
-    extra_args = { "--line-length", "1000" }
+    extra_args = { "--line-length", "200" }
   }
   -- {
   --   command = "yapf",
-  --   extra_args = { "--style={based_on_style: google, column_limit: 1000, indent_width: 4}" },
+  --   extra_args = { "--style={based_on_style: google, column_limit: 200, indent_width: 4}" },
   -- },
 })
 
@@ -32,7 +32,7 @@ local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   {
     command = "flake8",
-    extra_args = { "--max-line-length", "1000" },
+    extra_args = { "--max-line-length", "200" },
     filetypes = { "python" }
   },
   -- {

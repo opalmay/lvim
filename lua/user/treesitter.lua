@@ -1,6 +1,7 @@
 -- lvim.builtin.treesitter.ensure_installed = "all"
 -- lvim.builtin.illuminate.options.delay = 200
 -- lvim.builtin.illuminate.active = false
+lvim.builtin.indentlines.options.show_current_context = false
 lvim.builtin.autopairs.enable_check_bracket_line = true
 -- lvim.builtin.autopairs.disable_in_macro = true
 local opts = {

@@ -9,7 +9,8 @@ lvim.builtin.which_key.mappings["v"] = { ":vs<CR>", "Vertical Split" }
 lvim.builtin.which_key.mappings["v"] = { ":Telescope yank_history<CR>", "Yank History" }
 lvim.builtin.which_key.mappings["o"] = {
   l =  { ":set rnu!<CR>", "Toggle Relative Line Numbers" },
-  t = { ':let &background = ( &background == "dark"? "light" : "dark" )<CR>', "Toggle Dark Theme" }
+  t = { ':let &background = ( &background == "dark"? "light" : "dark" )<CR>', "Toggle Dark Theme" },
+  c = { ":lua require('copilot.suggestion').toggle_auto_trigger()<CR>", "Toggle Copilot Auto Trigger" },
 }
 -- lvim.builtin.which_key.mappings["D"] = {
 -- 	name = "Database",
