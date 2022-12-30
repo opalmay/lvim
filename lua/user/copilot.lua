@@ -13,12 +13,12 @@ require('copilot').setup({
   suggestion = {
     enabled = true,
     auto_trigger = true,
-    debounce = 75,
+    debounce = 0,
     keymap = {
       accept = "<Right>",
       -- accept = "<C-l>",
       accept_word = false,
-      accept_line = false,
+      accept_line = "<C-l>",
       next = "<C-j>",
       prev = "<C-k>",
       dismiss = "<C-->",

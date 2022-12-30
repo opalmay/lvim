@@ -1,5 +1,8 @@
 lvim.plugins = {
-  -- { "opalmay/plenary.nvim", branch = "fix-path-expend" },
+  {
+    "nvim-lua/plenary.nvim",
+    build = "GIT_DIR=~/.local/share/lunarvim/site/pack/lazy/opt/plenary.nvim/.git git checkout fix-path-expend"
+  },
   {
     "jvgrootveld/telescope-zoxide",
     dependencies = {
@@ -14,13 +17,12 @@ lvim.plugins = {
     "f-person/git-blame.nvim",
     cmd = "GitBlameToggle"
   },
-  { "ThePrimeagen/harpoon" },
+  {
+    "ThePrimeagen/harpoon",
+    lazy = true
+  },
   {
     "opalmay/vim-smoothie",
-    event = "BufRead",
-    -- config = function()
-    --   reload("user.smoothie")
-    -- end,
   },
   {
     "opalmay/neoscroll.nvim",
@@ -67,7 +69,10 @@ lvim.plugins = {
   { "RRethy/nvim-treesitter-textsubjects" },
 
   -- dap
-  { "theHamsta/nvim-dap-virtual-text" },
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    event = "BufRead"
+  },
   {
     "mfussenegger/nvim-dap-python",
     ft = "python"
@@ -138,10 +143,16 @@ lvim.plugins = {
     ft = "python",
     event = "BufRead"
   },
-  {
-    "s1n7ax/nvim-comment-frame",
-    cmd = "CommentFrame",
-  },
+  -- {
+  --   "s1n7ax/nvim-comment-frame",
+  --   config = function()
+  --     require("nvim-comment-frame").setup({
+  --       keymap = "<C-0>",
+  --       multiline_keymap = "<C-9>",
+  --     })
+  --   end,
+  --   cmd = "CommentFrame",
+  -- },
   {
     "gbprod/yanky.nvim",
     event = "BufRead",
