@@ -45,6 +45,16 @@ map("n", "<Down>", "<C-w>j")
 map("n", "<Up>", "<C-w>k")
 map("n", "<Right>", "<C-w>l")
 
+map("t", "<Left>", "<C-\\><C-N><C-w>h")
+map("t", "<Down>", "<C-\\><C-N><C-w>j")
+map("t", "<Up>", "<C-\\><C-N><C-w>k")
+map("t", "<Right>", "<C-\\><C-N><C-w>l")
+
+map("t", "<C-h>", "<Left>")
+map("t", "<C-j>", "<Down>")
+map("t", "<C-k>", "<Up>")
+map("t", "<C-l>", "<Right>")
+
 -- map("n", "<M-h>", "<C-w>h")
 -- map("n", "<M-j>", "<C-w>j")
 -- map("n", "<M-k>", "<C-w>k")

@@ -45,3 +45,5 @@ lvim.colorscheme = "catppuccin"
 
 -- lvim.transparent_window = true
 -- local colors = require("catppuccin.palettes").get_palette() -- fetch colors from g:catppuccin_flavour palette
+
+vim.cmd("highlight IndentBlanklineContextChar guifg=#FAB387 gui=nocombine")

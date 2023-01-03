@@ -5,12 +5,6 @@ lvim.plugins = {
   },
   {
     "jvgrootveld/telescope-zoxide",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-lua/popup.nvim",
-      "nvim-telescope/telescope.nvim",
-    },
-    cmd = "Telescope zoxide",
   },
   { "catppuccin/nvim" },
   {
@@ -179,7 +173,7 @@ lvim.plugins = {
     config = function()
       require('config-local').setup()
     end,
-    event = "BufRead",
+    -- event = "BufRead",
   },
   {
     "ThePrimeagen/vim-be-good",
@@ -212,6 +206,11 @@ lvim.plugins = {
     event = "InsertEnter",
   },
   {
+    "tzachar/cmp-tabnine",
+    build = "./install.sh",
+    event = "InsertEnter",
+  },
+  {
     "jackMort/ChatGPT.nvim",
     config = function()
       require("chatgpt").setup()
@@ -222,6 +221,6 @@ lvim.plugins = {
       "nvim-telescope/telescope.nvim"
     },
     cmd = "ChatGPT"
-  }
+  },
 }
 lvim.builtin.bufferline.active = false
