@@ -10,9 +10,6 @@ local function update_nlspsettings(client)
   end
 end
 
-
-
-
 lvim.lsp.buffer_mappings.normal_mode = {}
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }

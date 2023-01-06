@@ -3,7 +3,7 @@ lvim.builtin.which_key.setup.plugins.presets.windows = true
 lvim.builtin.which_key.mappings["g"]["B"] = { ":GitBlameToggle<CR>", "Git Blame" }
 lvim.builtin.which_key.mappings["l"]["t"] = { ":TroubleToggle<CR>", "Trouble" }
 lvim.builtin.which_key.mappings["l"]["b"] = { ":ToggleDiag<CR>", "Toggle Diag" }
-lvim.builtin.which_key.mappings["p"] = { ":Telescope zoxide list<CR>", "Zoxide" }
+lvim.builtin.which_key.mappings["p"] = { ":Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["q"] = { ":confirm q<CR>", "Quit" }
 -- lvim.builtin.which_key.mappings["v"] = { ":Telescope neoclip<CR>", "NeoClip" }
 lvim.builtin.which_key.mappings["v"] = { ":vs<CR>", "Vertical Split" }
@@ -24,6 +24,7 @@ lvim.builtin.which_key.mappings["a"] = { ":lua require('harpoon.mark').add_file(
 -- lvim.builtin.which_key.mappings["t"] = { ":silent !bspc rule -a kitty state=floating -o && kitty -e zsh -is eval \"cd $(pwd)\" & <CR>", "Floating Term" }
 
 lvim.builtin.which_key.mappings["t"] = { ":ToggleTerm<CR>", "Toggle Term" }
+lvim.builtin.which_key.mappings["i"] = { ":lua require('nvim-toggler').toggle()<CR>", "Invert Word" }
 
 -- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
 -- lvim.builtin.which_key.mappings["p"] = nil
@@ -43,3 +44,29 @@ lvim.builtin.which_key.mappings["c"] = nil
 --     u = { "<cmd>lua require'dapui'.toggle()<cr>", "UI" },
 --     x = { "<cmd>lua require'dap'.terminate()<cr>", "Exit" }
 -- }
+
+
+local keymap = lvim.builtin.which_key.mappings
+
+keymap["r"] = { name = "SearchReplaceSingleBuffer" }
+
+keymap["r"]["s"] =
+{ "<CMD>SearchReplaceSingleBufferSelections<CR>", "SearchReplaceSingleBuffer [s]elction list" }
+keymap["r"]["o"] = { "<CMD>SearchReplaceSingleBufferOpen<CR>", "[o]pen" }
+keymap["r"]["w"] = { "<CMD>SearchReplaceSingleBufferCWord<CR>", "[w]ord" }
+keymap["r"]["W"] = { "<CMD>SearchReplaceSingleBufferCWORD<CR>", "[W]ORD" }
+keymap["r"]["e"] = { "<CMD>SearchReplaceSingleBufferCExpr<CR>", "[e]xpr" }
+keymap["r"]["f"] = { "<CMD>SearchReplaceSingleBufferCFile<CR>", "[f]ile" }
+
+keymap["r"]["b"] = { name = "SearchReplaceMultiBuffer" }
+
+keymap["r"]["b"]["s"] =
+{ "<CMD>SearchReplaceMultiBufferSelections<CR>", "SearchReplaceMultiBuffer [s]elction list" }
+keymap["r"]["b"]["o"] = { "<CMD>SearchReplaceMultiBufferOpen<CR>", "[o]pen" }
+keymap["r"]["b"]["w"] = { "<CMD>SearchReplaceMultiBufferCWord<CR>", "[w]ord" }
+keymap["r"]["b"]["W"] = { "<CMD>SearchReplaceMultiBufferCWORD<CR>", "[W]ORD" }
+keymap["r"]["b"]["e"] = { "<CMD>SearchReplaceMultiBufferCExpr<CR>", "[e]xpr" }
+keymap["r"]["b"]["f"] = { "<CMD>SearchReplaceMultiBufferCFile<CR>", "[f]ile" }
+
+lvim.keys.visual_block_mode["<C-r>"] = [[<CMD>SearchReplaceSingleBufferVisualSelection<CR>]]
+lvim.keys.visual_block_mode["<C-b>"] = [[<CMD>SearchReplaceWithinVisualSelectionCWord<CR>]]

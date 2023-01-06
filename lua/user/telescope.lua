@@ -13,4 +13,5 @@ lvim.builtin.telescope.on_config_done = function(telescope)
   -- pcall(telescope.load_extension, "neoclip")
   pcall(telescope.load_extension, "yank_history")
   pcall(telescope.load_extension, "zoxide")
+  pcall(telescope.load_extension, "undo")
 end

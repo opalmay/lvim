@@ -1,12 +1,17 @@
 lvim.plugins = {
   {
-    "nvim-lua/plenary.nvim",
-    build = "GIT_DIR=~/.local/share/lunarvim/site/pack/lazy/opt/plenary.nvim/.git git checkout fix-path-expend"
+    "nvim-tree/nvim-tree.lua",
+    cmd = "NvimTreeToggle",
   },
-  {
-    "jvgrootveld/telescope-zoxide",
-  },
+  -- {
+  --   "nvim-lua/plenary.nvim",
+  --   build = "GIT_DIR=~/.local/share/lunarvim/site/pack/lazy/opt/plenary.nvim/.git && (git remote add opalmay https://github.com/opalmay/plenary.nvim && git fetch opalmay) && git checkout fix-path-expend"
+  -- },
+  -- {
+  --   "telescope-undo.nvim"
+  -- },
   { "catppuccin/nvim" },
+  -- { "Yazeed1s/oh-lucy.nvim" },
   {
     "f-person/git-blame.nvim",
     cmd = "GitBlameToggle"
@@ -17,15 +22,13 @@ lvim.plugins = {
   },
   {
     "opalmay/vim-smoothie",
+    event = "BufRead",
   },
   {
     "opalmay/neoscroll.nvim",
     branch = "feat-scroll-past-bottom",
     event = "BufRead"
   },
-  -- { "opalmay/neoscroll.nvim" },
-  -- { "baskerville/vim-sxhkdrc" },
-  -- { "j-hui/fidget.nvim" },
   {
     "nvim-pack/nvim-spectre",
     cmd = "Spectre"
@@ -65,7 +68,7 @@ lvim.plugins = {
   -- dap
   {
     "theHamsta/nvim-dap-virtual-text",
-    event = "BufRead"
+    cmd = "DapVirtualTextToggle"
   },
   {
     "mfussenegger/nvim-dap-python",
@@ -73,11 +76,11 @@ lvim.plugins = {
   },
 
   -- run stuff
-  {
-    "michaelb/sniprun",
-    build = 'bash ./install.sh',
-    cmd = "SnipRun"
-  },
+  -- {
+  --   "michaelb/sniprun",
+  --   build = 'bash ./install.sh',
+  --   cmd = "SnipRun"
+  -- },
   {
     "is0n/jaq-nvim",
     config = function()
@@ -97,7 +100,7 @@ lvim.plugins = {
   -- " }phaazon/hop.nvim",
   {
     "ggandor/leap.nvim",
-    event = "BufRead"
+    Lazy = true
   },
 
   -- jump list:
@@ -127,7 +130,6 @@ lvim.plugins = {
     ft = { "markdown" },
     cmd = "MarkdownPreview"
   },
-
   {
     "ray-x/lsp_signature.nvim",
     event = "InsertEnter"
@@ -135,18 +137,7 @@ lvim.plugins = {
   {
     "Vimjas/vim-python-pep8-indent",
     ft = "python",
-    event = "BufRead"
   },
-  -- {
-  --   "s1n7ax/nvim-comment-frame",
-  --   config = function()
-  --     require("nvim-comment-frame").setup({
-  --       keymap = "<C-0>",
-  --       multiline_keymap = "<C-9>",
-  --     })
-  --   end,
-  --   cmd = "CommentFrame",
-  -- },
   {
     "gbprod/yanky.nvim",
     event = "BufRead",
@@ -196,31 +187,191 @@ lvim.plugins = {
       end, 100)
     end,
   },
-
   {
     "zbirenbaum/copilot-cmp",
-    after = { "copilot.lua" },
+    dependencies = { "copilot.lua" },
     config = function()
       require("copilot_cmp").setup()
     end,
     event = "InsertEnter",
   },
+  -- {
+  --   "tzachar/cmp-tabnine",
+  --   build = "./install.sh",
+  --   event = "InsertEnter",
+  -- },
   {
-    "tzachar/cmp-tabnine",
-    build = "./install.sh",
-    event = "InsertEnter",
-  },
-  {
-    "jackMort/ChatGPT.nvim",
+    "simrat39/symbols-outline.nvim",
     config = function()
-      require("chatgpt").setup()
+      require("symbols-outline").setup()
     end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    },
-    cmd = "ChatGPT"
+    cmd = { "SymbolsOutline", "SymbolsOutlineOpen", "SymbolsOutlineClose" },
   },
+  -- {
+  --   "folke/noice.nvim",
+  -- config = function()
+  --   require("noice").setup({
+  --     override = {
+  --       -- override the default lsp markdown formatter with Noice
+  --       ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+  --       -- override the lsp markdown formatter with Noice
+  --       ["vim.lsp.util.stylize_markdown"] = true,
+  --       -- override cmp documentation with Noice (needs the other options to work)
+  --       ["cmp.entry.get_documentation"] = true,
+  --     },
+  --     presets = {
+  --       --ttom_search = true,
+  --       command_palette = true,
+  --       lsp_doc_border = true,
+  --     }
+  --   })
+  -- end,
+  -- },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup()
+    end,
+    event = "BufRead"
+  },
+  {
+    "roobert/search-replace.nvim",
+    config = function()
+      require("search-replace").setup()
+    end,
+    Lazy = true,
+  },
+  {
+    "stevearc/dressing.nvim"
+  },
+  {
+    -- TODO: read docs
+    "echasnovski/mini.nvim",
+    config = function()
+      -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md
+      -- align
+      require("mini.ai").setup()
+      -- require("mini.align").setup()
+      -- require("mini.jump").setup()
+    end,
+  },
+  {
+    "DNLHC/glance.nvim",
+    config = function()
+      require('glance').setup()
+    end,
+    cmd = "Glance"
+  },
+  -- {
+  --   "smjonas/inc-rename.nvim",
+  --   config = function()
+  --     require("inc_rename").setup({
+  --       input_buffer_type = "dressing",
+  --     })
+  --   end,
+  -- },
+  -- preview commands as you type them
+  {
+    "smjonas/live-command.nvim",
+    config = function()
+      require("live-command").setup {
+        commands = {
+          Norm = { cmd = "norm" },
+        },
+      }
+    end,
+    cmd = "Norm"
+  },
+  -- treesitter queries map popup
+  {
+    "ziontee113/neo-minimap",
+    config = function()
+      require("user.neo-minimap")
+    end,
+  },
+  -- lists helper
+  {
+    "gaoDean/autolist.nvim",
+    ft = {
+      "markdown",
+      "text",
+      "tex",
+      "plaintex",
+    },
+    config = function()
+      require("user.autolist")
+    end,
+  },
+  -- delay repeating keys
+  -- {
+  --   "ja-ford/delaytrain.nvim",
+  --   config = function()
+  --     require("delaytrain").setup({
+  --       delay_ms = 1000, -- How long repeated usage of a key should be prevented
+  --       grace_period = 3, -- How many repeated keypresses are allowed
+  --     })
+  --   end,
+  --   event = "BufRead",
+  -- },
+  -- open project in github
+  {
+    "almo7aya/openingh.nvim",
+    cmd = { "OpenInGHRepo", "OpenInGHFile" },
+  },
+  { "mong8se/actually.nvim" },
+  {
+    "vigoux/notifier.nvim",
+    config = function()
+      require 'notifier'.setup()
+    end,
+  },
+  {
+    "nguyenvukhang/nvim-toggler",
+    config = function()
+      require("user.toggler")
+    end,
+    event = "BufRead",
+  },
+
+  -- Fun:
+  {
+    "tamton-aquib/stuff.nvim",
+    config = function()
+      require("calc").setup()
+    end,
+    cmd = "Calc"
+  },
+  {
+    "Eandrju/cellular-automaton.nvim",
+    cmd = "CellularAutomaton"
+  },
+  {
+    "tamton-aquib/duck.nvim",
+    Lazy = true,
+  },
+  {
+    "tamton-aquib/zone.nvim",
+    config = function()
+      require('zone').setup {
+        style = "treadmill",
+        after = 60000, -- Idle timeout
+        -- More options to come later
+
+        treadmill = {
+          direction = "left",
+          -- Opts for Treadmill style
+        },
+        epilepsy = {
+          stage = "aura", -- "aura" or "ictal"
+          -- etc.
+        },
+        dvd = {
+          -- Opts for Dvd style
+        },
+        -- etc
+      }
+    end,
+  }
 }
 lvim.builtin.bufferline.active = false
