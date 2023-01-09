@@ -10,19 +10,19 @@ lvim.autocommands = {
       command = "set filetype=sxhkdrc"
     }
   },
-  {
-    { "BufEnter" },
-    {
-      group = buff,
-      pattern = ".py",
-      callback = function()
-        -- # add /home/opal/Documents/projects/webAvailability_dev/lib to python path
-        -- vim.cmd("let $PYTHONPATH = '/home/opal/Documents/projects/webAvailability_dev/lib'")
-        -- require("lspconfig")
-        -- vim.cmd("LspRestart")
-      end
-    }
-  },
+  -- {
+  -- { "BufEnter" },
+  -- {
+  --   group = buff,
+  --   pattern = ".py",
+  --   callback = function()
+  --     -- # add /home/opal/Documents/projects/webAvailability_dev/lib to python path
+  --     -- vim.cmd("let $PYTHONPATH = '/home/opal/Documents/projects/webAvailability_dev/lib'")
+  --     -- require("lspconfig")
+  --     -- vim.cmd("LspRestart")
+  --   end
+  -- }
+  -- },
   -- {
   --   { "CursorMoved" },
   --   {

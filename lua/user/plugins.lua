@@ -1,8 +1,8 @@
 lvim.plugins = {
-  {
-    "nvim-tree/nvim-tree.lua",
-    cmd = "NvimTreeToggle",
-  },
+  -- {
+  --   "nvim-tree/nvim-tree.lua",
+  --   cmd = "NvimTreeToggle",
+  -- },
   -- {
   --   "nvim-lua/plenary.nvim",
   --   build = "GIT_DIR=~/.local/share/lunarvim/site/pack/lazy/opt/plenary.nvim/.git && (git remote add opalmay https://github.com/opalmay/plenary.nvim && git fetch opalmay) && git checkout fix-path-expend"
@@ -180,6 +180,7 @@ lvim.plugins = {
   },
   {
     "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
     event = "VimEnter",
     config = function()
       vim.defer_fn(function()
@@ -193,7 +194,7 @@ lvim.plugins = {
     config = function()
       require("copilot_cmp").setup()
     end,
-    event = "InsertEnter",
+    event = "VimEnter",
   },
   -- {
   --   "tzachar/cmp-tabnine",
@@ -259,17 +260,17 @@ lvim.plugins = {
   {
     "DNLHC/glance.nvim",
     config = function()
-      require('glance').setup()
+      require("user.glance")
     end,
+    -- event = "BufRead",
     cmd = "Glance"
   },
   -- {
-  --   "smjonas/inc-rename.nvim",
+  --   "glepnir/lspsaga.nvim",
   --   config = function()
-  --     require("inc_rename").setup({
-  --       input_buffer_type = "dressing",
-  --     })
+  --     require("user.lspsaga")
   --   end,
+  --   cmd = "Lspsaga",
   -- },
   -- preview commands as you type them
   {

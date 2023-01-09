@@ -24,7 +24,17 @@ local map = function(mode, bind, action, opts)
   end
   lvim.keys[key][bind] = action
 end
-
+-- map('n', 'gD', '<CMD>Glance definitions<CR>')
+-- map('n', 'gr', '<CMD>Glance references<CR>')
+-- map('n', 'gt', '<CMD>Glance type_definitions<CR>')
+-- map('n', 'gi', '<CMD>Glance implementations<CR>')
+-- map("n", "<C-y>",
+--   function()
+--     local result = vim.treesitter.get_captures_at_cursor(0)
+--     print(vim.inspect(result))
+--   end,
+--   { noremap = true, silent = false }
+-- )
 --Remap space as leader key
 -- map("", "<Space>", "<Nop>")
 -- vim.g.mapleader = " "
@@ -266,13 +276,13 @@ map("n", "<C-i>", "<Plug>EnhancedJumpsLocalNewer")
 map("n", "g<C-o>", "<Plug>EnhancedJumpsRemoteOlder")
 map("n", "g<C-i>", "<Plug>EnhancedJumpsRemoteNewer")
 
-vim.keymap.set({"n","x"}, "p", "<Plug>(YankyPutAfter)") -- Add indent?
-vim.keymap.set({"n","x"}, "P", "<Plug>(YankyPutBefore)")
-vim.keymap.set({"n","x"}, "gp", "<Plug>(YankyGPutAfter)")
-vim.keymap.set({"n","x"}, "gP", "<Plug>(YankyGPutBefore)")
+vim.keymap.set({ "n", "x" }, "p", "<Plug>(YankyPutAfter)") -- Add indent?
+vim.keymap.set({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
+vim.keymap.set({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)")
+vim.keymap.set({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)")
 vim.keymap.set("n", "<c-p>", "<Plug>(YankyCycleBackward)")
 vim.keymap.set("n", "<c-n>", "<Plug>(YankyCycleForward)")
-vim.keymap.set({"n","x"}, "y", "<Plug>(YankyYank)") -- Stay in place
+vim.keymap.set({ "n", "x" }, "y", "<Plug>(YankyYank)") -- Stay in place
 
 vim.keymap.set("n", "s", "<cmd>lua require('substitute').operator()<cr>")
 vim.keymap.set("n", "ss", "<cmd>lua require('substitute').line()<cr>")

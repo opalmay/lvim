@@ -20,8 +20,7 @@ reload("user.toggleterm")
 reload("user.neovide")
 reload("user.smoothie")
 
-
 -- -- lvim.builtin.nvimtree.setup.hijack_netrw_behavior = true
-lvim.builtin.lir.active = false
-lvim.builtin.nvimtree.setup.disable_netrw = true
-lvim.builtin.nvimtree.setup.hijack_netrw = true
+-- lvim.builtin.lir.active = false
+-- lvim.builtin.nvimtree.setup.hijack_directories.enable = true
+-- lvim.builtin.nvimtree.setup.hijack_netrw = true
