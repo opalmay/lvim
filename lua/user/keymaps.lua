@@ -3,26 +3,26 @@
 -- Shorten function name
 -- local map = vim.api.nvim_set_keymap
 local map = function(mode, bind, action, opts)
-  -- local opts = { noremap = true, silent = true }
-  if opts then
-    vim.keymap.set(mode, bind, action, opts)
-    return
-  end
-  local key
-  if mode == "n" then
-    key = "normal_mode"
-  elseif mode == "v" then
-    key = "visual_mode"
-  elseif mode == "x" then
-    key = "visual_block_mode"
-  elseif mode == "i" then
-    key = "insert_mode"
-  elseif mode == "t" then
-    key = "term_mode"
-  elseif mode == "c" then
-    key = "command_mode"
-  end
-  lvim.keys[key][bind] = action
+	-- local opts = { noremap = true, silent = true }
+	if opts then
+		vim.keymap.set(mode, bind, action, opts)
+		return
+	end
+	local key
+	if mode == "n" then
+		key = "normal_mode"
+	elseif mode == "v" then
+		key = "visual_mode"
+	elseif mode == "x" then
+		key = "visual_block_mode"
+	elseif mode == "i" then
+		key = "insert_mode"
+	elseif mode == "t" then
+		key = "term_mode"
+	elseif mode == "c" then
+		key = "command_mode"
+	end
+	lvim.keys[key][bind] = action
 end
 -- map('n', 'gD', '<CMD>Glance definitions<CR>')
 -- map('n', 'gr', '<CMD>Glance references<CR>')
@@ -48,6 +48,19 @@ end
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- map("n", "<C-S-J>", "<cmd>tabnext<CR>")
+-- map("n", "<C-S-K>", "<cmd>tabprev<CR>")
+map("n", "<C-S-q>", "<cmd>tabclose<CR>")
+-- open current buffer in new tab
+map("n", "<C-S-n>", "<cmd>tabnew %<CR>")
+-- open current window in new tab
+map("n", "<C-S-t>", "<C-w>T")
+-- harpoon like
+map("n", "<C-S-J>", "<cmd>tabn 1<CR>")
+map("n", "<C-S-K>", "<cmd>tabn 2<CR>")
+map("n", "<C-S-l>", "<cmd>tabn 3<CR>")
+map("n", "<C-S-;>", "<cmd>tabn 4<CR>")
+
 map("v", "<RightMouse>", '"+y')
 
 map("n", "<Left>", "<C-w>h")
@@ -55,10 +68,10 @@ map("n", "<Down>", "<C-w>j")
 map("n", "<Up>", "<C-w>k")
 map("n", "<Right>", "<C-w>l")
 
-map("t", "<Left>", "<C-\\><C-N><C-w>h")
-map("t", "<Down>", "<C-\\><C-N><C-w>j")
-map("t", "<Up>", "<C-\\><C-N><C-w>k")
-map("t", "<Right>", "<C-\\><C-N><C-w>l")
+-- map("t", "<Left>", "<C-\\><C-N><C-w>h")
+-- map("t", "<Down>", "<C-\\><C-N><C-w>j")
+-- map("t", "<Up>", "<C-\\><C-N><C-w>k")
+-- map("t", "<Right>", "<C-\\><C-N><C-w>l")
 
 map("t", "<C-h>", "<Left>")
 map("t", "<C-j>", "<Down>")

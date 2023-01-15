@@ -1,5 +1,6 @@
 -- autocmd to not auto comment new line
 vim.cmd('autocmd BufEnter * set fo-=c fo-=r fo-=o')
+vim.cmd("autocmd FileType help wincmd L")
 
 lvim.autocommands = {
   {

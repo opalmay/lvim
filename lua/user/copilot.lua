@@ -17,8 +17,9 @@ require('copilot').setup({
     keymap = {
       accept = "<Right>",
       -- accept = "<C-l>",
-      accept_word = false,
-      accept_line = "<C-l>",
+      -- accept_word = false,
+      -- accept_line = "<C-l>",
+      accept_word = "<C-l>",
       next = "<C-j>",
       prev = "<C-k>",
       dismiss = "<C-->",

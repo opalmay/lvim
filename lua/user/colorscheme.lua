@@ -22,13 +22,14 @@ require("catppuccin").setup({
     -- WhichKeyFloat = { bg = colors.none },
     -- NormalFloat = { bg = colors.none },
     --
-    HlSearchNear = { fg="#1e2030", bg="#ed8796"},
+    HlSearchNear = { fg = "#1e2030", bg = "#ed8796" },
     HlSearchLensNear = { bg = cp.none },
 
     WhichKeyFloat = { bg = "NONE" },
     NormalFloat = { fg = cp.text, bg = "NONE" },
   },
   integrations = {
+    bufferline = true,
     illuminate = true,
     which_key = true,
     treesitter = true,
