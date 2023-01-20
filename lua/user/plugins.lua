@@ -439,7 +439,20 @@ lvim.plugins = {
 				-- etc
 			})
 		end,
+		cmd = "Zone",
 	},
+	{
+		"glacambre/firenvim",
+		build = function()
+			vim.fn["firenvim#install"](0)
+		end,
+		cond = vim.g.started_by_firenvim ~= nil,
+	},
+	-- {
+	-- 	"yioneko/nvim-yati",
+	-- 	-- tag = "*"
+	-- 	pt = "python",
+	-- },
 }
 
 lvim.builtin.bufferline.active = false

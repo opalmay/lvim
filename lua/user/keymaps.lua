@@ -50,6 +50,11 @@ end
 
 -- map("n", "<C-S-J>", "<cmd>tabnext<CR>")
 -- map("n", "<C-S-K>", "<cmd>tabprev<CR>")
+-- map("n", "h", "h<cmd>nohlsearch<CR>")
+map("n", "j", "j<cmd>nohlsearch<CR>")
+map("n", "k", "k<cmd>nohlsearch<CR>")
+-- map("n", "l", "l<cmd>nohlsearch<CR>")
+
 map("n", "<C-S-q>", "<cmd>tabclose<CR>")
 -- open current buffer in new tab
 map("n", "<C-S-n>", "<cmd>tabnew %<CR>")

@@ -18,3 +18,6 @@ reload("user.autocmds")
 -- reload("user.toggleterm")
 reload("user.neovide")
 reload("user.smoothie")
+
+-- local cmp_mappings = require("cmp").mappings
+-- lvim.builtin.cmp.mapping["<c-r>"] = cmp_mappings.complete()
