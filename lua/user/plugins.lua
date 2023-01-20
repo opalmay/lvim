@@ -1,8 +1,8 @@
 lvim.plugins = {
-	{
-		"kyazdani42/nvim-tree.lua",
-		cmd = "NvimTreeToggle",
-	},
+	-- {
+	-- 	"kyazdani42/nvim-tree.lua",
+	-- 	cmd = "NvimTreeToggle",
+	-- },
 	-- {
 	--   "nvim-lua/plenary.nvim",
 	--   build = "GIT_DIR=~/.local/share/lunarvim/site/pack/lazy/opt/plenary.nvim/.git && (git remote add opalmay https://github.com/opalmay/plenary.nvim && git fetch opalmay) && git checkout fix-path-expend"
@@ -129,7 +129,7 @@ lvim.plugins = {
 	-- " }phaazon/hop.nvim",
 	{
 		"ggandor/leap.nvim",
-		Lazy = true,
+		lazy = true,
 	},
 
 	-- jump list:
@@ -175,14 +175,19 @@ lvim.plugins = {
 	},
 	{
 		"gbprod/yanky.nvim",
-		event = "BufRead",
+		-- event = "BufRead",
+		event = "User FileOpened",
+		-- keys = { "y", "Y" },
 		config = function()
 			require("user.yanky")
 		end,
+		lazy = true,
 	},
 	{
 		"gbprod/substitute.nvim",
-		event = "BufRead",
+		-- event = "BufRead",
+		event = "User FileOpened",
+		-- keys = { "s", "S" },
 		config = function()
 			require("user.substitute")
 		end,
@@ -268,7 +273,7 @@ lvim.plugins = {
 		config = function()
 			require("search-replace").setup()
 		end,
-		Lazy = true,
+		lazy = true,
 	},
 	{
 		"stevearc/dressing.nvim",
@@ -383,7 +388,7 @@ lvim.plugins = {
 				load_breakpoints_event = "BufReadPost",
 			})
 		end,
-		enent = "BufReadPost",
+		event = "BufReadPost",
 	},
 	-- it looks cool but it's a bit too intrusive
 	-- {
@@ -415,7 +420,7 @@ lvim.plugins = {
 	},
 	{
 		"tamton-aquib/duck.nvim",
-		Lazy = true,
+		lazy = true,
 	},
 	{
 		"tamton-aquib/zone.nvim",
