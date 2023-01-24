@@ -21,3 +21,5 @@ reload("user.smoothie")
 
 -- local cmp_mappings = require("cmp").mappings
 -- lvim.builtin.cmp.mapping["<c-r>"] = cmp_mappings.complete()
+
+-- vim.api.nvim_clear_autocmds({ pattern = "alpha", group = "_filetype_settings" })

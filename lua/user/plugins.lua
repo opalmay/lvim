@@ -273,7 +273,7 @@ lvim.plugins = {
 		config = function()
 			require("search-replace").setup()
 		end,
-		lazy = true,
+		event = "BufRead",
 	},
 	{
 		"stevearc/dressing.nvim",
@@ -458,7 +458,16 @@ lvim.plugins = {
 	-- 	-- tag = "*"
 	-- 	pt = "python",
 	-- },
+	{
+		"stevearc/oil.nvim",
+		config = function()
+			require("user.oil")
+		end,
+		-- cmd = "Oil",
+		-- event = "User DirOpened",
+	},
 }
 
 lvim.builtin.bufferline.active = false
+lvim.builtin.lir.active = false
 -- lvim.builtin.terminal.active = false

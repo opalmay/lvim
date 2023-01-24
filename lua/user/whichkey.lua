@@ -54,6 +54,9 @@ lvim.builtin.which_key.mappings["c"] = nil
 
 local keymap = lvim.builtin.which_key.mappings
 
+keymap["t"] = keymap["e"]
+keymap["e"] = { "<cmd>Oil --float<cr>", "Oil" }
+
 keymap["r"] = { name = "SearchReplaceSingleBuffer" }
 
 keymap["r"]["s"] = { "<CMD>SearchReplaceSingleBufferSelections<CR>", "SearchReplaceSingleBuffer [s]elction list" }
