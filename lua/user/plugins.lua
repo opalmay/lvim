@@ -10,7 +10,25 @@ lvim.plugins = {
 	-- {
 	--   "telescope-undo.nvim"
 	-- },
-	{ "catppuccin/nvim", name = "catppuccin" },
+	-- {
+	-- 	"Exafunction/codeium.vim",
+	-- },
+	-- {
+	-- 	"jcdickinson/codeium.nvim",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"hrsh7th/nvim-cmp",
+	-- 	},
+	-- 	config = function()
+	-- 		require("codeium").setup({})
+	-- 	end,
+	-- },
+	{
+		"nvim-telescope/telescope.nvim",
+		dependencies = { "telescope-fzf-native.nvim", "tsakirist/telescope-lazy.nvim" },
+	},
+	{ "catppuccin/nvim", name = "catppuccin", lazy = false },
 	-- { "Yazeed1s/oh-lucy.nvim" },
 	{
 		"f-person/git-blame.nvim",
@@ -54,32 +72,32 @@ lvim.plugins = {
 	-- " }svermeulen/vim-macrobatics",
 
 	-- cmp:
-	-- {
-	--   "hrsh7th/nvim-cmp",
-	--   dependencies = {
-	--     "cmp-nvim-lsp",
-	--     "cmp_luasnip",
-	--     "cmp-buffer",
-	--     "cmp-path",
+	{
+		"hrsh7th/nvim-cmp",
+		dependencies = {
+			"cmp-nvim-lsp",
+			"cmp_luasnip",
+			"cmp-buffer",
+			"cmp-path",
 
-	--     "cmp-cmdline",
-	--     "copilot-cmp"
-	--   },
-	-- },
+			"cmp-cmdline",
+			"copilot-cmp",
+		},
+	},
 	-- {
 	--   "hrsh7th/cmp-cmdline",
 	--   lazy = true
 	--   -- event = "CmdLineEnter"
 	-- },
-	-- {
-	--   "zbirenbaum/copilot-cmp",
-	--   dependencies = { "copilot.lua" },
-	--   config = function()
-	--     require("copilot_cmp").setup()
-	--   end,
-	--   lazy = true
-	--   -- event = "VimEnter",
-	-- },
+	{
+		"zbirenbaum/copilot-cmp",
+		dependencies = { "copilot.lua" },
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+		lazy = true,
+		-- event = "VimEnter",
+	},
 	-- "rcarriga/cmp-dap",
 
 	-- treesitter:
@@ -122,6 +140,13 @@ lvim.plugins = {
 		"folke/trouble.nvim",
 		cmd = "TroubleToggle",
 	},
+	{
+		"kevinhwang91/nvim-bqf",
+		config = function()
+			require("user.bqf")
+		end,
+	},
+	{ "sindrets/diffview.nvim" },
 
 	-- { "folke/noice.nvim" },
 	-- { "MunifTanjim/nui.nvim" },
@@ -150,7 +175,7 @@ lvim.plugins = {
 	--   end,
 	-- },
 	{
-		"norcalli/nvim-colorizer.lua",
+		"NvChad/nvim-colorizer.lua",
 		config = function()
 			require("colorizer").setup()
 		end,
@@ -175,8 +200,8 @@ lvim.plugins = {
 	},
 	{
 		"gbprod/yanky.nvim",
-		-- event = "BufRead",
-		event = "User FileOpened",
+		event = "BufRead",
+		-- event = "User FileOpened",
 		-- keys = { "y", "Y" },
 		config = function()
 			require("user.yanky")
@@ -185,8 +210,8 @@ lvim.plugins = {
 	},
 	{
 		"gbprod/substitute.nvim",
-		-- event = "BufRead",
-		event = "User FileOpened",
+		event = "BufRead",
+		-- event = "User FileOpened",
 		-- keys = { "s", "S" },
 		config = function()
 			require("user.substitute")
@@ -233,13 +258,6 @@ lvim.plugins = {
 	--   build = "./install.sh",
 	--   event = "InsertEnter",
 	-- },
-	{
-		"simrat39/symbols-outline.nvim",
-		config = function()
-			require("symbols-outline").setup()
-		end,
-		cmd = { "SymbolsOutline", "SymbolsOutlineOpen", "SymbolsOutlineClose" },
-	},
 	-- {
 	--   "folke/noice.nvim",
 	-- config = function()
@@ -317,11 +335,22 @@ lvim.plugins = {
 		cmd = "Norm",
 	},
 	-- treesitter queries map popup
+	-- {
+	-- 	"ziontee113/neo-minimap",
+	-- 	config = function()
+	-- 		require("user.neo-minimap")
+	-- 	end,
+	-- 	lazy = false,
+	-- },
 	{
-		"ziontee113/neo-minimap",
+		"simrat39/symbols-outline.nvim",
 		config = function()
-			require("user.neo-minimap")
+			require("user.symbols_outline")
 		end,
+		cmd = { "SymbolsOutline", "SymbolsOutlineOpen", "SymbolsOutlineClose" },
+	},
+	{
+		"sindrets/diffview.nvim",
 	},
 	-- lists helper
 	{
@@ -453,11 +482,11 @@ lvim.plugins = {
 		end,
 		cond = vim.g.started_by_firenvim ~= nil,
 	},
-	-- {
-	-- 	"yioneko/nvim-yati",
-	-- 	-- tag = "*"
-	-- 	pt = "python",
-	-- },
+	{
+		"yioneko/nvim-yati",
+		-- tag = "*"
+		pt = "python",
+	},
 	{
 		"stevearc/oil.nvim",
 		config = function()
@@ -466,8 +495,10 @@ lvim.plugins = {
 		-- cmd = "Oil",
 		-- event = "User DirOpened",
 	},
+	-- { "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
 }
 
 lvim.builtin.bufferline.active = false
 lvim.builtin.lir.active = false
 -- lvim.builtin.terminal.active = false
+-- lvim.builtin.alpha.active = false

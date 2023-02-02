@@ -14,7 +14,7 @@ reload("user.lualine")
 reload("user.null-ls")
 reload("user.enhancedjumps")
 reload("user.autocmds")
--- reload("user.telescope")
+reload("user.telescope")
 -- reload("user.toggleterm")
 reload("user.neovide")
 reload("user.smoothie")
@@ -23,3 +23,10 @@ reload("user.smoothie")
 -- lvim.builtin.cmp.mapping["<c-r>"] = cmp_mappings.complete()
 
 -- vim.api.nvim_clear_autocmds({ pattern = "alpha", group = "_filetype_settings" })
+
+-- local ls = require("luasnip")
+-- ls.snippets = {
+-- 	lua = {
+-- 		ls.parser.parse_snippet("addd", "asd"),
+-- 	},
+-- }

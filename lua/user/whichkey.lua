@@ -38,6 +38,8 @@ lvim.builtin.which_key.mappings["d"]["R"] =
 	{ "<cmd>lua require('persistent-breakpoints.api').clear_all_breakpoints()<cr>", "Clear All Breakpoints" }
 
 lvim.builtin.which_key.mappings["c"] = nil
+lvim.builtin.which_key.mappings["m"] = lvim.builtin.which_key.mappings["s"]
+lvim.builtin.which_key.mappings["s"] = { "<cmd>SymbolsOutline<cr>", "Symbols Outline" }
 -- lvim.builtin.which_key.mappings["R"] = { ":SnipRun<CR>", "SnipRun" }
 
 -- lvim.builtin.which_key.mappings["d"] = {
