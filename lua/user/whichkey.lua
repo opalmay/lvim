@@ -5,8 +5,8 @@ lvim.builtin.which_key.mappings["l"]["t"] = { ":TroubleToggle<CR>", "Trouble" }
 lvim.builtin.which_key.mappings["l"]["b"] = { ":ToggleDiag<CR>", "Toggle Diag" }
 lvim.builtin.which_key.mappings["p"] = { ":Telescope projects<CR>", "Projects" }
 -- lvim.builtin.which_key.mappings["v"] = { ":Telescope neoclip<CR>", "NeoClip" }
-lvim.builtin.which_key.mappings["v"] = { ":vs<CR>", "Vertical Split" }
-lvim.builtin.which_key.mappings["v"] = { ":Telescope yank_history<CR>", "Yank History" }
+-- lvim.builtin.which_key.mappings["v"] = { ":vs<CR>", "Vertical Split" }
+-- lvim.builtin.which_key.mappings["v"] = { ":Telescope yank_history<CR>", "Yank History" }
 lvim.builtin.which_key.mappings["o"] = {
 	l = { ":set rnu!<CR>", "Toggle Relative Line Numbers" },
 	t = { ':let &background = ( &background == "dark"? "light" : "dark" )<CR>', "Toggle Dark Theme" },

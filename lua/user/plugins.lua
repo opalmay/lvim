@@ -28,7 +28,7 @@ lvim.plugins = {
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "telescope-fzf-native.nvim", "tsakirist/telescope-lazy.nvim" },
 	},
-	{ "catppuccin/nvim", name = "catppuccin", lazy = false },
+	{ "catppuccin/nvim", name = "catppuccin" },
 	-- { "Yazeed1s/oh-lucy.nvim" },
 	{
 		"f-person/git-blame.nvim",
@@ -40,12 +40,13 @@ lvim.plugins = {
 	},
 	{
 		"opalmay/vim-smoothie",
-		event = "BufRead",
+		event = "BufReadPost",
+		keys = { "j", "k" },
 	},
 	{
 		"opalmay/neoscroll.nvim",
 		branch = "feat-scroll-past-bottom",
-		event = "BufRead",
+		event = "BufReadPost",
 	},
 	{
 		"nvim-pack/nvim-spectre",
@@ -53,11 +54,11 @@ lvim.plugins = {
 	},
 	{
 		"stevearc/stickybuf.nvim",
-		event = "BufRead",
+		event = "BufReadPost",
 	},
 	{
 		"rbong/vim-buffest",
-		event = "BufRead",
+		event = "BufReadPost",
 	},
 	-- { "junegunn/vim-slash" }, Maybe fork this?
 	{
@@ -65,61 +66,88 @@ lvim.plugins = {
 		config = function()
 			require("nvim-surround").setup()
 		end,
-		event = "BufRead",
+		event = "BufReadPost",
 	},
 
 	-- { "tpope/vim-repeat" },
 	-- " }svermeulen/vim-macrobatics",
 
 	-- cmp:
-	{
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			"cmp-nvim-lsp",
-			"cmp_luasnip",
-			"cmp-buffer",
-			"cmp-path",
+	-- {
+	-- 	"hrsh7th/nvim-cmp",
+	-- 	dependencies = {
+	-- 		"cmp-nvim-lsp",
+	-- 		"cmp_luasnip",
+	-- 		"cmp-buffer",
+	-- 		"cmp-path",
 
-			"cmp-cmdline",
-			"copilot-cmp",
-		},
-	},
+	-- 		"cmp-cmdline",
+	-- 		-- "copilot-cmp",
+	-- 	},
+	-- },
 	-- {
 	--   "hrsh7th/cmp-cmdline",
 	--   lazy = true
 	--   -- event = "CmdLineEnter"
 	-- },
-	{
-		"zbirenbaum/copilot-cmp",
-		dependencies = { "copilot.lua" },
-		config = function()
-			require("copilot_cmp").setup()
-		end,
-		lazy = true,
-		-- event = "VimEnter",
-	},
+	-- {
+	-- 	"zbirenbaum/copilot-cmp",
+	-- 	dependencies = { "copilot.lua" },
+	-- 	config = function()
+	-- 		require("copilot_cmp").setup()
+	-- 	end,
+	-- 	lazy = true,
+	-- 	-- event = "VimEnter",
+	-- },
 	-- "rcarriga/cmp-dap",
 
 	-- treesitter:
-	{ "andymass/vim-matchup", event = "BufRead" },
-	{ "nvim-treesitter/nvim-treesitter-textobjects", event = "BufRead" },
-	{ "RRethy/nvim-treesitter-textsubjects", event = "BufRead" },
-
+	-- {
+	-- 	"nvim-treesitter/nvim-treesitter",
+	-- 	dependencies = {
+	-- 		-- "nvim-ts-context-commentstring",
+	-- 		"vim-matchup",
+	-- 		"nvim-treesitter-textobjects",
+	-- 		"nvim-treesitter-textsubjects",
+	-- 		-- "nvim-yati",
+	-- 	},
+	-- },
+	{ "andymass/vim-matchup", lazy = true },
+	{ "nvim-treesitter/nvim-treesitter-textobjects", lazy = true },
+	{ "RRethy/nvim-treesitter-textsubjects", lazy = true },
+	{
+		"yioneko/nvim-yati",
+		-- tag = "*"
+		ft = "python",
+	},
 	{
 		"mfussenegger/nvim-dap",
-		dependencies = "theHamsta/nvim-dap-virtual-text",
+		dependencies = {
+			"theHamsta/nvim-dap-virtual-text",
+			"mfussenegger/nvim-dap-python",
+		},
 	},
 	-- dap
 	{
 		"theHamsta/nvim-dap-virtual-text",
-		-- cmd = "DapVirtualTextToggle",
 		config = function()
-			reload("user.dap-virtual-text")
+			require("user.dap-virtual-text")
 		end,
+		lazy = true,
 	},
 	{
 		"mfussenegger/nvim-dap-python",
-		ft = "python",
+		lazy = true,
+	},
+	{
+		"Weissle/persistent-breakpoints.nvim",
+		config = function()
+			require("persistent-breakpoints").setup({
+				load_breakpoints_event = "BufReadPost",
+			})
+		end,
+		-- event = "BufReadPost",
+		lazy = true,
 	},
 
 	-- run stuff
@@ -145,8 +173,12 @@ lvim.plugins = {
 		config = function()
 			require("user.bqf")
 		end,
+		ft = "qf",
 	},
-	{ "sindrets/diffview.nvim" },
+	{
+		"sindrets/diffview.nvim",
+		cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+	},
 
 	-- { "folke/noice.nvim" },
 	-- { "MunifTanjim/nui.nvim" },
@@ -160,10 +192,11 @@ lvim.plugins = {
 	-- jump list:
 	{
 		"opalmay/vim-EnhancedJumps",
-		event = "BufRead",
+		event = "BufReadPost",
 		dependencies = {
 			"inkarkat/vim-ingo-library",
 		},
+		-- keys = { "<C-i>", "<C-o>" },
 	},
 	-- { "petertriho/nvim-scrollbar" },
 	-- { "kevinhwang91/nvim-hlslens" },
@@ -179,7 +212,7 @@ lvim.plugins = {
 		config = function()
 			require("colorizer").setup()
 		end,
-		event = "BufRead",
+		event = "VeryLazy",
 	},
 	{
 		"iamcco/markdown-preview.nvim",
@@ -187,8 +220,7 @@ lvim.plugins = {
 		init = function()
 			vim.g.mkdp_filetypes = { "markdown" }
 		end,
-		ft = { "markdown" },
-		cmd = "MarkdownPreview",
+		ft = "markdown",
 	},
 	{
 		"ray-x/lsp_signature.nvim",
@@ -200,36 +232,36 @@ lvim.plugins = {
 	},
 	{
 		"gbprod/yanky.nvim",
-		event = "BufRead",
-		-- event = "User FileOpened",
-		-- keys = { "y", "Y" },
+		-- event = "BufReadPost",
+		event = "User FileOpened",
+		-- keys = { "y", "p", "P", "gp", "gP" },
 		config = function()
 			require("user.yanky")
 		end,
-		lazy = true,
 	},
 	{
 		"gbprod/substitute.nvim",
-		event = "BufRead",
-		-- event = "User FileOpened",
-		-- keys = { "s", "S" },
 		config = function()
 			require("user.substitute")
 		end,
+		lazy = true,
 	},
 	{
 		"gbprod/stay-in-place.nvim",
 		config = function()
 			require("stay-in-place").setup()
 		end,
-		event = "BufRead",
+		keys = { ">", "<", "=" },
+	},
+	{
+		"neovim/nvim-lspconfig",
+		dependencies = { "mason-lspconfig.nvim", "nlsp-settings.nvim", "nvim-config-local" },
 	},
 	{
 		"klen/nvim-config-local",
 		config = function()
 			require("config-local").setup()
 		end,
-		-- event = "BufRead",
 	},
 	{
 		"ThePrimeagen/vim-be-good",
@@ -284,35 +316,40 @@ lvim.plugins = {
 		config = function()
 			require("todo-comments").setup()
 		end,
-		event = "BufRead",
+		event = "BufReadPost",
 	},
 	{
 		"roobert/search-replace.nvim",
 		config = function()
 			require("search-replace").setup()
 		end,
-		event = "BufRead",
+		event = "BufReadPost",
+		-- Lazy load
 	},
 	{
 		"stevearc/dressing.nvim",
 	},
+	-- {
+	-- 	"echasnovski/mini.nvim",
+	-- 	config = function()
+	-- 		-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md
+	-- 		-- align
+	-- 		require("mini.ai").setup()
+	-- 		-- require("mini.align").setup()
+	-- 		-- require("mini.jump").setup()
+	-- 	end,
+	-- },
 	{
-		-- TODO: read docs
-		"echasnovski/mini.nvim",
-		config = function()
-			-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md
-			-- align
-			require("mini.ai").setup()
-			-- require("mini.align").setup()
-			-- require("mini.jump").setup()
-		end,
+		"echasnovski/mini.ai",
+		version = false,
+		event = "BufReadPost",
 	},
 	{
 		"DNLHC/glance.nvim",
 		config = function()
 			require("user.glance")
 		end,
-		-- event = "BufRead",
+		-- event = "BufReadPost",
 		cmd = "Glance",
 	},
 	-- {
@@ -374,7 +411,7 @@ lvim.plugins = {
 	--       grace_period = 3, -- How many repeated keypresses are allowed
 	--     })
 	--   end,
-	--   event = "BufRead",
+	--   event = "BufReadPost",
 	-- },
 	-- open project in github
 	{
@@ -393,7 +430,7 @@ lvim.plugins = {
 		config = function()
 			require("user.toggler")
 		end,
-		event = "BufRead",
+		event = "BufReadPost",
 	},
 	{ "jghauser/mkdir.nvim", event = "BufWritePre" },
 	-- broken for some reason
@@ -409,15 +446,6 @@ lvim.plugins = {
 			require("debugprint").setup()
 		end,
 		keys = "g?",
-	},
-	{
-		"Weissle/persistent-breakpoints.nvim",
-		config = function()
-			require("persistent-breakpoints").setup({
-				load_breakpoints_event = "BufReadPost",
-			})
-		end,
-		event = "BufReadPost",
 	},
 	-- it looks cool but it's a bit too intrusive
 	-- {
@@ -483,11 +511,6 @@ lvim.plugins = {
 		cond = vim.g.started_by_firenvim ~= nil,
 	},
 	{
-		"yioneko/nvim-yati",
-		-- tag = "*"
-		pt = "python",
-	},
-	{
 		"stevearc/oil.nvim",
 		config = function()
 			require("user.oil")
@@ -502,3 +525,4 @@ lvim.builtin.bufferline.active = false
 lvim.builtin.lir.active = false
 -- lvim.builtin.terminal.active = false
 -- lvim.builtin.alpha.active = false
+-- lvim.builtin.nvimtree.active = false

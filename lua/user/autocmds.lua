@@ -1,6 +1,6 @@
 -- autocmd to not auto comment new line
 vim.cmd("autocmd BufEnter * set fo-=c fo-=r fo-=o")
-vim.cmd("autocmd FileType help wincmd L")
+-- vim.cmd("autocmd FileType help wincmd L")
 
 vim.cmd("au BufEnter github.com_*.txt set filetype=markdown")
 vim.cmd("au BufEnter solarwinds.nice.com_*.txt set filetype=ps1")

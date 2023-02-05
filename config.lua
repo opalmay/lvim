@@ -24,9 +24,9 @@ reload("user.smoothie")
 
 -- vim.api.nvim_clear_autocmds({ pattern = "alpha", group = "_filetype_settings" })
 
--- local ls = require("luasnip")
--- ls.snippets = {
--- 	lua = {
--- 		ls.parser.parse_snippet("addd", "asd"),
--- 	},
+-- local execs = {
+-- 	{ keymap = "<leader>u", cmd = "sudo dmesg | less", desc = "Show Kernel Logs", size = 1 },
+-- 	{ keymap = "<C-4>", cmd = "neofetch && read", size = 0.6 },
+-- 	{ keymap = "<C-5>", cmd = "ls -l && read", direction = "horizontal" },
 -- }
+-- vim.list_extend(lvim.builtin.terminal.execs, execs)
