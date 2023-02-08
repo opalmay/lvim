@@ -302,6 +302,8 @@ vim.keymap.set("n", "<c-p>", "<Plug>(YankyCycleBackward)")
 vim.keymap.set("n", "<c-n>", "<Plug>(YankyCycleForward)")
 vim.keymap.set({ "n", "x" }, "y", "<Plug>(YankyYank)") -- Stay in place
 
+-- map("n", "<BS>", '"+p')
+
 vim.keymap.set("n", "s", "<cmd>lua require('substitute').operator()<cr>")
 vim.keymap.set("n", "ss", "<cmd>lua require('substitute').line()<cr>")
 vim.keymap.set("n", "S", "<cmd>lua require('substitute').eol()<cr>")

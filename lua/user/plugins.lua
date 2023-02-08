@@ -40,8 +40,9 @@ lvim.plugins = {
 	},
 	{
 		"opalmay/vim-smoothie",
-		event = "BufReadPost",
-		keys = { "j", "k" },
+		-- event = "User FileOpened",
+		-- event = "BufReadPost",
+		-- keys = { "j", "k" },
 	},
 	{
 		"opalmay/neoscroll.nvim",
@@ -102,16 +103,16 @@ lvim.plugins = {
 	-- "rcarriga/cmp-dap",
 
 	-- treesitter:
-	-- {
-	-- 	"nvim-treesitter/nvim-treesitter",
-	-- 	dependencies = {
-	-- 		-- "nvim-ts-context-commentstring",
-	-- 		"vim-matchup",
-	-- 		"nvim-treesitter-textobjects",
-	-- 		"nvim-treesitter-textsubjects",
-	-- 		-- "nvim-yati",
-	-- 	},
-	-- },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		dependencies = {
+			-- "nvim-ts-context-commentstring",
+			"vim-matchup",
+			"nvim-treesitter-textobjects",
+			"nvim-treesitter-textsubjects",
+			-- "nvim-yati",
+		},
+	},
 	{ "andymass/vim-matchup", lazy = true },
 	{ "nvim-treesitter/nvim-treesitter-textobjects", lazy = true },
 	{ "RRethy/nvim-treesitter-textsubjects", lazy = true },
@@ -341,6 +342,9 @@ lvim.plugins = {
 	-- },
 	{
 		"echasnovski/mini.ai",
+		config = function()
+			require("mini.ai").setup()
+		end,
 		version = false,
 		event = "BufReadPost",
 	},
@@ -372,13 +376,12 @@ lvim.plugins = {
 		cmd = "Norm",
 	},
 	-- treesitter queries map popup
-	-- {
-	-- 	"ziontee113/neo-minimap",
-	-- 	config = function()
-	-- 		require("user.neo-minimap")
-	-- 	end,
-	-- 	lazy = false,
-	-- },
+	{
+		"ziontee113/neo-minimap",
+		config = function()
+			require("user.neo-minimap")
+		end,
+	},
 	{
 		"simrat39/symbols-outline.nvim",
 		config = function()

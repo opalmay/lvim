@@ -26,7 +26,21 @@ reload("user.smoothie")
 
 -- local execs = {
 -- 	{ keymap = "<leader>u", cmd = "sudo dmesg | less", desc = "Show Kernel Logs", size = 1 },
--- 	{ keymap = "<C-4>", cmd = "neofetch && read", size = 0.6 },
+-- 	{ keymap = "<leader>k", cmd = "htop", desc = "Interactive System Monitor", size = 0.8 },
+-- 	{
+-- 		keymap = "<leader>os",
+-- 		direction = "vertical",
+-- 		cmd = "docker ps",
+-- 		desc = "List Docker Containers",
+-- 		close_on_exit = false,
+-- 		persist_mode = false,
+-- 		size = 0.3,
+-- 	},
+-- 	{ keymap = "<C-4>", cmd = "neofetch", close_on_exit = false, direction = "horizontal", size = 0.6 },
 -- 	{ keymap = "<C-5>", cmd = "ls -l && read", direction = "horizontal" },
 -- }
--- vim.list_extend(lvim.builtin.terminal.execs, execs)
+-- vim.list_extend(lvim.builtin.terminal.keybinds, execs)
+
+-- -- lvim.builtin.terminal.execs = {
+-- -- 	{ nil, "<C-8>", "Float Terminal", "float", nil },
+-- -- }
