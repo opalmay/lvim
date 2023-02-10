@@ -3,7 +3,7 @@ lvim.builtin.which_key.setup.plugins.presets.windows = true
 lvim.builtin.which_key.mappings["g"]["B"] = { ":GitBlameToggle<CR>", "Git Blame" }
 lvim.builtin.which_key.mappings["l"]["t"] = { ":TroubleToggle<CR>", "Trouble" }
 lvim.builtin.which_key.mappings["l"]["b"] = { ":ToggleDiag<CR>", "Toggle Diag" }
-lvim.builtin.which_key.mappings["p"] = { ":Telescope projects<CR>", "Projects" }
+-- lvim.builtin.which_key.mappings["p"] = { ":Telescope projects<CR>", "Projects" }
 -- lvim.builtin.which_key.mappings["v"] = { ":Telescope neoclip<CR>", "NeoClip" }
 -- lvim.builtin.which_key.mappings["v"] = { ":vs<CR>", "Vertical Split" }
 -- lvim.builtin.which_key.mappings["v"] = { ":Telescope yank_history<CR>", "Yank History" }
@@ -39,7 +39,8 @@ lvim.builtin.which_key.mappings["d"]["R"] =
 
 lvim.builtin.which_key.mappings["c"] = nil
 lvim.builtin.which_key.mappings["m"] = lvim.builtin.which_key.mappings["s"]
-lvim.builtin.which_key.mappings["s"] = { "<cmd>SymbolsOutline<cr>", "Symbols Outline" }
+-- lvim.builtin.which_key.mappings["s"] = { "<cmd>SymbolsOutline<cr>", "Symbols Outline" }
+lvim.builtin.which_key.mappings["s"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Telescope Buffer Fuzzy Find" }
 -- lvim.builtin.which_key.mappings["R"] = { ":SnipRun<CR>", "SnipRun" }
 
 -- lvim.builtin.which_key.mappings["d"] = {
