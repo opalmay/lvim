@@ -15,6 +15,22 @@ lvim.autocommands = {
 		},
 	},
 	-- {
+	-- 	{ "BufEnter" },
+	-- 	{
+	-- 		group = spell,
+	-- 		pattern = { "*.md", "*.txt" },
+	-- 		command = "set spell",
+	-- 	},
+	-- },
+	{
+		{ "BufEnter" },
+		{
+			group = spell,
+			pattern = { "*.lua" },
+			command = "set nospell",
+		},
+	},
+	-- {
 	-- { "BufEnter" },
 	-- {
 	--   group = buff,

@@ -34,6 +34,7 @@ vim.opt.sidescrolloff = 8
 vim.opt.laststatus = 3 -- unified status bar
 vim.opt.mousescroll = "ver:10"
 vim.opt.mousemodel = "popup"
+vim.opt.spell = true
 -- vim.opt.showcmd = true
 -- vim.cmd "set laststatus=3"
 -- vim.opt.startofline = true

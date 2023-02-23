@@ -11,6 +11,7 @@ lvim.builtin.which_key.mappings["o"] = {
 	l = { ":set rnu!<CR>", "Toggle Relative Line Numbers" },
 	t = { ':let &background = ( &background == "dark"? "light" : "dark" )<CR>', "Toggle Dark Theme" },
 	c = { ":lua require('copilot.suggestion').toggle_auto_trigger()<CR>", "Toggle Copilot Auto Trigger" },
+	s = { "set spell!<CR>", "Toggle Spell Check" },
 }
 -- lvim.builtin.which_key.mappings["D"] = {
 -- 	name = "Database",

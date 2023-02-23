@@ -46,3 +46,19 @@ require("lsp_signature").setup({
 	-- select_signature_key = "<C-X>"
 	-- noice = true
 })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
+-- remove pylsp from the table
+-- for i, server in ipairs(lvim.lsp.automatic_configuration.skipped_servers) do
+-- 	if server == "pylsp" then
+-- 		table.remove(lvim.lsp.automatic_configuration.skipped_servers, i)
+-- 		break
+-- 	end
+-- end
+
+-- require("lvim.lsp.manager").setup("jedi_language_server", {})
+-- require("lspconfig").jedi_language_server.setup({})
+-- require("lspconfig").pylsp.setup({
+-- 	cmd = { "pylsp", "-v", "--log-file", "/tmp/nvim-pylsp.log" },
+-- })
+-- require("lvim.lsp.manager").setup("pylsp", {})
+-- lvim.lsp.installer.setup.automatic_installation = false
