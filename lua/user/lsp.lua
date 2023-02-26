@@ -46,7 +46,7 @@ require("lsp_signature").setup({
 	-- select_signature_key = "<C-X>"
 	-- noice = true
 })
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
+-- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 -- remove pylsp from the table
 -- for i, server in ipairs(lvim.lsp.automatic_configuration.skipped_servers) do
 -- 	if server == "pylsp" then

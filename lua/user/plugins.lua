@@ -41,13 +41,13 @@ lvim.plugins = {
 	{
 		"opalmay/vim-smoothie",
 		-- event = "User FileOpened",
-		-- event = "BufReadPost",
+		-- event = "User FileOpened",
 		-- keys = { "j", "k" },
 	},
 	{
 		"opalmay/neoscroll.nvim",
 		branch = "feat-scroll-past-bottom",
-		event = "BufReadPost",
+		event = "User FileOpened",
 	},
 	{
 		"nvim-pack/nvim-spectre",
@@ -199,8 +199,23 @@ lvim.plugins = {
 		},
 		-- keys = { "<C-i>", "<C-o>" },
 	},
-	-- { "petertriho/nvim-scrollbar" },
-	-- { "kevinhwang91/nvim-hlslens" },
+	-- {
+	-- 	"petertriho/nvim-scrollbar",
+	-- 	event = "User FileOpened",
+	-- 	config = function()
+	-- 		require("user.scrollbar")
+	-- 	end,
+	-- 	dependencies = {
+	-- 		"nvim-hlslens",
+	-- 	},
+	-- },
+	-- {
+	-- 	"kevinhwang91/nvim-hlslens",
+	-- 	config = function()
+	-- 		require("user.hlslens")
+	-- 	end,
+	-- 	lazy = true,
+	-- },
 	-- { "haya14busa/vim-asterisk" },
 	-- {
 	--   "asiryk/auto-hlsearch.nvim",
@@ -278,12 +293,10 @@ lvim.plugins = {
 	},
 	{
 		"zbirenbaum/copilot.lua",
-		-- cmd = "Copilot",
-		event = "VimEnter",
+		cmd = "Copilot",
+		event = "InsertEnter",
 		config = function()
-			vim.defer_fn(function()
-				require("user.copilot")
-			end, 100)
+			require("user.copilot")
 		end,
 	},
 	-- {
@@ -334,14 +347,14 @@ lvim.plugins = {
 		config = function()
 			require("todo-comments").setup()
 		end,
-		event = "BufReadPost",
+		event = "User FileOpened",
 	},
 	{
 		"roobert/search-replace.nvim",
 		config = function()
 			require("search-replace").setup()
 		end,
-		event = "BufReadPost",
+		event = "User FileOpened",
 		-- Lazy load
 	},
 	{
@@ -363,7 +376,7 @@ lvim.plugins = {
 			require("mini.ai").setup()
 		end,
 		version = false,
-		event = "BufReadPost",
+		event = "User FileOpened",
 	},
 	{
 		"DNLHC/glance.nvim",
@@ -421,6 +434,7 @@ lvim.plugins = {
 		config = function()
 			require("user.autolist")
 		end,
+		event = "User FileOpened",
 	},
 	-- delay repeating keys
 	-- {
@@ -450,7 +464,7 @@ lvim.plugins = {
 		config = function()
 			require("user.toggler")
 		end,
-		event = "BufReadPost",
+		event = "User FileOpened",
 	},
 	{ "jghauser/mkdir.nvim", event = "BufWritePre" },
 	-- broken for some reason
