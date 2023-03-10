@@ -1,8 +1,8 @@
 lvim.plugins = {
-	{
-		"nvim-telescope/telescope.nvim",
-		dependencies = { "telescope-fzf-native.nvim", "tsakirist/telescope-lazy.nvim" },
-	},
+	-- {
+	-- 	"nvim-telescope/telescope.nvim",
+	-- 	dependencies = { "telescope-fzf-native.nvim", "tsakirist/telescope-lazy.nvim" },
+	-- },
 	{ "catppuccin/nvim", name = "catppuccin" },
 	-- { "Yazeed1s/oh-lucy.nvim" },
 	{
@@ -12,6 +12,9 @@ lvim.plugins = {
 	{
 		"ThePrimeagen/harpoon",
 		lazy = true,
+		-- config = function()
+		-- 	require("harpoon").setup({ save_on_toggle = true })
+		-- end,
 	},
 	{
 		"opalmay/vim-smoothie",
@@ -44,7 +47,7 @@ lvim.plugins = {
 		config = function()
 			require("nvim-surround").setup()
 		end,
-		event = "BufReadPost",
+		keys = { "ys", "cs", "ds" },
 	},
 
 	-- treesitter:
@@ -293,15 +296,16 @@ lvim.plugins = {
 		cmd = { "PetsNew", "PetsNewCustom", "PetsList" },
 		dependencies = { "MunifTanjim/nui.nvim", "giusgad/hologram.nvim" },
 	},
-	{
-		"tjdevries/sg.nvim",
-		build = "cargo build --workspace",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("sg").setup({ on_attach = lvim.lsp.on_attach_callback })
-		end,
-		event = "User FileOpened",
-	},
+	-- {
+	-- 	"tjdevries/sg.nvim",
+	-- 	build = "cargo build --workspace",
+	-- 	dependencies = { "nvim-lua/plenary.nvim" },
+	-- 	config = function()
+	-- 		-- require("sg").setup({ on_attach = lvim.lsp.on_attach_callback })
+	-- 		require("sg").setup({})
+	-- 	end,
+	-- 	event = "User FileOpened",
+	-- },
 	{
 		"DNLHC/glance.nvim",
 		config = function()
@@ -446,7 +450,32 @@ lvim.plugins = {
 		-- cmd = "Oil",
 		-- event = "User DirOpened",
 	},
+	-- {
+	-- 	"miversen33/netman.nvim",
+	-- 	config = function()
+	-- 		require("netman")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"nvim-neo-tree/neo-tree.nvim",
+	-- 	branch = "v2.x",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"netman.nvim",
+	-- 	},
+	-- 	config = function()
+	-- 		require("neo-tree").setup({
+	-- 			sources = {
+	-- 				"filesystem", -- Neotree filesystem source
+	-- 				"netman.ui.neo-tree", -- The one you really care about 😉
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 }
 
 lvim.builtin.bufferline.active = false
 lvim.builtin.lir.active = false
+-- lvim.builtin.nvimtree.active = false

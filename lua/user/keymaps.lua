@@ -314,3 +314,6 @@ map("n", "~", "<Plug>(leap-backward-to)")
 -- map("n", "leap-cross-window", "<Plug>(leap=cross-window)")
 map("v", "x", "<Plug>(leap-forward-till)")
 map("v", "X", "<Plug>(leap-backward-till)")
+
+-- map("n", "gp", "`[v`]") -- pasted text to visual mode
+vim.cmd([[nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]']])
