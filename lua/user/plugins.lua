@@ -1,29 +1,4 @@
 lvim.plugins = {
-	-- {
-	-- 	"kyazdani42/nvim-tree.lua",
-	-- 	cmd = "NvimTreeToggle",
-	-- },
-	-- {
-	--   "nvim-lua/plenary.nvim",
-	--   build = "GIT_DIR=~/.local/share/lunarvim/site/pack/lazy/opt/plenary.nvim/.git && (git remote add opalmay https://github.com/opalmay/plenary.nvim && git fetch opalmay) && git checkout fix-path-expend"
-	-- },
-	-- {
-	--   "telescope-undo.nvim"
-	-- },
-	-- {
-	-- 	"Exafunction/codeium.vim",
-	-- },
-	-- {
-	-- 	"jcdickinson/codeium.nvim",
-	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		"hrsh7th/nvim-cmp",
-	-- 	},
-	-- 	config = function()
-	-- 		require("codeium").setup({})
-	-- 	end,
-	-- },
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "telescope-fzf-native.nvim", "tsakirist/telescope-lazy.nvim" },
@@ -41,7 +16,6 @@ lvim.plugins = {
 	{
 		"opalmay/vim-smoothie",
 		-- event = "User FileOpened",
-		-- event = "User FileOpened",
 		-- keys = { "j", "k" },
 	},
 	{
@@ -55,6 +29,9 @@ lvim.plugins = {
 	},
 	{
 		"stevearc/stickybuf.nvim",
+		config = function()
+			require("stickybuf").setup()
+		end,
 		event = "BufReadPost",
 	},
 	{
@@ -69,38 +46,6 @@ lvim.plugins = {
 		end,
 		event = "BufReadPost",
 	},
-
-	-- { "tpope/vim-repeat" },
-	-- " }svermeulen/vim-macrobatics",
-
-	-- cmp:
-	-- {
-	-- 	"hrsh7th/nvim-cmp",
-	-- 	dependencies = {
-	-- 		"cmp-nvim-lsp",
-	-- 		"cmp_luasnip",
-	-- 		"cmp-buffer",
-	-- 		"cmp-path",
-
-	-- 		"cmp-cmdline",
-	-- 		-- "copilot-cmp",
-	-- 	},
-	-- },
-	-- {
-	--   "hrsh7th/cmp-cmdline",
-	--   lazy = true
-	--   -- event = "CmdLineEnter"
-	-- },
-	-- {
-	-- 	"zbirenbaum/copilot-cmp",
-	-- 	dependencies = { "copilot.lua" },
-	-- 	config = function()
-	-- 		require("copilot_cmp").setup()
-	-- 	end,
-	-- 	lazy = true,
-	-- 	-- event = "VimEnter",
-	-- },
-	-- "rcarriga/cmp-dap",
 
 	-- treesitter:
 	{
@@ -224,6 +169,10 @@ lvim.plugins = {
 	--   end,
 	-- },
 	{
+		"KenN7/vim-arsync",
+		event = "BufWritePre",
+	},
+	{
 		"NvChad/nvim-colorizer.lua",
 		config = function()
 			require("colorizer").setup()
@@ -299,48 +248,6 @@ lvim.plugins = {
 			require("user.copilot")
 		end,
 	},
-	-- {
-	-- 	"tzachar/cmp-tabnine",
-	-- 	build = "./install.sh",
-	-- 	event = "InsertEnter",
-	-- 	config = function()
-	-- 		local tabnine = require("cmp_tabnine.config")
-
-	-- 		tabnine:setup({
-	-- 			max_lines = 1000,
-	-- 			max_num_results = 20,
-	-- 			sort = true,
-	-- 			run_on_every_keystroke = true,
-	-- 			snippet_placeholder = "..",
-	-- 			ignored_file_types = {
-	-- 				-- default is not to ignore
-	-- 				-- uncomment to ignore in lua:
-	-- 				-- lua = true
-	-- 			},
-	-- 			show_prediction_strength = false,
-	-- 		})
-	-- 	end,
-	-- },
-	-- {
-	--   "folke/noice.nvim",
-	-- config = function()
-	--   require("noice").setup({
-	--     override = {
-	--       -- override the default lsp markdown formatter with Noice
-	--       ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-	--       -- override the lsp markdown formatter with Noice
-	--       ["vim.lsp.util.stylize_markdown"] = true,
-	--       -- override cmp documentation with Noice (needs the other options to work)
-	--       ["cmp.entry.get_documentation"] = true,
-	--     },
-	--     presets = {
-	--       --ttom_search = true,
-	--       command_palette = true,
-	--       lsp_doc_border = true,
-	--     }
-	--   })
-	-- end,
-	-- },
 	{
 		"folke/todo-comments.nvim",
 		dependencies = "nvim-lua/plenary.nvim",
@@ -357,25 +264,42 @@ lvim.plugins = {
 		event = "User FileOpened",
 		-- Lazy load
 	},
-	{
-		"stevearc/dressing.nvim",
-	},
 	-- {
-	-- 	"echasnovski/mini.nvim",
-	-- 	config = function()
-	-- 		-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md
-	-- 		-- align
-	-- 		require("mini.ai").setup()
-	-- 		-- require("mini.align").setup()
-	-- 		-- require("mini.jump").setup()
-	-- 	end,
+	-- 	"stevearc/dressing.nvim",
 	-- },
 	{
-		"echasnovski/mini.ai",
+		"opalmay/floating-input.nvim",
 		config = function()
-			require("mini.ai").setup()
+			require("floating-input").setup({
+				esc_normal_mode = true,
+			})
 		end,
-		version = false,
+		branch = "feat-esc-normalmode",
+	},
+	{
+		"echasnovski/mini.nvim",
+		config = function()
+			-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md
+			require("mini.ai").setup()
+			require("mini.splitjoin").setup()
+		end,
+		event = "User FileOpened",
+	},
+	{
+		"giusgad/pets.nvim",
+		config = function()
+			require("pets").setup()
+		end,
+		cmd = { "PetsNew", "PetsNewCustom", "PetsList" },
+		dependencies = { "MunifTanjim/nui.nvim", "giusgad/hologram.nvim" },
+	},
+	{
+		"tjdevries/sg.nvim",
+		build = "cargo build --workspace",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("sg").setup({ on_attach = lvim.lsp.on_attach_callback })
+		end,
 		event = "User FileOpened",
 	},
 	{
@@ -386,31 +310,13 @@ lvim.plugins = {
 		-- event = "BufReadPost",
 		cmd = "Glance",
 	},
-	-- {
-	--   "glepnir/lspsaga.nvim",
-	--   config = function()
-	--     require("user.lspsaga")
-	--   end,
-	--   cmd = "Lspsaga",
-	-- },
-	-- preview commands as you type them
-	{
-		"smjonas/live-command.nvim",
-		config = function()
-			require("live-command").setup({
-				commands = {
-					Norm = { cmd = "norm" },
-				},
-			})
-		end,
-		cmd = "Norm",
-	},
 	-- treesitter queries map popup
 	{
 		"ziontee113/neo-minimap",
 		config = function()
 			require("user.neo-minimap")
 		end,
+		keys = "zj",
 	},
 	{
 		"simrat39/symbols-outline.nvim",
@@ -466,7 +372,10 @@ lvim.plugins = {
 		end,
 		event = "User FileOpened",
 	},
-	{ "jghauser/mkdir.nvim", event = "BufWritePre" },
+	{
+		"jghauser/mkdir.nvim",
+		event = "BufWritePre",
+	},
 	-- broken for some reason
 	-- {
 	-- 	"chrisgrieser/nvim-recorder",
@@ -481,21 +390,6 @@ lvim.plugins = {
 		end,
 		keys = "g?",
 	},
-	-- it looks cool but it's a bit too intrusive
-	-- {
-	-- 	"ray-x/navigator.lua",
-	-- 	dependencies = {
-	-- 		{ "ray-x/guihua.lua", run = "cd lua/fzy && make" },
-	-- 		{ "neovim/nvim-lspconfig" },
-	-- 	},
-	-- 	config = function()
-	-- 		-- require("user.navigator")
-	-- 	end,
-	-- },
-	-- chatgpt
-	-- {
-	-- 	"aduros/ai.vim",
-	-- },
 
 	-- Fun:
 	{
@@ -537,13 +431,13 @@ lvim.plugins = {
 		end,
 		cmd = "Zone",
 	},
-	{
-		"glacambre/firenvim",
-		build = function()
-			vim.fn["firenvim#install"](0)
-		end,
-		cond = vim.g.started_by_firenvim ~= nil,
-	},
+	-- {
+	-- 	"glacambre/firenvim",
+	-- 	build = function()
+	-- 		vim.fn["firenvim#install"](0)
+	-- 	end,
+	-- 	cond = vim.g.started_by_firenvim ~= nil,
+	-- },
 	{
 		"stevearc/oil.nvim",
 		config = function()
@@ -552,11 +446,7 @@ lvim.plugins = {
 		-- cmd = "Oil",
 		-- event = "User DirOpened",
 	},
-	-- { "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
 }
 
 lvim.builtin.bufferline.active = false
 lvim.builtin.lir.active = false
--- lvim.builtin.terminal.active = false
--- lvim.builtin.alpha.active = false
--- lvim.builtin.nvimtree.active = false
