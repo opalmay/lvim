@@ -7,11 +7,11 @@ lvim.builtin.autopairs.enable_check_bracket_line = true
 lvim.builtin.autopairs.disable_in_macro = true
 local opts = {
 	-- 	ensure_installed = "all",
-	yati = {
-		enable = true,
-		default_lazy = true,
-		suppress_conflict_warning = true,
-	},
+	-- yati = {
+	-- 	enable = true,
+	-- 	default_lazy = true,
+	-- 	suppress_conflict_warning = true,
+	-- },
 	textsubjects = {
 		enable = true,
 		prev_selection = ",", -- (Optional) keymap to select the previous selection

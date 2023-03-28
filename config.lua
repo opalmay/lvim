@@ -44,3 +44,5 @@ reload("user.smoothie")
 -- -- lvim.builtin.terminal.execs = {
 -- -- 	{ nil, "<C-8>", "Float Terminal", "float", nil },
 -- -- }
+
+-- lvim.builtin.illuminate.active = false

@@ -64,11 +64,11 @@ lvim.plugins = {
 	{ "andymass/vim-matchup", lazy = true },
 	{ "nvim-treesitter/nvim-treesitter-textobjects", lazy = true },
 	{ "RRethy/nvim-treesitter-textsubjects", lazy = true },
-	{
-		"yioneko/nvim-yati",
-		-- tag = "*"
-		ft = "python",
-	},
+	-- {
+	-- 	"yioneko/nvim-yati",
+	-- 	-- tag = "*"
+	-- 	ft = "python",
+	-- },
 	{
 		"mfussenegger/nvim-dap",
 		dependencies = {
@@ -171,10 +171,10 @@ lvim.plugins = {
 	--     require("auto-hlsearch").setup()
 	--   end,
 	-- },
-	{
-		"KenN7/vim-arsync",
-		event = "BufWritePre",
-	},
+	-- {
+	-- 	"KenN7/vim-arsync",
+	-- 	event = "BufWritePre",
+	-- },
 	{
 		"NvChad/nvim-colorizer.lua",
 		config = function()
@@ -320,7 +320,7 @@ lvim.plugins = {
 		config = function()
 			require("user.neo-minimap")
 		end,
-		keys = "zj",
+		-- keys = "zj",
 	},
 	{
 		"simrat39/symbols-outline.nvim",
