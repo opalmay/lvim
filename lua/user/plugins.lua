@@ -178,9 +178,11 @@ lvim.plugins = {
 	{
 		"NvChad/nvim-colorizer.lua",
 		config = function()
-			require("colorizer").setup()
+			require("colorizer").setup({
+				"!*",
+			})
 		end,
-		event = "VeryLazy",
+		cmd = "ColorizerToggle",
 	},
 	{
 		"iamcco/markdown-preview.nvim",
@@ -223,7 +225,7 @@ lvim.plugins = {
 	},
 	{
 		"neovim/nvim-lspconfig",
-		dependencies = { "mason-lspconfig.nvim", "nlsp-settings.nvim", "nvim-config-local" },
+		dependencies = { "mason-lspconfig.nvim", "nlsp-settings.nvim", "nvim-config-local", "nvim-navbuddy" },
 	},
 	{
 		"klen/nvim-config-local",
@@ -362,7 +364,12 @@ lvim.plugins = {
 		"almo7aya/openingh.nvim",
 		cmd = { "OpenInGHRepo", "OpenInGHFile" },
 	},
-	{ "mong8se/actually.nvim" },
+	{
+		"axieax/typo.nvim",
+		config = function()
+			require("typo").setup()
+		end,
+	},
 	{
 		"vigoux/notifier.nvim",
 		config = function()
@@ -450,6 +457,29 @@ lvim.plugins = {
 		-- cmd = "Oil",
 		-- event = "User DirOpened",
 	},
+	{
+		"james1236/backseat.nvim",
+		config = function()
+			require("backseat").setup({
+				-- Alternatively, set the env var $OPENAI_API_KEY by putting "export OPENAI_API_KEY=sk-xxxxx" in your ~/.bashrc
+				openai_model_id = "gpt-3.5-turbo", --gpt-4 (If you do not have access to a model, it says "The model does not exist")
+				language = "english", -- Such as 'japanese', 'french', 'pirate', 'LOLCAT'
+				-- split_threshold = 100,
+				-- additional_instruction = "", -- (GPT-3 will probably deny this request, but GPT-4 complies)
+				-- highlight = {
+				--     icon = '', -- ''
+				--     group = 'Comment',
+				-- }
+			})
+		end,
+		cmd = { "Backseat", "BackseatAsk" },
+	},
+	{
+		"SmiteshP/nvim-navbuddy",
+		lazy = true,
+	},
+	{ "chrisgrieser/nvim-spider", lazy = true },
+
 	-- {
 	-- 	"miversen33/netman.nvim",
 	-- 	config = function()
