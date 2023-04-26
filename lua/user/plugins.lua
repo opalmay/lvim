@@ -479,7 +479,37 @@ lvim.plugins = {
 		lazy = true,
 	},
 	{ "chrisgrieser/nvim-spider", lazy = true },
-
+	{
+		"Bryley/neoai.nvim",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+		cmd = {
+			"NeoAI",
+			"NeoAIOpen",
+			"NeoAIClose",
+			"NeoAIToggle",
+			"NeoAIContext",
+			"NeoAIContextOpen",
+			"NeoAIContextClose",
+			"NeoAIInject",
+			"NeoAIInjectCode",
+			"NeoAIInjectContext",
+			"NeoAIInjectContextCode",
+		},
+		keys = {
+			{ "<leader>od", desc = "summarize text" },
+			{ "<leader>og", desc = "generate git message" },
+		},
+		config = function()
+			require("neoai").setup({
+				-- Options go here
+			})
+		end,
+	},
+	{
+		"ThePrimeagen/refactoring.nvim",
+	},
 	-- {
 	-- 	"miversen33/netman.nvim",
 	-- 	config = function()

@@ -41,6 +41,7 @@ lvim.builtin.telescope.on_config_done = function(telescope)
 	-- pcall(telescope.load_extension, "zoxide")
 	-- pcall(telescope.load_extension, "undo")
 	pcall(telescope.load_extension, "lazy")
+	-- pcall(telescope.load_extension, "refactoring")
 end
 
 -- lvim.builtin.telescope.pickers.live_grep.layout_config = {
