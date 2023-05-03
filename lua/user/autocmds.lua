@@ -5,6 +5,8 @@ vim.cmd("autocmd BufEnter * set fo-=c fo-=r fo-=o")
 vim.cmd("au BufEnter github.com_*.txt set filetype=markdown")
 vim.cmd("au BufEnter solarwinds.nice.com_*.txt set filetype=ps1")
 
+-- vim.cmd("autocmd CmdlineLeave : echo ''")
+
 lvim.autocommands = {
 	{
 		{ "BufEnter" },
@@ -29,6 +31,13 @@ lvim.autocommands = {
 			pattern = { "*.lua" },
 			command = "set nospell",
 		},
+	},
+	{
+	  {"CmdlineLeave"},
+	  {
+	    group = cmd,
+	    pattern = "*",
+	    -- echo "hi"
 	},
 	-- {
 	-- { "BufEnter" },

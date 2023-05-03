@@ -2,26 +2,27 @@
 
 -- Shorten function name
 -- local map = vim.api.nvim_set_keymap
-local map = function(mode, bind, action, opts)
+-- local map = function(mode, bind, action, opts)
+local function map(mode, bind, action, opts)
 	-- local opts = { noremap = true, silent = true }
-	if opts then
-		vim.keymap.set(mode, bind, action, opts)
+	if type(mode) == "table" then
+		for _, m in ipairs(mode) do
+			map(m, bind, action, opts)
+		end
 		return
 	end
-	local key
-	if mode == "n" then
-		key = "normal_mode"
-	elseif mode == "v" then
-		key = "visual_mode"
-	elseif mode == "x" then
-		key = "visual_block_mode"
-	elseif mode == "i" then
-		key = "insert_mode"
-	elseif mode == "t" then
-		key = "term_mode"
-	elseif mode == "c" then
-		key = "command_mode"
+	if opts then
+		action = { action, opts }
 	end
+	local mode_map = {
+		n = "normal_mode",
+		v = "visual_mode",
+		x = "visual_block_mode",
+		i = "insert_mode",
+		t = "term_mode",
+		c = "command_mode",
+	}
+	local key = mode_map[mode]
 	lvim.keys[key][bind] = action
 end
 -- map('n', 'gD', '<CMD>Glance definitions<CR>')
@@ -317,3 +318,5 @@ map("v", "X", "<Plug>(leap-backward-till)")
 
 -- map("n", "gp", "`[v`]") -- pasted text to visual mode
 vim.cmd([[nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]']])
+
+map({ "n", "v" }, "<C-m>", "<cmd>Navbuddy<cr>")
