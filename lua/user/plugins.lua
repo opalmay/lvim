@@ -101,9 +101,12 @@ lvim.plugins = {
 
 	-- run stuff
 	-- {
-	--   "michaelb/sniprun",
-	--   build = 'bash ./install.sh',
-	--   cmd = "SnipRun"
+	-- 	"michaelb/sniprun",
+	-- 	build = "bash ./install.sh",
+	-- 	-- cmd = { "SnipRun", "SnipLive" },
+	-- 	config = function()
+	-- 		require("user.sniprun")
+	-- 	end,
 	-- },
 	{
 		"is0n/jaq-nvim",
@@ -477,6 +480,7 @@ lvim.plugins = {
 	{
 		"SmiteshP/nvim-navbuddy",
 		lazy = true,
+		-- cmd = "Navbuddy",
 	},
 	{ "chrisgrieser/nvim-spider", lazy = true },
 	{

@@ -20,6 +20,7 @@ formatters.setup({
 	{
 		command = "black",
 		extra_args = { "--line-length", "200" },
+		filetypes = { "python" },
 	},
 	-- {
 	--   command = "yapf",
