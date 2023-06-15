@@ -23,7 +23,7 @@ lvim.builtin.which_key.mappings["o"] = {
 lvim.builtin.which_key.mappings["a"] = { ":lua require('harpoon.mark').add_file()<CR>", "Harpoon Add" }
 -- lvim.builtin.which_key.mappings["t"] = { ":silent !bspc rule -a kitty state=floating -o && kitty -e zsh -is eval \"cd $(pwd)\" & <CR>", "Floating Term" }
 
-lvim.builtin.which_key.mappings["t"] = { ":ToggleTerm<CR>", "Toggle Term" }
+lvim.builtin.which_key.mappings["y"] = { ":ToggleTerm<CR>", "Toggle Term" }
 lvim.builtin.which_key.mappings["i"] = { ":lua require('nvim-toggler').toggle()<CR>", "Invert Word" }
 
 -- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
@@ -58,7 +58,7 @@ lvim.builtin.which_key.mappings["s"] = { "<cmd>Telescope current_buffer_fuzzy_fi
 
 local keymap = lvim.builtin.which_key.mappings
 
-keymap["t"] = keymap["e"]
+-- keymap["t"] = keymap["e"]
 keymap["e"] = { "<cmd>Oil --float<cr>", "Oil" }
 
 keymap["r"] = { name = "SearchReplaceSingleBuffer" }

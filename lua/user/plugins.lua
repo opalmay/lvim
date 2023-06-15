@@ -1,7 +1,41 @@
 lvim.plugins = {
+	{
+		-- multiple replacements thingy
+		"AckslD/muren.nvim",
+		config = true,
+		cmd = { "MurenToggle" },
+	},
 	-- {
-	-- 	"nvim-telescope/telescope.nvim",
-	-- 	dependencies = { "telescope-fzf-native.nvim", "tsakirist/telescope-lazy.nvim" },
+	-- 	"Bekaboo/dropbar.nvim",
+	-- 	config = function()
+	-- 		-- duplicate lvim.icons.kind
+	-- 		local kind_icons = vim.deepcopy(lvim.icons.kind)
+	-- 		-- add padding
+	-- 		for k, v in pairs(kind_icons) do
+	-- 			kind_icons[k] = v .. " "
+	-- 		end
+	-- 		-- require("dropbar").setup()
+	-- 		require("dropbar").setup({
+	-- 			icons = {
+	-- 				kinds = {
+	-- 					symbols = kind_icons,
+	-- 				},
+	-- 				ui = {
+	-- 					bar = {
+	-- 						-- separator = "  ",
+	-- 						separator = " " .. lvim.icons.ui.ChevronRight .. " ",
+	-- 						extends = "…",
+	-- 					},
+	-- 					menu = {
+	-- 						{
+	-- 							separator = " ",
+	-- 							indicator = " ",
+	-- 						},
+	-- 					},
+	-- 				},
+	-- 			},
+	-- 		})
+	-- 	end,
 	-- },
 	{ "catppuccin/nvim", name = "catppuccin" },
 	-- { "Yazeed1s/oh-lucy.nvim" },
@@ -64,11 +98,11 @@ lvim.plugins = {
 	{ "andymass/vim-matchup", lazy = true },
 	{ "nvim-treesitter/nvim-treesitter-textobjects", lazy = true },
 	{ "RRethy/nvim-treesitter-textsubjects", lazy = true },
-	-- {
-	-- 	"yioneko/nvim-yati",
-	-- 	-- tag = "*"
-	-- 	ft = "python",
-	-- },
+	{
+		"yioneko/nvim-yati",
+		-- tag = "*"
+		ft = "python",
+	},
 	{
 		"mfussenegger/nvim-dap",
 		dependencies = {
@@ -199,10 +233,10 @@ lvim.plugins = {
 		"ray-x/lsp_signature.nvim",
 		event = "InsertEnter",
 	},
-	{
-		"Vimjas/vim-python-pep8-indent",
-		ft = "python",
-	},
+	-- {
+	-- 	"Vimjas/vim-python-pep8-indent",
+	-- 	ft = "python",
+	-- },
 	{
 		"gbprod/yanky.nvim",
 		-- event = "BufReadPost",
@@ -542,4 +576,7 @@ lvim.plugins = {
 
 lvim.builtin.bufferline.active = false
 lvim.builtin.lir.active = false
+-- lvim.builtin.breadcrumbs.active = true
 -- lvim.builtin.nvimtree.active = false
+--
+--
