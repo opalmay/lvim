@@ -549,6 +549,12 @@ lvim.plugins = {
 		"ThePrimeagen/refactoring.nvim",
 	},
 	-- {
+	-- 	"phaazon/hop.nvim",
+	-- 	config = function()
+	-- 		require("hop").setup()
+	-- 	end,
+	-- },
+	-- {
 	-- 	"miversen33/netman.nvim",
 	-- 	config = function()
 	-- 		require("netman")
