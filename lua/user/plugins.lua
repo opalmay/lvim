@@ -90,14 +90,14 @@ lvim.plugins = {
 		dependencies = {
 			-- "nvim-ts-context-commentstring",
 			"vim-matchup",
-			"nvim-treesitter-textobjects",
-			"nvim-treesitter-textsubjects",
+			-- "nvim-treesitter-textobjects",
+			-- "nvim-treesitter-textsubjects",
 			-- "nvim-yati",
 		},
 	},
 	{ "andymass/vim-matchup", lazy = true },
-	{ "nvim-treesitter/nvim-treesitter-textobjects", lazy = true },
-	{ "RRethy/nvim-treesitter-textsubjects", lazy = true },
+	-- { "nvim-treesitter/nvim-treesitter-textobjects", lazy = true },
+	-- { "RRethy/nvim-treesitter-textsubjects", lazy = true },
 	{
 		"yioneko/nvim-yati",
 		-- tag = "*"
@@ -221,14 +221,14 @@ lvim.plugins = {
 		end,
 		cmd = "ColorizerToggle",
 	},
-	{
-		"iamcco/markdown-preview.nvim",
-		build = "cd app && npm install",
-		init = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
-		ft = "markdown",
-	},
+	-- {
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	build = "cd app && npm install",
+	-- 	init = function()
+	-- 		vim.g.mkdp_filetypes = { "markdown" }
+	-- 	end,
+	-- 	ft = "markdown",
+	-- },
 	{
 		"ray-x/lsp_signature.nvim",
 		event = "InsertEnter",
@@ -324,6 +324,7 @@ lvim.plugins = {
 			-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md
 			require("mini.ai").setup()
 			require("mini.splitjoin").setup()
+			require("mini.jump").setup()
 		end,
 		event = "User FileOpened",
 	},
@@ -354,13 +355,13 @@ lvim.plugins = {
 		cmd = "Glance",
 	},
 	-- treesitter queries map popup
-	{
-		"ziontee113/neo-minimap",
-		config = function()
-			require("user.neo-minimap")
-		end,
-		-- keys = "zj",
-	},
+	-- {
+	-- 	"ziontee113/neo-minimap",
+	-- 	config = function()
+	-- 		require("user.neo-minimap")
+	-- 	end,
+	-- 	-- keys = "zj",
+	-- },
 	{
 		"simrat39/symbols-outline.nvim",
 		config = function()
@@ -371,8 +372,8 @@ lvim.plugins = {
 	{
 		"sindrets/diffview.nvim",
 	},
-	-- lists helper
 	{
+		-- lists helper
 		"gaoDean/autolist.nvim",
 		ft = {
 			"markdown",
@@ -385,23 +386,24 @@ lvim.plugins = {
 		end,
 		event = "User FileOpened",
 	},
-	-- delay repeating keys
-	-- {
-	--   "ja-ford/delaytrain.nvim",
-	--   config = function()
-	--     require("delaytrain").setup({
-	--       delay_ms = 1000, -- How long repeated usage of a key should be prevented
-	--       grace_period = 3, -- How many repeated keypresses are allowed
-	--     })
-	--   end,
-	--   event = "BufReadPost",
-	-- },
-	-- open project in github
 	{
+		-- delay repeating keys
+		"ja-ford/delaytrain.nvim",
+		config = function()
+			require("delaytrain").setup({
+				delay_ms = 1000, -- How long repeated usage of a key should be prevented
+				grace_period = 3, -- How many repeated keypresses are allowed
+			})
+		end,
+		event = "BufReadPost",
+	},
+	{
+		-- open project in github
 		"almo7aya/openingh.nvim",
 		cmd = { "OpenInGHRepo", "OpenInGHFile" },
 	},
 	{
+		-- Did you mean to open this file instead?
 		"axieax/typo.nvim",
 		config = function()
 			require("typo").setup()
@@ -440,45 +442,45 @@ lvim.plugins = {
 	},
 
 	-- Fun:
-	{
-		"tamton-aquib/stuff.nvim",
-		config = function()
-			require("calc").setup()
-		end,
-		cmd = "Calc",
-	},
-	{
-		"Eandrju/cellular-automaton.nvim",
-		cmd = "CellularAutomaton",
-	},
-	{
-		"tamton-aquib/duck.nvim",
-		lazy = true,
-	},
-	{
-		"tamton-aquib/zone.nvim",
-		config = function()
-			require("zone").setup({
-				style = "treadmill",
-				after = 60000, -- Idle timeout
-				-- More options to come later
+	-- {
+	-- 	"tamton-aquib/stuff.nvim",
+	-- 	config = function()
+	-- 		require("calc").setup()
+	-- 	end,
+	-- 	cmd = "Calc",
+	-- },
+	-- {
+	-- 	"Eandrju/cellular-automaton.nvim",
+	-- 	cmd = "CellularAutomaton",
+	-- },
+	-- {
+	-- 	"tamton-aquib/duck.nvim",
+	-- 	lazy = true,
+	-- },
+	-- {
+	-- 	"tamton-aquib/zone.nvim",
+	-- 	config = function()
+	-- 		require("zone").setup({
+	-- 			style = "treadmill",
+	-- 			after = 60000, -- Idle timeout
+	-- 			-- More options to come later
 
-				treadmill = {
-					direction = "left",
-					-- Opts for Treadmill style
-				},
-				epilepsy = {
-					stage = "aura", -- "aura" or "ictal"
-					-- etc.
-				},
-				dvd = {
-					-- Opts for Dvd style
-				},
-				-- etc
-			})
-		end,
-		cmd = "Zone",
-	},
+	-- 			treadmill = {
+	-- 				direction = "left",
+	-- 				-- Opts for Treadmill style
+	-- 			},
+	-- 			epilepsy = {
+	-- 				stage = "aura", -- "aura" or "ictal"
+	-- 				-- etc.
+	-- 			},
+	-- 			dvd = {
+	-- 				-- Opts for Dvd style
+	-- 			},
+	-- 			-- etc
+	-- 		})
+	-- 	end,
+	-- 	cmd = "Zone",
+	-- },
 	-- {
 	-- 	"glacambre/firenvim",
 	-- 	build = function()
@@ -545,8 +547,23 @@ lvim.plugins = {
 			})
 		end,
 	},
+	-- {
+	-- 	"ThePrimeagen/refactoring.nvim",
+	-- },
 	{
-		"ThePrimeagen/refactoring.nvim",
+		"crusj/bookmarks.nvim",
+		keys = {
+			{ "<tab><tab>", mode = { "n" } },
+			{ "\\z", mode = { "n" } },
+		},
+		config = function()
+			require("bookmarks").setup({
+				fix_enable = true,
+				preview_ext_enable = true,
+				virt_text = "",
+			})
+		end,
+		-- event = "BufRead",
 	},
 	-- {
 	-- 	"phaazon/hop.nvim",
