@@ -69,7 +69,6 @@ lvim.plugins = {
 		config = function()
 			require("stickybuf").setup()
 		end,
-		event = "BufReadPost",
 	},
 	{
 		"rbong/vim-buffest",
@@ -90,10 +89,18 @@ lvim.plugins = {
 		dependencies = {
 			-- "nvim-ts-context-commentstring",
 			"vim-matchup",
+			"nvim-ts-autotag",
 			-- "nvim-treesitter-textobjects",
 			-- "nvim-treesitter-textsubjects",
 			-- "nvim-yati",
 		},
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+		lazy = true,
 	},
 	{ "andymass/vim-matchup", lazy = true },
 	-- { "nvim-treesitter/nvim-treesitter-textobjects", lazy = true },
@@ -328,14 +335,14 @@ lvim.plugins = {
 		end,
 		event = "User FileOpened",
 	},
-	{
-		"giusgad/pets.nvim",
-		config = function()
-			require("pets").setup()
-		end,
-		cmd = { "PetsNew", "PetsNewCustom", "PetsList" },
-		dependencies = { "MunifTanjim/nui.nvim", "giusgad/hologram.nvim" },
-	},
+	-- {
+	-- 	"giusgad/pets.nvim",
+	-- 	config = function()
+	-- 		require("pets").setup()
+	-- 	end,
+	-- 	cmd = { "PetsNew", "PetsNewCustom", "PetsList" },
+	-- 	dependencies = { "MunifTanjim/nui.nvim", "giusgad/hologram.nvim" },
+	-- },
 	-- {
 	-- 	"tjdevries/sg.nvim",
 	-- 	build = "cargo build --workspace",
@@ -386,17 +393,17 @@ lvim.plugins = {
 		end,
 		event = "User FileOpened",
 	},
-	{
-		-- delay repeating keys
-		"ja-ford/delaytrain.nvim",
-		config = function()
-			require("delaytrain").setup({
-				delay_ms = 1000, -- How long repeated usage of a key should be prevented
-				grace_period = 3, -- How many repeated keypresses are allowed
-			})
-		end,
-		event = "BufReadPost",
-	},
+	-- {
+	-- 	-- delay repeating keys
+	-- 	"ja-ford/delaytrain.nvim",
+	-- 	config = function()
+	-- 		require("delaytrain").setup({
+	-- 			delay_ms = 1000, -- How long repeated usage of a key should be prevented
+	-- 			grace_period = 3, -- How many repeated keypresses are allowed
+	-- 		})
+	-- 	end,
+	-- 	event = "BufReadPost",
+	-- },
 	{
 		-- open project in github
 		"almo7aya/openingh.nvim",
@@ -550,21 +557,22 @@ lvim.plugins = {
 	-- {
 	-- 	"ThePrimeagen/refactoring.nvim",
 	-- },
-	{
-		"crusj/bookmarks.nvim",
-		keys = {
-			{ "<tab><tab>", mode = { "n" } },
-			{ "\\z", mode = { "n" } },
-		},
-		config = function()
-			require("bookmarks").setup({
-				fix_enable = true,
-				preview_ext_enable = true,
-				virt_text = "",
-			})
-		end,
-		-- event = "BufRead",
-	},
+	-- # TODO: fix right key
+	-- {
+	-- 	"crusj/bookmarks.nvim",
+	-- 	keys = {
+	-- 		{ "<tab><tab>", mode = { "n" } },
+	-- 		{ "\\z", mode = { "n" } },
+	-- 	},
+	-- 	config = function()
+	-- 		require("bookmarks").setup({
+	-- 			fix_enable = true,
+	-- 			preview_ext_enable = true,
+	-- 			virt_text = "",
+	-- 		})
+	-- 	end,
+	-- 	-- event = "BufRead",
+	-- },
 	-- {
 	-- 	"phaazon/hop.nvim",
 	-- 	config = function()

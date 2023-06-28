@@ -53,6 +53,13 @@ vim.keymap.set({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<C
 vim.keymap.set({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
 vim.keymap.set({ "n", "o", "x" }, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" })
 
+-- vim.keymap.set({ "n", "o", "x" }, "W", "w")
+-- vim.keymap.set({ "n", "o", "x" }, "E", "e")
+-- vim.keymap.set({ "n", "o", "x" }, "B", "b")
+
+-- https://github.com/chrisgrieser/nvim-spider makes it consistent with motions
+vim.keymap.set("n", "cw", "ce", { remap = true })
+
 -- require("refactoring").setup({})
 
 local code_actions = require("lvim.lsp.null-ls.code_actions")
