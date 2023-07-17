@@ -33,6 +33,17 @@ lvim.autocommands = {
 		},
 	},
 	-- {
+	--   { "CursorMoved" },
+	--   {
+	--     group = cursor,
+	--     pattern = "*",
+	--     callback = function ()
+	--       vim.notify("CursorMoved")
+	--       require('harpoon.ui').toggle_quick_menu()
+	--     end
+	--   },
+	-- }
+	-- {
 	--   {"CmdlineLeave"},
 	--   {
 	--     group = cmd,

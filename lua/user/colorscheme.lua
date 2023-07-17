@@ -43,7 +43,12 @@ require("catppuccin").setup({
 	},
 })
 lvim.colorscheme = "catppuccin"
-
+-- local hour = tonumber(vim.fn.strftime("%H"))
+-- if hour >= 17 or hour < 7 then
+-- 	lvim.colorscheme = "catppuccin-macchiato"
+-- else
+-- 	lvim.colorscheme = "catppuccin-latte"
+-- end
 -- lvim.transparent_window = true
 -- local colors = require("catppuccin.palettes").get_palette() -- fetch colors from g:catppuccin_flavour palette
 

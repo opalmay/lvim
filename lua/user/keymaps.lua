@@ -319,7 +319,7 @@ map("v", "X", "<Plug>(leap-backward-till)")
 -- map("n", "gp", "`[v`]") -- pasted text to visual mode
 vim.cmd([[nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]']])
 
-map({ "n", "v" }, "<C-,", "<cmd>Navbuddy<cr>")
+-- map({ "n", "v" }, "<C-,", "<cmd>Navbuddy<cr>")
 
 -- place this in one of your configuration file(s)
 -- local hop = require("hop")

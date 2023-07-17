@@ -265,7 +265,7 @@ lvim.plugins = {
 		config = function()
 			require("stay-in-place").setup()
 		end,
-		keys = { ">", "<", "=" },
+		event = "User FileOpened",
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -391,7 +391,7 @@ lvim.plugins = {
 		config = function()
 			require("user.autolist")
 		end,
-		event = "User FileOpened",
+		-- event = "User FileOpened",
 	},
 	-- {
 	-- 	-- delay repeating keys
@@ -524,6 +524,7 @@ lvim.plugins = {
 		"SmiteshP/nvim-navbuddy",
 		lazy = true,
 		-- cmd = "Navbuddy",
+		dependencies = { "SmiteshP/nvim-navic" },
 	},
 	{ "chrisgrieser/nvim-spider", lazy = true },
 	{
