@@ -1,614 +1,537 @@
 lvim.plugins = {
-	{
-		-- multiple replacements thingy
-		"AckslD/muren.nvim",
-		config = true,
-		cmd = { "MurenToggle" },
-	},
-	-- {
-	-- 	"Bekaboo/dropbar.nvim",
-	-- 	config = function()
-	-- 		-- duplicate lvim.icons.kind
-	-- 		local kind_icons = vim.deepcopy(lvim.icons.kind)
-	-- 		-- add padding
-	-- 		for k, v in pairs(kind_icons) do
-	-- 			kind_icons[k] = v .. " "
-	-- 		end
-	-- 		-- require("dropbar").setup()
-	-- 		require("dropbar").setup({
-	-- 			icons = {
-	-- 				kinds = {
-	-- 					symbols = kind_icons,
-	-- 				},
-	-- 				ui = {
-	-- 					bar = {
-	-- 						-- separator = "  ",
-	-- 						separator = " " .. lvim.icons.ui.ChevronRight .. " ",
-	-- 						extends = "…",
-	-- 					},
-	-- 					menu = {
-	-- 						{
-	-- 							separator = " ",
-	-- 							indicator = " ",
-	-- 						},
-	-- 					},
-	-- 				},
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
-	{ "catppuccin/nvim", name = "catppuccin" },
-	-- { "Yazeed1s/oh-lucy.nvim" },
-	{
-		"f-person/git-blame.nvim",
-		cmd = "GitBlameToggle",
-	},
-	{
-		"ThePrimeagen/harpoon",
-		lazy = true,
-		-- config = function()
-		-- 	require("harpoon").setup({ save_on_toggle = true })
-		-- end,
-	},
-	{
-		"opalmay/vim-smoothie",
-		-- event = "User FileOpened",
-		-- keys = { "j", "k" },
-	},
-	{
-		"opalmay/neoscroll.nvim",
-		branch = "feat-scroll-past-bottom",
-		event = "User FileOpened",
-	},
-	{
-		"nvim-pack/nvim-spectre",
-		cmd = "Spectre",
-	},
-	{
-		"stevearc/stickybuf.nvim",
-		config = function()
-			require("stickybuf").setup()
-		end,
-	},
-	{
-		"rbong/vim-buffest",
-		event = "BufReadPost",
-	},
-	-- { "junegunn/vim-slash" }, Maybe fork this?
-	{
-		"kylechui/nvim-surround",
-		config = function()
-			require("nvim-surround").setup()
-		end,
-		keys = { "ys", "cs", "ds" },
-	},
+  {
+    "AckslD/muren.nvim",
+    config = true,
+    cmd = { "MurenToggle" },
+  },
+  { "catppuccin/nvim",      name = "catppuccin" },
+  {
+    "f-person/git-blame.nvim",
+    cmd = "GitBlameToggle",
+  },
+  {
+    "ThePrimeagen/harpoon",
+    lazy = true,
+  },
+  {
+    "opalmay/vim-smoothie",
+  },
+  {
+    "opalmay/neoscroll.nvim",
+    branch = "feat-scroll-past-bottom",
+    event = "User FileOpened",
+  },
+  {
+    "nvim-pack/nvim-spectre",
+    cmd = "Spectre",
+  },
+  {
+    "stevearc/stickybuf.nvim",
+    config = function()
+      require("stickybuf").setup()
+    end,
+  },
+  {
+    "rbong/vim-buffest",
+    event = "BufReadPost",
+  },
+  {
+    "kylechui/nvim-surround",
+    config = function()
+      require("nvim-surround").setup()
+    end,
+    keys = { "ys", "cs", "ds" },
+  },
 
-	-- treesitter:
-	{
-		"nvim-treesitter/nvim-treesitter",
-		dependencies = {
-			-- "nvim-ts-context-commentstring",
-			"vim-matchup",
-			"nvim-ts-autotag",
-			-- "nvim-treesitter-textobjects",
-			-- "nvim-treesitter-textsubjects",
-			-- "nvim-yati",
-		},
-	},
-	{
-		"windwp/nvim-ts-autotag",
-		config = function()
-			require("nvim-ts-autotag").setup()
-		end,
-		lazy = true,
-	},
-	{ "andymass/vim-matchup", lazy = true },
-	-- { "nvim-treesitter/nvim-treesitter-textobjects", lazy = true },
-	-- { "RRethy/nvim-treesitter-textsubjects", lazy = true },
-	{
-		"yioneko/nvim-yati",
-		-- tag = "*"
-		ft = "python",
-	},
-	{
-		"mfussenegger/nvim-dap",
-		dependencies = {
-			"theHamsta/nvim-dap-virtual-text",
-			"mfussenegger/nvim-dap-python",
-		},
-	},
-	-- dap
-	{
-		"theHamsta/nvim-dap-virtual-text",
-		config = function()
-			require("user.dap-virtual-text")
-		end,
-		lazy = true,
-	},
-	{
-		"mfussenegger/nvim-dap-python",
-		lazy = true,
-	},
-	{
-		"Weissle/persistent-breakpoints.nvim",
-		config = function()
-			require("persistent-breakpoints").setup({
-				load_breakpoints_event = "BufReadPost",
-			})
-		end,
-		-- event = "BufReadPost",
-		lazy = true,
-	},
+  {
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "vim-matchup",
+      "nvim-ts-autotag",
+    },
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+    lazy = true,
+  },
+  { "andymass/vim-matchup", lazy = true },
+  {
+    "yioneko/nvim-yati",
+    ft = "python",
+  },
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "theHamsta/nvim-dap-virtual-text",
+      "mfussenegger/nvim-dap-python",
+    },
+  },
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    config = function()
+      require("user.dap-virtual-text")
+    end,
+    lazy = true,
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    lazy = true,
+  },
+  {
+    "Weissle/persistent-breakpoints.nvim",
+    config = function()
+      require("persistent-breakpoints").setup({
+        load_breakpoints_event = "BufReadPost",
+      })
+    end,
+    lazy = true,
+  },
 
-	-- run stuff
-	-- {
-	-- 	"michaelb/sniprun",
-	-- 	build = "bash ./install.sh",
-	-- 	-- cmd = { "SnipRun", "SnipLive" },
-	-- 	config = function()
-	-- 		require("user.sniprun")
-	-- 	end,
-	-- },
-	{
-		"is0n/jaq-nvim",
-		config = function()
-			require("user.jaq")
-		end,
-		cmd = "Jaq",
-	},
+  {
+    "is0n/jaq-nvim",
+    config = function()
+      require("user.jaq")
+    end,
+    cmd = "Jaq",
+  },
 
-	{
-		"folke/trouble.nvim",
-		cmd = "TroubleToggle",
-	},
-	{
-		"kevinhwang91/nvim-bqf",
-		config = function()
-			require("user.bqf")
-		end,
-		ft = "qf",
-	},
-	{
-		"sindrets/diffview.nvim",
-		cmd = { "DiffviewOpen", "DiffviewFileHistory" },
-	},
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
+  {
+    "kevinhwang91/nvim-bqf",
+    config = function()
+      require("user.bqf")
+    end,
+    ft = "qf",
+  },
+  {
+    "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+  },
 
-	-- { "folke/noice.nvim" },
-	-- { "MunifTanjim/nui.nvim" },
+  {
+    "ggandor/leap.nvim",
+    lazy = true,
+  },
 
-	-- " }phaazon/hop.nvim",
-	{
-		"ggandor/leap.nvim",
-		lazy = true,
-	},
+  {
+    "opalmay/vim-EnhancedJumps",
+    event = "BufReadPost",
+    dependencies = {
+      "inkarkat/vim-ingo-library",
+    },
+  },
+  {
+    "NvChad/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup({
+        "!*",
+      })
+    end,
+    cmd = "ColorizerToggle",
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "InsertEnter",
+  },
+  {
+    "gbprod/yanky.nvim",
+    event = "User FileOpened",
+    config = function()
+      require("user.yanky")
+    end,
+  },
+  {
+    "gbprod/substitute.nvim",
+    config = function()
+      require("user.substitute")
+    end,
+    lazy = true,
+  },
+  {
+    "gbprod/stay-in-place.nvim",
+    config = function()
+      require("stay-in-place").setup()
+    end,
+    event = "User FileOpened",
+  },
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = { "mason-lspconfig.nvim", "nlsp-settings.nvim", "nvim-config-local", "nvim-navbuddy" },
+  },
+  {
+    "klen/nvim-config-local",
+    config = function()
+      require("config-local").setup()
+    end,
+  },
+  {
+    "ThePrimeagen/vim-be-good",
+    cmd = "VimBeGood",
+  },
+  {
+    "MTDL9/vim-log-highlighting",
+    ft = "log",
+  },
+  {
+    "mbbill/undotree",
+    cmd = "UndotreeToggle",
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("user.copilot")
+    end,
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup()
+    end,
+    event = "User FileOpened",
+  },
+  {
+    "roobert/search-replace.nvim",
+    config = function()
+      require("search-replace").setup()
+    end,
+    event = "User FileOpened",
+  },
+  {
+    "opalmay/floating-input.nvim",
+    config = function()
+      require("floating-input").setup({
+        esc_normal_mode = true,
+      })
+    end,
+    branch = "feat-esc-normalmode",
+  },
+  {
+    "echasnovski/mini.nvim",
+    config = function()
+      require("mini.ai").setup()
+      require("mini.splitjoin").setup()
+      require("mini.jump").setup()
+    end,
+    event = "User FileOpened",
+  },
+  {
+    "DNLHC/glance.nvim",
+    config = function()
+      require("user.glance")
+    end,
+    cmd = "Glance",
+  },
+  {
+    "simrat39/symbols-outline.nvim",
+    config = function()
+      require("user.symbols_outline")
+    end,
+    cmd = { "SymbolsOutline", "SymbolsOutlineOpen", "SymbolsOutlineClose" },
+  },
+  {
+    "sindrets/diffview.nvim",
+  },
+  {
+    "gaoDean/autolist.nvim",
+    ft = {
+      "markdown",
+      "text",
+      "tex",
+      "plaintex",
+    },
+    config = function()
+      require("user.autolist")
+    end,
+  },
+  {
+    "almo7aya/openingh.nvim",
+    cmd = { "OpenInGHRepo", "OpenInGHFile" },
+  },
+  {
+    "axieax/typo.nvim",
+    config = function()
+      require("typo").setup()
+    end,
+  },
+  -- {
+  -- 	"folke/noice.nvim",
+  -- 	event = "VeryLazy",
+  -- 	opts = {
+  -- 		lsp = {
+  -- 			override = {
+  -- 				["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+  -- 				["vim.lsp.util.stylize_markdown"] = true,
+  -- 				["cmp.entry.get_documentation"] = true,
+  -- 			},
+  -- 		},
+  -- 		routes = {
+  -- 			{
+  -- 				filter = {
+  -- 					event = "msg_show",
+  -- 					any = {
+  -- 						{ find = "%d+L, %d+B" },
+  -- 						{ find = "; after #%d+" },
+  -- 						{ find = "; before #%d+" },
+  -- 					},
+  -- 				},
+  -- 				view = "mini",
+  -- 			},
+  -- 		},
+  -- 		presets = {
+  -- 			bottom_search = true,
+  -- 			command_palette = true,
+  -- 			long_message_to_split = true,
+  -- 			inc_rename = true,
+  -- 		},
+  -- 	},
+  --    -- stylua: ignore
+  --    keys = {
+  --      { "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c", desc = "Redirect Cmdline" },
+  --      { "<leader>snl", function() require("noice").cmd("last") end, desc = "Noice Last Message" },
+  --      { "<leader>snh", function() require("noice").cmd("history") end, desc = "Noice History" },
+  --      { "<leader>sna", function() require("noice").cmd("all") end, desc = "Noice All" },
+  --      { "<leader>snd", function() require("noice").cmd("dismiss") end, desc = "Dismiss All" },
+  --      { "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true, expr = true, desc = "Scroll forward", mode = {"i", "n", "s"} },
+  --      { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll backward", mode = {"i", "n", "s"}},
+  --    },
+  -- },
+  {
+    "vigoux/notifier.nvim",
+    config = function()
+      require("notifier").setup()
+    end,
+  },
+  {
+    "nguyenvukhang/nvim-toggler",
+    config = function()
+      require("user.toggler")
+    end,
+    event = "User FileOpened",
+  },
+  {
+    "jghauser/mkdir.nvim",
+    event = "BufWritePre",
+  },
+  {
+    "andrewferrier/debugprint.nvim",
+    config = function()
+      require("debugprint").setup()
+    end,
+    keys = "g?",
+  },
 
-	-- jump list:
-	{
-		"opalmay/vim-EnhancedJumps",
-		event = "BufReadPost",
-		dependencies = {
-			"inkarkat/vim-ingo-library",
-		},
-		-- keys = { "<C-i>", "<C-o>" },
-	},
-	-- {
-	-- 	"petertriho/nvim-scrollbar",
-	-- 	event = "User FileOpened",
-	-- 	config = function()
-	-- 		require("user.scrollbar")
-	-- 	end,
-	-- 	dependencies = {
-	-- 		"nvim-hlslens",
-	-- 	},
-	-- },
-	-- {
-	-- 	"kevinhwang91/nvim-hlslens",
-	-- 	config = function()
-	-- 		require("user.hlslens")
-	-- 	end,
-	-- 	lazy = true,
-	-- },
-	-- { "haya14busa/vim-asterisk" },
-	-- {
-	--   "asiryk/auto-hlsearch.nvim",
-	--   config = function()
-	--     require("auto-hlsearch").setup()
-	--   end,
-	-- },
-	-- {
-	-- 	"KenN7/vim-arsync",
-	-- 	event = "BufWritePre",
-	-- },
-	{
-		"NvChad/nvim-colorizer.lua",
-		config = function()
-			require("colorizer").setup({
-				"!*",
-			})
-		end,
-		cmd = "ColorizerToggle",
-	},
-	-- {
-	-- 	"iamcco/markdown-preview.nvim",
-	-- 	build = "cd app && npm install",
-	-- 	init = function()
-	-- 		vim.g.mkdp_filetypes = { "markdown" }
-	-- 	end,
-	-- 	ft = "markdown",
-	-- },
-	{
-		"ray-x/lsp_signature.nvim",
-		event = "InsertEnter",
-	},
-	-- {
-	-- 	"Vimjas/vim-python-pep8-indent",
-	-- 	ft = "python",
-	-- },
-	{
-		"gbprod/yanky.nvim",
-		-- event = "BufReadPost",
-		event = "User FileOpened",
-		-- keys = { "y", "p", "P", "gp", "gP" },
-		config = function()
-			require("user.yanky")
-		end,
-	},
-	{
-		"gbprod/substitute.nvim",
-		config = function()
-			require("user.substitute")
-		end,
-		lazy = true,
-	},
-	{
-		"gbprod/stay-in-place.nvim",
-		config = function()
-			require("stay-in-place").setup()
-		end,
-		event = "User FileOpened",
-	},
-	{
-		"neovim/nvim-lspconfig",
-		dependencies = { "mason-lspconfig.nvim", "nlsp-settings.nvim", "nvim-config-local", "nvim-navbuddy" },
-	},
-	{
-		"klen/nvim-config-local",
-		config = function()
-			require("config-local").setup()
-		end,
-	},
-	{
-		"ThePrimeagen/vim-be-good",
-		cmd = "VimBeGood",
-	},
-	{
-		"MTDL9/vim-log-highlighting",
-		ft = "log",
-	},
-	{
-		"mbbill/undotree",
-		cmd = "UndotreeToggle",
-	},
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-		config = function()
-			require("user.copilot")
-		end,
-	},
-	{
-		"folke/todo-comments.nvim",
-		dependencies = "nvim-lua/plenary.nvim",
-		config = function()
-			require("todo-comments").setup()
-		end,
-		event = "User FileOpened",
-	},
-	{
-		"roobert/search-replace.nvim",
-		config = function()
-			require("search-replace").setup()
-		end,
-		event = "User FileOpened",
-		-- Lazy load
-	},
-	-- {
-	-- 	"stevearc/dressing.nvim",
-	-- },
-	{
-		"opalmay/floating-input.nvim",
-		config = function()
-			require("floating-input").setup({
-				esc_normal_mode = true,
-			})
-		end,
-		branch = "feat-esc-normalmode",
-	},
-	{
-		"echasnovski/mini.nvim",
-		config = function()
-			-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md
-			require("mini.ai").setup()
-			require("mini.splitjoin").setup()
-			require("mini.jump").setup()
-		end,
-		event = "User FileOpened",
-	},
-	-- {
-	-- 	"giusgad/pets.nvim",
-	-- 	config = function()
-	-- 		require("pets").setup()
-	-- 	end,
-	-- 	cmd = { "PetsNew", "PetsNewCustom", "PetsList" },
-	-- 	dependencies = { "MunifTanjim/nui.nvim", "giusgad/hologram.nvim" },
-	-- },
-	-- {
-	-- 	"tjdevries/sg.nvim",
-	-- 	build = "cargo build --workspace",
-	-- 	dependencies = { "nvim-lua/plenary.nvim" },
-	-- 	config = function()
-	-- 		-- require("sg").setup({ on_attach = lvim.lsp.on_attach_callback })
-	-- 		require("sg").setup({})
-	-- 	end,
-	-- 	event = "User FileOpened",
-	-- },
-	{
-		"DNLHC/glance.nvim",
-		config = function()
-			require("user.glance")
-		end,
-		-- event = "BufReadPost",
-		cmd = "Glance",
-	},
-	-- treesitter queries map popup
-	-- {
-	-- 	"ziontee113/neo-minimap",
-	-- 	config = function()
-	-- 		require("user.neo-minimap")
-	-- 	end,
-	-- 	-- keys = "zj",
-	-- },
-	{
-		"simrat39/symbols-outline.nvim",
-		config = function()
-			require("user.symbols_outline")
-		end,
-		cmd = { "SymbolsOutline", "SymbolsOutlineOpen", "SymbolsOutlineClose" },
-	},
-	{
-		"sindrets/diffview.nvim",
-	},
-	{
-		-- lists helper
-		"gaoDean/autolist.nvim",
-		ft = {
-			"markdown",
-			"text",
-			"tex",
-			"plaintex",
-		},
-		config = function()
-			require("user.autolist")
-		end,
-		-- event = "User FileOpened",
-	},
-	-- {
-	-- 	-- delay repeating keys
-	-- 	"ja-ford/delaytrain.nvim",
-	-- 	config = function()
-	-- 		require("delaytrain").setup({
-	-- 			delay_ms = 1000, -- How long repeated usage of a key should be prevented
-	-- 			grace_period = 3, -- How many repeated keypresses are allowed
-	-- 		})
-	-- 	end,
-	-- 	event = "BufReadPost",
-	-- },
-	{
-		-- open project in github
-		"almo7aya/openingh.nvim",
-		cmd = { "OpenInGHRepo", "OpenInGHFile" },
-	},
-	{
-		-- Did you mean to open this file instead?
-		"axieax/typo.nvim",
-		config = function()
-			require("typo").setup()
-		end,
-	},
-	{
-		"vigoux/notifier.nvim",
-		config = function()
-			require("notifier").setup()
-		end,
-	},
-	{
-		"nguyenvukhang/nvim-toggler",
-		config = function()
-			require("user.toggler")
-		end,
-		event = "User FileOpened",
-	},
-	{
-		"jghauser/mkdir.nvim",
-		event = "BufWritePre",
-	},
-	-- broken for some reason
-	-- {
-	-- 	"chrisgrieser/nvim-recorder",
-	-- 	config = function()
-	-- 		require("recorder").setup()
-	-- 	end,
-	-- },
-	{
-		"andrewferrier/debugprint.nvim",
-		config = function()
-			require("debugprint").setup()
-		end,
-		keys = "g?",
-	},
+  {
+    "stevearc/oil.nvim",
+    config = function()
+      require("user.oil")
+    end,
+  },
+  {
+    "james1236/backseat.nvim",
+    config = function()
+      require("backseat").setup({
+        -- openai_model_id = "gpt-3.5-turbo", --gpt-4 (If you do not have access to a model, it says "The model does not exist")
+        openai_model_id = "gpt-4", --gpt-4 (If you do not have access to a model, it says "The model does not exist")
+      })
+    end,
+    cmd = { "Backseat", "BackseatAsk" },
+  },
+  {
+    "SmiteshP/nvim-navbuddy",
+    lazy = true,
+    dependencies = { "SmiteshP/nvim-navic" },
+  },
+  { "chrisgrieser/nvim-spider", lazy = true },
+  {
+    "Bryley/neoai.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+    cmd = {
+      "NeoAI",
+      "NeoAIOpen",
+      "NeoAIClose",
+      "NeoAIToggle",
+      "NeoAIContext",
+      "NeoAIContextOpen",
+      "NeoAIContextClose",
+      "NeoAIInject",
+      "NeoAIInjectCode",
+      "NeoAIInjectContext",
+      "NeoAIInjectContextCode",
+    },
+    keys = {
+      { "<leader>od", desc = "summarize text" },
+      { "<leader>og", desc = "generate git message" },
+    },
+    config = function()
+      require("neoai").setup({
+        -- Below are the default options, feel free to override what you would like changed
+        ui = {
+          output_popup_text = "NeoAI",
+          input_popup_text = "Prompt",
+          width = 30,               -- As percentage eg. 30%
+          output_popup_height = 80, -- As percentage eg. 80%
+          submit = "<Enter>",       -- Key binding to submit the prompt
+        },
+        models = {
+          {
+            name = "openai",
+            model = "gpt-4",
+            params = nil,
+          },
+        },
+        register_output = {
+          ["g"] = function(output)
+            return output
+          end,
+          ["c"] = require("neoai.utils").extract_code_snippets,
+        },
+        inject = {
+          cutoff_width = 75,
+        },
+        prompts = {
+          context_prompt = function(context)
+            return "Hey, I'd like to provide some context for future "
+                .. "messages. Here is the code/text that I want to refer "
+                .. "to in our upcoming conversations:\n\n"
+                .. context
+          end,
+        },
+        mappings = {
+          ["select_up"] = "<C-k>",
+          ["select_down"] = "<C-j>",
+        },
+        open_ai = {
+          api_key = {
+            env = "OPENAI_API_KEY",
+            value = nil,
+            -- `get` is is a function that retrieves an API key, can be used to override the default method.
+            -- get = function() ... end
 
-	-- Fun:
-	-- {
-	-- 	"tamton-aquib/stuff.nvim",
-	-- 	config = function()
-	-- 		require("calc").setup()
-	-- 	end,
-	-- 	cmd = "Calc",
-	-- },
-	-- {
-	-- 	"Eandrju/cellular-automaton.nvim",
-	-- 	cmd = "CellularAutomaton",
-	-- },
-	-- {
-	-- 	"tamton-aquib/duck.nvim",
-	-- 	lazy = true,
-	-- },
-	-- {
-	-- 	"tamton-aquib/zone.nvim",
-	-- 	config = function()
-	-- 		require("zone").setup({
-	-- 			style = "treadmill",
-	-- 			after = 60000, -- Idle timeout
-	-- 			-- More options to come later
+            -- Here is some code for a function that retrieves an API key. You can use it with
+            -- the Linux 'pass' application.
+            -- get = function()
+            --     local key = vim.fn.system("pass show openai/mytestkey")
+            --     key = string.gsub(key, "\n", "")
+            --     return key
+            -- end,
+          },
+        },
+        shortcuts = {
+          {
+            name = "textify",
+            key = "<leader>as",
+            desc = "fix text with AI",
+            use_context = true,
+            prompt = [[
+                Please rewrite the text to make it more readable, clear,
+                concise, and fix any grammatical, punctuation, or spelling
+                errors
+            ]],
+            modes = { "v" },
+            strip_function = nil,
+          },
+          {
+            name = "gitcommit",
+            key = "<leader>ag",
+            desc = "generate git commit message",
+            use_context = false,
+            prompt = function()
+              return [[
+                    Using the following git diff generate a consise and
+                    clear git commit message, with a short title summary
+                    that is 75 characters or less:
+                ]] .. vim.fn.system("git diff --cached")
+            end,
+            modes = { "n" },
+            strip_function = nil,
+          },
+        },
+      })
+    end,
+  },
+  {
+    "lambdalisue/suda.vim",
+    config = function()
+      vim.g["suda#nopass"] = 1
+    end,
+  },
+  {
+    "milanglacier/yarepl.nvim",
+    config = function()
+      -- return lines
 
-	-- 			treadmill = {
-	-- 				direction = "left",
-	-- 				-- Opts for Treadmill style
-	-- 			},
-	-- 			epilepsy = {
-	-- 				stage = "aura", -- "aura" or "ictal"
-	-- 				-- etc.
-	-- 			},
-	-- 			dvd = {
-	-- 				-- Opts for Dvd style
-	-- 			},
-	-- 			-- etc
-	-- 		})
-	-- 	end,
-	-- 	cmd = "Zone",
-	-- },
-	-- {
-	-- 	"glacambre/firenvim",
-	-- 	build = function()
-	-- 		vim.fn["firenvim#install"](0)
-	-- 	end,
-	-- 	cond = vim.g.started_by_firenvim ~= nil,
-	-- },
-	{
-		"stevearc/oil.nvim",
-		config = function()
-			require("user.oil")
-		end,
-		-- cmd = "Oil",
-		-- event = "User DirOpened",
-	},
-	{
-		"james1236/backseat.nvim",
-		config = function()
-			require("backseat").setup({
-				-- Alternatively, set the env var $OPENAI_API_KEY by putting "export OPENAI_API_KEY=sk-xxxxx" in your ~/.bashrc
-				openai_model_id = "gpt-3.5-turbo", --gpt-4 (If you do not have access to a model, it says "The model does not exist")
-				language = "english", -- Such as 'japanese', 'french', 'pirate', 'LOLCAT'
-				-- split_threshold = 100,
-				-- additional_instruction = "", -- (GPT-3 will probably deny this request, but GPT-4 complies)
-				-- highlight = {
-				--     icon = '', -- ''
-				--     group = 'Comment',
-				-- }
-			})
-		end,
-		cmd = { "Backseat", "BackseatAsk" },
-	},
-	{
-		"SmiteshP/nvim-navbuddy",
-		lazy = true,
-		-- cmd = "Navbuddy",
-		dependencies = { "SmiteshP/nvim-navic" },
-	},
-	{ "chrisgrieser/nvim-spider", lazy = true },
-	{
-		"Bryley/neoai.nvim",
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-		},
-		cmd = {
-			"NeoAI",
-			"NeoAIOpen",
-			"NeoAIClose",
-			"NeoAIToggle",
-			"NeoAIContext",
-			"NeoAIContextOpen",
-			"NeoAIContextClose",
-			"NeoAIInject",
-			"NeoAIInjectCode",
-			"NeoAIInjectContext",
-			"NeoAIInjectContextCode",
-		},
-		keys = {
-			{ "<leader>od", desc = "summarize text" },
-			{ "<leader>og", desc = "generate git message" },
-		},
-		config = function()
-			require("neoai").setup({
-				-- Options go here
-			})
-		end,
-	},
-	-- {
-	-- 	"ThePrimeagen/refactoring.nvim",
-	-- },
-	-- # TODO: fix right key
-	-- {
-	-- 	"crusj/bookmarks.nvim",
-	-- 	keys = {
-	-- 		{ "<tab><tab>", mode = { "n" } },
-	-- 		{ "\\z", mode = { "n" } },
-	-- 	},
-	-- 	config = function()
-	-- 		require("bookmarks").setup({
-	-- 			fix_enable = true,
-	-- 			preview_ext_enable = true,
-	-- 			virt_text = "",
-	-- 		})
-	-- 	end,
-	-- 	-- event = "BufRead",
-	-- },
-	-- {
-	-- 	"phaazon/hop.nvim",
-	-- 	config = function()
-	-- 		require("hop").setup()
-	-- 	end,
-	-- },
-	-- {
-	-- 	"miversen33/netman.nvim",
-	-- 	config = function()
-	-- 		require("netman")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"nvim-neo-tree/neo-tree.nvim",
-	-- 	branch = "v2.x",
-	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		"netman.nvim",
-	-- 	},
-	-- 	config = function()
-	-- 		require("neo-tree").setup({
-	-- 			sources = {
-	-- 				"filesystem", -- Neotree filesystem source
-	-- 				"netman.ui.neo-tree", -- The one you really care about 😉
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
+      -- below is the default configuration, there's no need to copy paste them if
+      -- you are satisfied with the default configuration, just calling
+      -- `require('yarepl').setup {}` is sufficient.
+      local yarepl = require 'yarepl'
+      local function powershell_formatter(lines)
+        for i, _ in ipairs(lines) do
+          lines[i] = lines[i] .. '\r'
+        end
+        return yarepl.formatter.trim_empty_lines(lines)
+      end
+
+      yarepl.setup {
+        -- see `:h buflisted`, whether the REPL buffer should be buflisted.
+        buflisted = true,
+        -- whether the REPL buffer should be a scratch buffer.
+        scratch = true,
+        -- the filetype of the REPL buffer created by `yarepl`
+        ft = 'REPL',
+        -- How yarepl open the REPL window, can be a string or a lua function.
+        -- See below example for how to configure this option
+        wincmd = 'belowright 15 split',
+        -- The available REPL palattes that `yarepl` can create REPL based on
+        metas = {
+          aichat = { cmd = 'aichat', formatter = yarepl.formatter.bracketed_pasting },
+          radian = { cmd = 'radian', formatter = yarepl.formatter.bracketed_pasting },
+          ipython = { cmd = 'ipython', formatter = yarepl.formatter.bracketed_pasting },
+          python = { cmd = 'python', formatter = yarepl.formatter.trim_empty_lines },
+          R = { cmd = 'R', formatter = yarepl.formatter.trim_empty_lines },
+          bash = { cmd = 'bash', formatter = yarepl.formatter.trim_empty_lines },
+          zsh = { cmd = 'zsh', formatter = yarepl.formatter.bracketed_pasting },
+          -- powershell = { cmd = "pwsh", formatter = yarepl.formatter.trim_empty_lines },
+          powershell = { cmd = "pwsh", formatter = powershell_formatter },
+        },
+        -- when a REPL process exits, should the window associated with those REPLs closed?
+        close_on_exit = true,
+        -- whether automatically scroll to the bottom of the REPL window after sending
+        -- text? This feature would be helpful if you want to ensure that your view
+        -- stays updated with the latest REPL output.
+        scroll_to_bottom_after_sending = true,
+        os = {
+          -- Some hacks for Windows. macOS and Linux users can simply ignore
+          -- them. The default options are recommended for Windows user.
+          windows = {
+            -- Send a final `\r` to the REPL with delay,
+            send_delayed_cr_after_sending = true,
+          },
+        },
+      }
+    end
+  }
 }
 
 lvim.builtin.bufferline.active = false
 lvim.builtin.lir.active = false
--- lvim.builtin.breadcrumbs.active = true
--- lvim.builtin.nvimtree.active = false
---
---
+lvim.builtin.bufferline.active = false
+lvim.builtin.lir.active = false
+lvim.builtin.bufferline.active = false
+lvim.builtin.lir.active = false
+lvim.builtin.bufferline.active = false
+lvim.builtin.lir.active = false
+lvim.builtin.bufferline.active = false
+lvim.builtin.lir.active = false
+lvim.builtin.bufferline.active = false
+lvim.builtin.lir.active = false

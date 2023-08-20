@@ -4,26 +4,26 @@
 -- local map = vim.api.nvim_set_keymap
 -- local map = function(mode, bind, action, opts)
 local function map(mode, bind, action, opts)
-	-- local opts = { noremap = true, silent = true }
-	if type(mode) == "table" then
-		for _, m in ipairs(mode) do
-			map(m, bind, action, opts)
-		end
-		return
-	end
-	if opts then
-		action = { action, opts }
-	end
-	local mode_map = {
-		n = "normal_mode",
-		v = "visual_mode",
-		x = "visual_block_mode",
-		i = "insert_mode",
-		t = "term_mode",
-		c = "command_mode",
-	}
-	local key = mode_map[mode]
-	lvim.keys[key][bind] = action
+  -- local opts = { noremap = true, silent = true }
+  if type(mode) == "table" then
+    for _, m in ipairs(mode) do
+      map(m, bind, action, opts)
+    end
+    return
+  end
+  if opts then
+    action = { action, opts }
+  end
+  local mode_map = {
+    n = "normal_mode",
+    v = "visual_mode",
+    x = "visual_block_mode",
+    i = "insert_mode",
+    t = "term_mode",
+    c = "command_mode",
+  }
+  local key = mode_map[mode]
+  lvim.keys[key][bind] = action
 end
 -- map('n', 'gD', '<CMD>Glance definitions<CR>')
 -- map('n', 'gr', '<CMD>Glance references<CR>')
@@ -336,3 +336,5 @@ vim.cmd([[nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]']])
 -- vim.keymap.set("", "T", function()
 -- 	hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
 -- end, { remap = true })
+
+map("v", "<leader>c", "<cmd>REPLSendVisual<cr>")

@@ -8,10 +8,10 @@ lvim.builtin.which_key.mappings["l"]["b"] = { ":ToggleDiag<CR>", "Toggle Diag" }
 -- lvim.builtin.which_key.mappings["v"] = { ":vs<CR>", "Vertical Split" }
 -- lvim.builtin.which_key.mappings["v"] = { ":Telescope yank_history<CR>", "Yank History" }
 lvim.builtin.which_key.mappings["o"] = {
-	l = { ":set rnu!<CR>", "Toggle Relative Line Numbers" },
-	t = { ':let &background = ( &background == "dark"? "light" : "dark" )<CR>', "Toggle Dark Theme" },
-	c = { ":lua require('copilot.suggestion').toggle_auto_trigger()<CR>", "Toggle Copilot Auto Trigger" },
-	s = { "set spell!<CR>", "Toggle Spell Check" },
+  l = { ":set rnu!<CR>", "Toggle Relative Line Numbers" },
+  t = { ':let &background = ( &background == "dark"? "light" : "dark" )<CR>', "Toggle Dark Theme" },
+  c = { ":lua require('copilot.suggestion').toggle_auto_trigger()<CR>", "Toggle Copilot Auto Trigger" },
+  s = { "set spell!<CR>", "Toggle Spell Check" },
 }
 -- lvim.builtin.which_key.mappings["D"] = {
 -- 	name = "Database",
@@ -32,11 +32,11 @@ lvim.builtin.which_key.mappings["i"] = { ":lua require('nvim-toggler').toggle()<
 lvim.builtin.which_key.mappings["d"]["U"] = { "<cmd>lua require('dapui').toggle(2)<cr>", "Toggle UI" }
 lvim.builtin.which_key.mappings["d"]["I"] = { "<cmd>lua require('dapui').toggle()<cr>", "Toggle all UI" }
 lvim.builtin.which_key.mappings["d"]["t"] =
-	{ "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>", "Toggle Breakpoint" }
+{ "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>", "Toggle Breakpoint" }
 lvim.builtin.which_key.mappings["d"]["T"] =
-	{ "<cmd>lua require('persistent-breakpoints.api').set_conditional_breakpoint()<cr>", "Clear All Breakpoints" }
+{ "<cmd>lua require('persistent-breakpoints.api').set_conditional_breakpoint()<cr>", "Clear All Breakpoints" }
 lvim.builtin.which_key.mappings["d"]["R"] =
-	{ "<cmd>lua require('persistent-breakpoints.api').clear_all_breakpoints()<cr>", "Clear All Breakpoints" }
+{ "<cmd>lua require('persistent-breakpoints.api').clear_all_breakpoints()<cr>", "Clear All Breakpoints" }
 
 lvim.builtin.which_key.mappings["c"] = nil
 lvim.builtin.which_key.mappings["m"] = lvim.builtin.which_key.mappings["s"]
