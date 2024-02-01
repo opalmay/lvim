@@ -21,7 +21,7 @@ jaq_nvim.setup {
       cpp = "g++ % -o $fileBase && ./$fileBase",
       go = "go run %",
       sh = "sh %",
-      powershell = "pwsh %",
+      powershell = "pwsh -File %",
     },
 
     -- Uses internal commands such as 'source' and 'luafile'

@@ -12,6 +12,13 @@ local opts = {
 		default_lazy = true,
 		suppress_conflict_warning = true,
 	},
+	-- highlight = {
+	-- 	enable = true,
+	-- 	use_languagetree = true,
+	-- },
+
+	-- indent = { enable = true },
+
 	-- textsubjects = {
 	-- 	enable = true,
 	-- 	prev_selection = ",", -- (Optional) keymap to select the previous selection
